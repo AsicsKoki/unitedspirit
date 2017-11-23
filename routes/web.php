@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', 'UserController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::group(['prefix' => 'admin'], function () {
@@ -23,8 +23,10 @@ Route::group(['prefix' => 'admin'], function () {
   Route::post('/login', 'AdminAuth\LoginController@postAdminLogin')->name('postAdminLogin');
   Route::post('/logout', 'AdminAuth\LoginController@logout')->name('logout');
 
+  Route::get('/home', 'AdminAuth\LoginController@getAdminHome')->name('getAdminHome');
+
   Route::get('/register', 'AdminAuth\RegisterController@getAdminRegister')->name('getAdminRegister');
-  Route::post('/register', 'AdminAuth\RegisterController@postAdminRegister')->name('postAdminRegister');
+  Route::post('/postAdminRegister', 'AdminAuth\RegisterController@postAdminRegister')->name('postAdminRegister');
 
   Route::post('/password/email', 'AdminAuth\ForgotPasswordController@sendResetLinkEmail')->name('password.request');
   Route::post('/password/reset', 'AdminAuth\ResetPasswordController@reset')->name('password.email');

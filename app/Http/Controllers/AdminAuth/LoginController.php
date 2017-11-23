@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers\AdminAuth;
 
+use App\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Hesto\MultiAuth\Traits\LogsoutGuard;
+use Illuminate\Support\Facades\Hash as Hash;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
+use Session;
 
 class LoginController extends Controller
 {
@@ -59,5 +64,28 @@ class LoginController extends Controller
     protected function guard()
     {
         return Auth::guard('admin');
+    }
+
+    public function getAdminHome()
+    {
+        return view('admin.home');
+    }
+
+    public function getAdminLogin()
+    {
+        return view('admin.auth.login');
+    }
+
+    public function postAdminLogin()
+    {
+        $email = Input::get('email');
+        $password = Input::get('password');
+        $admin = Admin::where('email', $email)->first();
+        
+        if ($admin &&  Hash::check(Input::get('password'), $admin->password)) {
+            Session::put('admin', $admin);
+            return redirect()->route('admin.home');
+        }
+        return redirect()->back()->withErrors(['error', 'Wrong email or password!']);
     }
 }

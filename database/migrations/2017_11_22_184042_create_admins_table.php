@@ -14,11 +14,13 @@ class CreateAdminsTable extends Migration
     {
         Schema::create('admins', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
+			$table->string('name', 50);
+            $table->string('email', 100)->unique();
+            $table->string('password', 100);
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 
@@ -29,6 +31,6 @@ class CreateAdminsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('admins');
+        Schema::dropIfExists('admins');
     }
 }

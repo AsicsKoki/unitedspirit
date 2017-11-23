@@ -6,6 +6,10 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Auth as Auth;
+use Illuminate\Support\Facades\Hash as Hash;
 
 class RegisterController extends Controller
 {
@@ -73,4 +77,27 @@ class RegisterController extends Controller
     {
         return view('auth.register');
     }
+
+    
+    public function postUserRegister(Request $request)
+    {
+        $request->validate([
+        'first_name'            => 'required',
+        'last_name'             => 'required',
+        'email'                 => 'required',
+        'birthdate'             => 'required',
+        'phone'                 => 'required',
+        'password'              => 'required',
+        'password_confirmation' => 'required',
+    ]);
+    if (!strcmp(Input::get('password'), Input::get('password_confirmation'))){
+        $user = new User(Input::all());
+        $user->password = Hash::make(Input::get('password'));
+        $user->save();
+        return redirect()->route('/home');
+    } else {
+        return Redirect::back()->withErrors(['error', "Password does not match!"]);
+        }
+    }
+
 }

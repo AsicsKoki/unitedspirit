@@ -7,6 +7,9 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Hash as Hash;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -88,5 +91,28 @@ class RegisterController extends Controller
     protected function guard()
     {
         return Auth::guard('admin');
+    }
+
+    public function getAdminRegister()
+    {
+        return view('admin.auth.register');
+    }
+
+    public function postAdminRegister(Request $request)
+    {
+        $request->validate([
+        'name'                  => 'required',
+        'email'                 => 'required',
+        'password'              => 'required',
+        'password_confirmation' => 'required',
+    ]);
+    if (!strcmp(Input::get('password'), Input::get('password_confirmation'))){
+        $admin = new Admin(Input::all());
+        $admin->password = Hash::make(Input::get('password'));
+        $admin->save();
+        return redirect()->route('admin.home');
+    } else {
+        return Redirect::back()->withErrors(['error', "Password does not match!"]);
+        }
     }
 }
