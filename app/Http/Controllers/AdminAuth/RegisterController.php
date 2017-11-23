@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\AdminAuth;
 
-use App\User;
+use App\Admin;
+use Validator;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Auth as Auth;
 use Illuminate\Support\Facades\Hash as Hash;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -27,11 +27,11 @@ class RegisterController extends Controller
     use RegistersUsers;
 
     /**
-     * Where to redirect users after registration.
+     * Where to redirect users after login / registration.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin/home';
 
     /**
      * Create a new controller instance.
@@ -40,7 +40,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('admin.guest');
     }
 
     /**
@@ -52,9 +52,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:admins',
+            'password' => 'required|min:6|confirmed',
         ]);
     }
 
@@ -62,42 +62,57 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return Admin
      */
     protected function create(array $data)
     {
-        return User::create([
+        return Admin::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
     }
 
-    public function getUserRegister()
+    /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showRegistrationForm()
     {
-        return view('auth.register');
+        return view('admin.auth.register');
     }
 
-    
-    public function postUserRegister(Request $request)
+    /**
+     * Get the guard to be used during registration.
+     *
+     * @return \Illuminate\Contracts\Auth\StatefulGuard
+     */
+    protected function guard()
+    {
+        return Auth::guard('admin');
+    }
+
+    public function getAdminRegister()
+    {
+        return view('admin.auth.register');
+    }
+
+    public function postAdminRegister(Request $request)
     {
         $request->validate([
-        'first_name'            => 'required',
-        'last_name'             => 'required',
+        'name'                  => 'required',
         'email'                 => 'required',
-        'birthdate'             => 'required',
-        'phone'                 => 'required',
         'password'              => 'required',
         'password_confirmation' => 'required',
     ]);
     if (!strcmp(Input::get('password'), Input::get('password_confirmation'))){
-        $user = new User(Input::all());
-        $user->password = Hash::make(Input::get('password'));
-        $user->save();
-        return redirect()->route('/home');
+        $admin = new Admin(Input::all());
+        $admin->password = Hash::make(Input::get('password'));
+        $admin->save();
+        return redirect()->route('admin.home');
     } else {
         return Redirect::back()->withErrors(['error', "Password does not match!"]);
         }
     }
-
 }
