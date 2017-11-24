@@ -54,10 +54,18 @@ class LoginController extends Controller
         $password = Input::get('password');
         $user = User::where('email', $email)->first();
         
-        if ($user &&  Hash::check(Input::get('password'), $user->password)) {
-            Session::put('user', $user);
+        // if ($user &&  Hash::check(Input::get('password'), $user->password)) {
+        //     Session::put('user', $user);
+        //     return redirect()->route('home');
+        // }
+        // return redirect()->back()->withErrors(['error', 'Wrong email or password!']);
+
+        if (Auth::attempt(['email' => $email, 'password' => $password])) {
+            // Authentication passed...
             return redirect()->route('home');
+        } else {
+            // Auth failed...
+            return redirect()->back()->withErrors(['error', 'Wrong username or password!']);
         }
-        return redirect()->back()->withErrors(['error', 'Wrong email or password!']);
     }
 }

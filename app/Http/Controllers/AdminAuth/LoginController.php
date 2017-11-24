@@ -82,10 +82,19 @@ class LoginController extends Controller
         $password = Input::get('password');
         $admin = Admin::where('email', $email)->first();
         
-        if ($admin &&  Hash::check(Input::get('password'), $admin->password)) {
-            Session::put('admin', $admin);
-            return redirect()->route('admin.home');
+        // if ($admin &&  Hash::check(Input::get('password'), $admin->password)) {
+        //     Session::put('admin', $admin);
+        //     return redirect()->route('getAdminHome');
+        // }
+        // return redirect()->back()->withErrors(['error', 'Wrong email or password!']);
+
+        if (Auth::guard('admin')->attempt(['email' => $email, 'password' => $password])) {
+            // Authentication passed...
+            return redirect()->route('getAdminHome');
+        } else {
+            // Auth failed...
+            return redirect()->back()->withErrors(['error', 'Wrong username or password!']);
         }
-        return redirect()->back()->withErrors(['error', 'Wrong email or password!']);
+
     }
 }

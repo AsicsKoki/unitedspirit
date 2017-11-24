@@ -11,19 +11,21 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function () { 
     return view('welcome');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/logout', 'HomeController@logout')->name('logout');
 
+Route::group(['middleware'=>'admin'],function (){
+Route::get('/adminHome', 'AdminAuth\LoginController@getAdminHome')->name('getAdminHome');
+});
 
 Route::group(['prefix' => 'admin'], function () {
   Route::get('/login', 'AdminAuth\LoginController@getAdminLogin')->name('getAdminlogin');
   Route::post('/login', 'AdminAuth\LoginController@postAdminLogin')->name('postAdminLogin');
   Route::post('/logout', 'AdminAuth\LoginController@logout')->name('logout');
-
-  Route::get('/home', 'AdminAuth\LoginController@getAdminHome')->name('getAdminHome');
 
   Route::get('/register', 'AdminAuth\RegisterController@getAdminRegister')->name('getAdminRegister');
   Route::post('/postAdminRegister', 'AdminAuth\RegisterController@postAdminRegister')->name('postAdminRegister');

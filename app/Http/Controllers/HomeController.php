@@ -17,5 +17,12 @@ class HomeController extends Controller
         return view('404');
     }
 
+    public function logout()
+    {
+        Auth::logout();
+        session()->flush();
+        return redirect('/');
+    }
+
 
 }
