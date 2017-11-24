@@ -15,6 +15,7 @@ class CreateImagesTable extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('week_id');
             $table->timestamps();
         });
     }

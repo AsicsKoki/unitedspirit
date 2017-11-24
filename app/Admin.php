@@ -45,6 +45,6 @@ class Admin extends Authenticatable
 
     public function weeks()
     {
-        $this->hasMany('App\Week');
+        return $this->hasMany('App\Week');
     }
 }

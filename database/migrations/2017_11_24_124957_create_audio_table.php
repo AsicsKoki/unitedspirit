@@ -15,6 +15,7 @@ class CreateAudioTable extends Migration
     {
         Schema::create('audio', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('week_id');
             $table->timestamps();
         });
     }

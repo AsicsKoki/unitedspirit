@@ -8,6 +8,6 @@ class Video extends Model
 {
     public function week()
     {
-    	$this->belongsTo('App\Week');
+    	return $this->belongsTo('App\Week');
     }
 }

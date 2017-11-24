@@ -8,6 +8,6 @@ class Image extends Model
 {
     public function Week()
     {
-    	$this->belongsTo('App\Week');
+    	return $this->belongsTo('App\Week');
     }
 }
