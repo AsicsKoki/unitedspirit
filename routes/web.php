@@ -54,3 +54,5 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('/weeks', 'WeekController@getWeeks')->name('getWeeks');
 Route::get('/week/{wid}', 'WeekController@getWeek')->name('getSpecificWeek');
+
+Route::post('/uploadImage', 'WeekController@uploadImage')->name('uploadImage');

@@ -80,7 +80,7 @@ class WeekController extends Controller
         //
     }
 
-    /**
+    /**\
      * Remove the specified resource from storage.
      *
      * @param  \App\Week  $week
@@ -100,14 +100,42 @@ class WeekController extends Controller
 
     public function getWeek($wid)
     {  
-        $video = Video::where('week_id',$wid)->get();
-        $audio = Audio::where('week_id',$wid)->get();
-        $image = Image::where('week_id',$wid)->get();
-        $document = Document::where('week_id',$wid)->get();
-        $week = Week::where('id', $wid)->get();
-        // return $week;
-        return view('week.week', ['week' => $week , 'video' => $video , 'audio' => $audio , 'image' => $image , 'document' => $document ]);
+        $video = Video::where('week_id',$wid)->first();
+        $audio = Audio::where('week_id',$wid)->first();
+        $image = Image::where('week_id',$wid)->first();
+        $document = Document::where('week_id',$wid)->first();
+        $week = Week::where('id', $wid)->first();
+        // $logo = $image->path;
+        // return $image['path'];
+        return view('week.week', ['logo' => $image['path'], 'week' => $week , 'video' => $video , 'audio' => $audio , 'image' => $image , 'document' => $document ]);
     }
+
+    public function uploadImage(Request $request)
+    {
+    // get current time and append the upload file extension to it,
+    // then put that name to $photoName variable.
+    $photoName = time().'.'.$request->photo->getClientOriginalExtension();
+    /*
+        talk the select file and move it public directory and make avatars
+        folder if doesn't exsit then give it that unique name.
+    */
+    $week = Week::where('id', Input::get('wid'))->with('images')->first();
+    $request->photo->move(public_path('content/photos'), $photoName);
+    if($week->images->isEmpty())
+    {
+    $image = new Image;
+    $image->week_id = $week->id;
+    $image->path = '/content/photos/' . $photoName;
+    $image->save();
+    }else{
+        $image = $week->images->first();
+        $image->week_id = $week->id;
+        $image->path = '/content/photos/' . $photoName;
+        $image->save();
+    }
+    return redirect()->back();
+    }
+
 
 
     public function getJobs()
