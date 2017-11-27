@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth as Auth;
 use Carbon\Carbon;
+use URL;
 
 class WeekController extends Controller
 {
@@ -107,46 +108,188 @@ class WeekController extends Controller
         $week = Week::where('id', $wid)->first();
         // $logo = $image->path;
         // return $image['path'];
-        return view('week.week', ['logo' => $image['path'], 'week' => $week , 'video' => $video , 'audio' => $audio , 'image' => $image , 'document' => $document ]);
+        return view('week.week', ['doc' => $document['path'], 'aud' => $audio['path'] , 'vid' => $video['path'], 'logo' => $image['path'], 'week' => $week , 'video' => $video , 'audio' => $audio , 'image' => $image , 'document' => $document ]);
     }
 
     public function uploadImage(Request $request)
     {
-    // get current time and append the upload file extension to it,
-    // then put that name to $photoName variable.
-    $photoName = time().'.'.$request->photo->getClientOriginalExtension();
-    /*
-        talk the select file and move it public directory and make avatars
-        folder if doesn't exsit then give it that unique name.
-    */
-    $week = Week::where('id', Input::get('wid'))->with('images')->first();
-    $request->photo->move(public_path('content/photos'), $photoName);
-    if($week->images->isEmpty())
-    {
-    $image = new Image;
-    $image->week_id = $week->id;
-    $image->path = '/content/photos/' . $photoName;
-    $image->save();
-    }else{
-        $image = $week->images->first();
+        // get current time and append the upload file extension to it,
+        // then put that name to $photoName variable.
+        $photoName = time().'.'.$request->photo->getClientOriginalExtension();
+        /*
+            talk the select file and move it public directory and make avatars
+            folder if doesn't exsit then give it that unique name.
+        */
+        $week = Week::where('id', Input::get('wid'))->with('images')->first();
+        $request->photo->move(public_path('content/photos'), $photoName);
+        if($week->images->isEmpty())
+        {
+        $image = new Image;
         $image->week_id = $week->id;
         $image->path = '/content/photos/' . $photoName;
         $image->save();
+        }else{
+            $image = $week->images->first();
+            $image->week_id = $week->id;
+            $image->path = '/content/photos/' . $photoName;
+            $image->save();
+        }
+        return redirect()->back();
     }
-    return redirect()->back();
-    }
 
-
-
-    public function getJobs()
+    public function uploadVideo(Request $request)
     {
-        return view('ad.allAds', ['ads' => Ad::with('company.image')->get()]);
+        // get current time and append the upload file extension to it,
+        // then put that name to $photoName variable.
+        $videoName = time().'.'.$request->video->getClientOriginalExtension();
+        /*
+            talk the select file and move it public directory and make avatars
+            folder if doesn't exsit then give it that unique name.
+        */
+        $week = Week::where('id', Input::get('wid'))->with('videos')->first();
+        $request->video->move(public_path('content/videos'), $videoName);
+        if($week->videos->isEmpty())
+        {
+        $video = new Video;
+        $video->week_id = $week->id;
+        $video->path = '/content/videos/' . $videoName;
+        $video->save();
+        }else{
+            $video = $week->videos->first();
+            $video->week_id = $week->id;
+            $video->path = '/content/videos/' . $videoName;
+            $video->save();
+        }
+        return redirect()->back();
     }
 
-    public function getJob($jid)
-    {  
-        $ad = Ad::where('id', $jid)->with('company.image')->with('categories')->get();
-        return view('ad.ad', ['ad' => $ad]);
+    public function uploadAudio(Request $request)
+    {
+        // get current time and append the upload file extension to it,
+        // then put that name to $photoName variable.
+        $audioName = time().'.'.$request->audio->getClientOriginalExtension();
+        /*
+            talk the select file and move it public directory and make avatars
+            folder if doesn't exsit then give it that unique name.
+        */
+        $week = Week::where('id', Input::get('wid'))->with('audios')->first();
+        $request->audio->move(public_path('content/audios'), $audioName);
+        if($week->audios->isEmpty())
+        {
+        $audio = new Audio;
+        $audio->week_id = $week->id;
+        $audio->path = '/content/audios/' . $audioName;
+        $audio->save();
+        }else{
+            $audio = $week->audios->first();
+            $audio->week_id = $week->id;
+            $audio->path = '/content/audios/' . $audioName;
+            $audio->save();
+        }
+        return redirect()->back();
+    }
+
+    public function uploadDocument(Request $request)
+    {
+        // get current time and append the upload file extension to it,
+        // then put that name to $photoName variable.
+        $documentName = time().'.'.$request->document->getClientOriginalExtension();
+        /*
+            talk the select file and move it public directory and make avatars
+            folder if doesn't exsit then give it that unique name.
+        */
+        $week = Week::where('id', Input::get('wid'))->with('documents')->first();
+        $request->document->move(public_path('content/documents'), $documentName);
+        if($week->documents->isEmpty())
+        {
+        $document = new Document;
+        $document->week_id = $week->id;
+        $document->path = '/content/documents/' . $documentName;
+        $document->save();
+        }else{
+            $document = $week->documents->first();
+            $document->week_id = $week->id;
+            $document->path = '/content/documents/' . $documentName;
+            $document->save();
+        }
+        return redirect()->back();
+    }
+
+
+                // some helper functions
+    // public function getJobs()
+    // {
+    //     return view('ad.allAds', ['ads' => Ad::with('company.image')->get()]);
+    // }
+
+    // public function getJob($jid)
+    // {  
+    //     $ad = Ad::where('id', $jid)->with('company.image')->with('categories')->get();
+    //     return view('ad.ad', ['ad' => $ad]);
+    // }
+
+    public function getDocument($wid)
+    {
+        $week = Week::where('id', $wid)->with('documents')->first();
+        $document = $week->documents->first();
+
+        $doc = URL::to('/') . $document['path'];
+
+        $doc2 = $document['path'];
+
+        if (file_exists($doc)) {
+            header('Content-Description: File Transfer');
+            header('Content-Type: application/octet-stream');
+            header('Content-Disposition: attachment; filename="'.basename($doc).'"');
+            header('Expires: 0');
+            header('Cache-Control: must-revalidate');
+            header('Pragma: public');
+            header('Content-Length: ' . filesize($doc));
+            readfile($doc);
+            exit;
+        }
+        else echo("aaa");
+        
+        $doc3 = '1511806490.xml';
+        
+
+
+                // if(is_file($doc2)) {
+
+                //     /*
+                //         Do any processing you'd like here:
+                //         1.  Increment a counter
+                //         2.  Do something with the DB
+                //         3.  Check user permissions
+                //         4.  Anything you want!
+                //     */
+
+                //     // required for IE
+                //     if(ini_get('zlib.output_compression')) { ini_set('zlib.output_compression', 'Off');	}
+
+                //     // get the file mime type using the file extension
+                //     switch(strtolower(substr(strrchr($doc2, '.'), 1))) {
+                //         case 'pdf': $mime = 'application/pdf'; break;
+                //         case 'zip': $mime = 'application/zip'; break;
+                //         case 'jpeg':
+                //         case 'jpg': $mime = 'image/jpg'; break;
+                //         default: $mime = 'application/force-download';
+                //     }
+                //     header('Pragma: public'); 	// required
+                //     header('Expires: 0');		// no cache
+                //     header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+                //     header('Last-Modified: '.gmdate ('D, d M Y H:i:s', filemtime ($doc2)).' GMT');
+                //     header('Cache-Control: private',false);
+                //     header('Content-Type: '.$mime);
+                //     header('Content-Disposition: attachment; filename="'.basename($doc2).'"');
+                //     header('Content-Transfer-Encoding: binary');
+                //     header('Content-Length: '.filesize($doc2));	// provide file size
+                //     header('Connection: close');
+                //     readfile($doc2);		// push it out
+                //     exit();
+
+                // }else echo('no');
+
     }
 
 }

@@ -56,3 +56,8 @@ Route::get('/weeks', 'WeekController@getWeeks')->name('getWeeks');
 Route::get('/week/{wid}', 'WeekController@getWeek')->name('getSpecificWeek');
 
 Route::post('/uploadImage', 'WeekController@uploadImage')->name('uploadImage');
+Route::post('/uploadVideo', 'WeekController@uploadVideo')->name('uploadVideo');
+Route::post('/uploadAudio', 'WeekController@uploadAudio')->name('uploadAudio');
+Route::post('/uploadDocument', 'WeekController@uploadDocument')->name('uploadDocument');
+
+Route::get('/getDocument/{wid}', 'WeekController@getDocument')->name('getDocument');

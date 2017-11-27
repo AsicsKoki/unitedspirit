@@ -17,6 +17,7 @@ class CreateDocumentsTable extends Migration
             $table->increments('id');
             $table->integer('week_id');
             $table->timestamps();
+            $table->string('path', 250);
         });
     }
 
