@@ -34,6 +34,12 @@ class User extends Authenticatable
 
     public function weeks()
     {
-        return $this->hasMany('App\Week');
+        return $this->belongsToMany('App\Week' , 'user_week');
     }
+    
+    public function subscriptions()
+    {
+        return $this->belongsToMany('App\Subscription' , 'user_subscription');
+    }
+    
 }

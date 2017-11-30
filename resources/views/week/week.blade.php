@@ -5,14 +5,7 @@
 
 <h1> Specific week {{ $week->id }} </h1>
 
-  <table> 
-    <tr>
-        <th> {{ $audio->id }} </th>
-        <th> {{ $video->id }} </th>
-        <th> {{ $document->id }} </th>
-        <th> {{ $video->name }} </th>
-    </tr>
-  </table>
+
 
 {{Form::open(array('route' => 'uploadImage','method'=>'POST', 'files'=>true))}}
   <input type="file" name="photo" id="uploaded_photo" value="Upload photo!">
@@ -72,7 +65,7 @@ Your browser does not support the audio element.
 <a href="{{ route('getDocument',['wid'=> $week->id]) }}"><button class="submit"> Download documentation! </button></a>
 
 
-<!-- radi ovako -->
- <a href="{{ URL::to('/') . $doc }}" download> Download here </a>
+<!-- radi i ovako -->
+ <!-- <a href="{{ URL::to('/') . $doc }}" download> Download here </a> -->
 
 @endsection

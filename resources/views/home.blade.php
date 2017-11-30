@@ -16,6 +16,8 @@
 
                     You are logged in!
                 </div>
+
+                <a href="{{ route('postSubscribe') }}"><button>Subscribe!</button></a>
             </div>
         </div>
     </div>

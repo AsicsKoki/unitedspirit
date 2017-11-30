@@ -20,6 +20,7 @@ Route::get('/logout', 'HomeController@logout')->name('logout');
 
 Route::group(['middleware'=>'admin'],function (){
 Route::get('/adminHome', 'AdminAuth\LoginController@getAdminHome')->name('getAdminHome');
+
 });
 
 Route::group(['prefix' => 'admin'], function () {
@@ -27,8 +28,10 @@ Route::group(['prefix' => 'admin'], function () {
   Route::post('/login', 'AdminAuth\LoginController@postAdminLogin')->name('postAdminLogin');
   Route::post('/logout', 'AdminAuth\LoginController@logout')->name('logout');
 
+  
   Route::get('/register', 'AdminAuth\RegisterController@getAdminRegister')->name('getAdminRegister');
   Route::post('/postAdminRegister', 'AdminAuth\RegisterController@postAdminRegister')->name('postAdminRegister');
+  
 
   Route::post('/password/email', 'AdminAuth\ForgotPasswordController@sendResetLinkEmail')->name('password.request');
   Route::post('/password/reset', 'AdminAuth\ResetPasswordController@reset')->name('password.email');
@@ -52,8 +55,8 @@ Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
-Route::get('/weeks', 'WeekController@getWeeks')->name('getWeeks');
-Route::get('/week/{wid}', 'WeekController@getWeek')->name('getSpecificWeek');
+Route::get('/weeks', 'WeekController@getWeeks')->name('getWeeks')->middleware('auth');
+Route::get('/week/{wid}', 'WeekController@getWeek')->name('getSpecificWeek')->middleware('auth');
 
 Route::post('/uploadImage', 'WeekController@uploadImage')->name('uploadImage');
 Route::post('/uploadVideo', 'WeekController@uploadVideo')->name('uploadVideo');
@@ -61,3 +64,5 @@ Route::post('/uploadAudio', 'WeekController@uploadAudio')->name('uploadAudio');
 Route::post('/uploadDocument', 'WeekController@uploadDocument')->name('uploadDocument');
 
 Route::get('/getDocument/{wid}', 'WeekController@getDocument')->name('getDocument');
+
+Route::get('/subscribe', 'UserController@subscribe')->name('postSubscribe');

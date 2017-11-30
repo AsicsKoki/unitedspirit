@@ -94,7 +94,7 @@ class RegisterController extends Controller
         $user = new User(Input::all());
         $user->password = Hash::make(Input::get('password'));
         $user->save();
-        return redirect()->route('/home');
+        return redirect()->route('home');
     } else {
         return Redirect::back()->withErrors(['error', "Password does not match!"]);
         }
