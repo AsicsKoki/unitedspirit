@@ -346,9 +346,50 @@ body {
     background: #eee;
 }
 
+.experts h3 {
+    font-size: 30px;
+    color: #000;
+    margin-top: 0;
+    padding-top: 20px;
+    margin-bottom: 45px;
+}
+
+.experts img {
+    width: 100px;
+}
+
 
 /* donations
 -------------------------------------------------- */
+
+.donations h2 {
+    padding: 30px 0px;
+}
+
+
+/* campus_box
+-------------------------------------------------- */
+
+.campus_box {
+    background: #eee;
+}
+
+.campus_box small {
+    padding-bottom: 20px;
+    display: block;
+}
+
+
+/* partners
+-------------------------------------------------- */
+
+.our_partners {
+    background: #eee;
+}
+
+.our_partners h2 {
+    padding: 20px 0;
+}
 
 
 /* RESPONSIVE CSS

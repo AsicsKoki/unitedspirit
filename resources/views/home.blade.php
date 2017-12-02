@@ -178,52 +178,54 @@
     </div>
 
     <div class="experts">
-        <h3 class="text-center">Our Experts</h3>
-        <div class="text-center row">
-            <div class="col-lg-2">expert</div>
-            <div class="col-lg-2">expert</div>
-            <div class="col-lg-2">expert</div>
-            <div class="col-lg-2">expert</div>
-            <div class="col-lg-2">expert</div>
-            <div class="col-lg-2">expert</div>
-        </div>
+    <h3 class="text-center">Our Experts</h3>
+    <div class="text-center row">
+        <div class="col-lg-2"><img src="http://simpleicon.com/wp-content/uploads/user1.png" alt=""></div>
+        <div class="col-lg-2"><img src="http://simpleicon.com/wp-content/uploads/user1.png" alt=""></div>
+        <div class="col-lg-2"><img src="http://simpleicon.com/wp-content/uploads/user1.png" alt=""></div>
+        <div class="col-lg-2"><img src="http://simpleicon.com/wp-content/uploads/user1.png" alt=""></div>
+        <div class="col-lg-2"><img src="http://simpleicon.com/wp-content/uploads/user1.png" alt=""></div>
+        <div class="col-lg-2"><img src="http://simpleicon.com/wp-content/uploads/user1.png" alt=""></div>
     </div>
+</div>
 
-    <div class="donations">
-        <h3 class="text-center">Make a donation</h3>
-        <div class="row text-center">
-            <div class="col-lg-2">5e</div>
-            <div class="col-lg-2">10e</div>
-            <div class="col-lg-2">20e</div>
-            <div class="col-lg-2">50e</div>
-            <div class="col-lg-4">other</div>
-        </div>
+<div class="donations">
+    <h3 class="text-center">Make a donation</h3>
+    <div class="row text-center">
+        <div class="col-lg-2"><button class="btn btn-default">5e</button></div>
+        <div class="col-lg-2"><button class="btn btn-default">10e</button></div>
+        <div class="col-lg-2"><button class="btn btn-default">20e</button></div>
+        <div class="col-lg-2"><button class="btn btn-default">50e</button></div>
+        <div class="col-lg-4"><button class="btn btn-default">other</button></div>
     </div>
-    <div class="text-center campus_box">
-        <h3>Campus Box</h3>
-        <h4>Get a taste of Campus from where you are.</h4>
-        <p>
-            Receive for 52 weeks the content of the class from Campus (Self Realization, Wisdom of the World, Healthy mind in a healthy body) to transform your life by finding your path</br>
-            <span>Progress at your own rythm with weekly exercises</span>
-        </p>
-        <button class="btn btn-default center-block">Subscription / Connection</button>
-        <span>*All people working on Campus are volunteer, the money collected will be used to found the school</span>
-    </div>
+</div>
+<div class="text-center campus_box">
+    <h3>Campus Box</h3>
+    <h4>Get a taste of Campus from where you are.</h4>
+    <p>
+        Receive for 52 weeks the content of the class from Campus (Self Realization, Wisdom of the World, Healthy mind in a healthy body) to transform your life by finding your path</br>
+        <span>Progress at your own rythm with weekly exercises</span>
+    </p>
+    <button class="btn btn-default center-block">Subscription / Connection</button>
+    <small>*All people working on Campus are volunteer, the money collected will be used to found the school</small>
+</div>
 
-    <div class="container contact">
-        <h2 class="text-center">Contact</h2>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
-    </div>
+<div class="container contact">
+    <h2 class="text-center">Contact</h2>
+    <textarea name="" id="" cols="30" rows="10" class="center-block"></textarea>
+    <button class="btn btn-default center-block" type="submit">Send</button>
+</div>
 
-    <div class="our_partners">
-        <div class="text-center row">
-            <div class="col-lg-2">Partner</div>
-            <div class="col-lg-2">Partner</div>
-            <div class="col-lg-2">Partner</div>
-            <div class="col-lg-2">Partner</div>
-            <div class="col-lg-2">Partner</div>
-            <div class="col-lg-2">Partner</div>
-        </div>
+<div class="our_partners">
+    <h3 class="text-center">Our Partners</h3>
+    <div class="text-center row">
+        <div class="col-lg-2">Partner</div>
+        <div class="col-lg-2">Partner</div>
+        <div class="col-lg-2">Partner</div>
+        <div class="col-lg-2">Partner</div>
+        <div class="col-lg-2">Partner</div>
+        <div class="col-lg-2">Partner</div>
     </div>
+</div>
 
 @endsection
