@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/homeOld', 'HomeController@homeOld')->name('homeOld');
+
 Route::get('/logout', 'HomeController@logout')->name('logout');
 
 Route::group(['middleware'=>'admin'],function (){
@@ -66,3 +68,10 @@ Route::post('/uploadDocument', 'WeekController@uploadDocument')->name('uploadDoc
 Route::get('/getDocument/{wid}', 'WeekController@getDocument')->name('getDocument');
 
 Route::get('/subscribe', 'UserController@subscribe')->name('postSubscribe');
+Route::get('/subCheck', 'UserController@subCheck')->name('subCheck');
+
+Route::get('/editWeeks', 'AdminController@getEditWeeks')->name('getEditWeeks');
+
+Route::get('/editExperts', 'AdminController@getEditExperts')->name('getEditExperts');
+
+Route::get('/editPartners', 'AdminController@getEditPartners')->name('getEditPartners');

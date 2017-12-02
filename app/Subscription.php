@@ -8,7 +8,7 @@ class Subscription extends Model
 {
     public function users()
     {
-        return $this->belongsToMany('App\User' , 'user_subscription');
+        return $this->belongsToMany('App\User' , 'user_subscription')->withTimestamps();
     }
 
 }

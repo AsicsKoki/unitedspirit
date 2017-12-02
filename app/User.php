@@ -25,7 +25,7 @@ class User extends Authenticatable
 
     /**
      * The attributes that should be hidden for arrays.
-     *
+    *
      * @var array
      */
     protected $hidden = [
@@ -39,7 +39,7 @@ class User extends Authenticatable
     
     public function subscriptions()
     {
-        return $this->belongsToMany('App\Subscription' , 'user_subscription');
+        return $this->belongsToMany('App\Subscription' , 'user_subscription')->withTimestamps();
     }
     
 }

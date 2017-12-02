@@ -9,6 +9,11 @@
 
                 <div class="panel-body">
                     You are logged in as Admin!
+                    <nav>
+                        <li><a href="{{ route('getEditWeeks') }}">Edit weeks</a></li>
+                        <li><a href="{{ route('getEditExperts') }}">Edit experts</a></li>
+                        <li><a href="{{ route('getEditPartners') }}">Edit partners</a></li>
+                    </nav>
                 </div>
             </div>
         </div>

@@ -12,6 +12,11 @@ class HomeController extends Controller
         return view('home');
     }
 
+    public function homeOld()
+    {
+        return view('home_old');
+    }
+
     public function get404()
     {
         return view('404');
