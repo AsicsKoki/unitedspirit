@@ -10,10 +10,30 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Illuminate\Http\Request;
 
 Route::get('/', function () { 
-    return view('welcome');
+    return view('home');
 });
+
+//stripe
+Route::post ( '/', function (Request $request) {
+	\Stripe\Stripe::setApiKey ( 'base64:XiuYG0uPYhGxR34WFMs1JSNw+MGP9nn0hZzotIzikBM=' );
+	try {
+		\Stripe\Charge::create ( array (
+				"amount" => 300 * 100,
+				"currency" => "usd",
+				"source" => $request->input ( 'stripeToken' ), // obtained with Stripe.js
+				"description" => "Test payment." 
+		) );
+		Session::flash ( 'success-message', 'Payment done successfully !' );
+		return Redirect::back ();
+	} catch ( \Exception $e ) {
+		Session::flash ( 'fail-message', "Error! Please Try again." );
+		return Redirect::back ();
+	}
+} );
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/homeOld', 'HomeController@homeOld')->name('homeOld');
