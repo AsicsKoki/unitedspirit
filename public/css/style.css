@@ -418,3 +418,98 @@ body {
 }
 
 @media (min-width: 992px) {}
+
+
+/* MY CAMPUS PAGE STYLES 
+======================== */
+
+.myCampus_main h1 {
+    margin: 75px 0;
+}
+
+.myCampus_main .col-sm-3 .campus_week {
+    border: solid 1px #000;
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+
+/* FOOOTER STYLES 
+======================= */
+
+footer {
+    background: #162A3C;
+    padding: 30px;
+    margin-top: 30px;
+    color: #fff;
+}
+
+
+/* popup styles 
+======================== */
+
+.popup {
+    background: rgba(100, 100, 100, 0.6);
+    position: fixed;
+    display: none;
+    z-index: 5000;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.popup>div {
+    border-radius: 10px;
+    position: fixed;
+    background: #fff;
+    box-shadow: 0px 0px 15px 0px #162A3C;
+    padding: 30px 15px;
+    /* Width of popup can be changed */
+    width: 70%;
+    max-width: 600px;
+    z-index: 5001;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    border: 5px solid #162A3C;
+}
+
+.popup button {
+    margin: 10px auto;
+}
+
+.popup2 {
+    background: rgba(100, 100, 100, 0.6);
+    position: fixed;
+    display: none;
+    z-index: 5000;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.popup2>div {
+    border-radius: 10px;
+    position: fixed;
+    background: #fff;
+    box-shadow: 0px 0px 15px 0px #162A3C;
+    padding: 30px 15px;
+    /* Width of popup can be changed */
+    width: 70%;
+    max-width: 600px;
+    z-index: 5001;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    border: 5px solid #162A3C;
+}
+
+.popup2 .btn-danger {
+    margin: 10px auto;
+}

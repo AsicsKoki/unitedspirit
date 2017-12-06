@@ -190,24 +190,42 @@
 </div>
 
 <div class="donations">
-    <h3 class="text-center">Make a donation</h3>
+<h3 class="text-center">Make a donation</h3>
+<button class="btn btn-default center-block" data-js="open">donate</button>
+<div class="popup">
     <div class="row text-center">
         <div class="col-lg-2"><button class="btn btn-default">5e</button></div>
         <div class="col-lg-2"><button class="btn btn-default">10e</button></div>
         <div class="col-lg-2"><button class="btn btn-default">20e</button></div>
         <div class="col-lg-2"><button class="btn btn-default">50e</button></div>
         <div class="col-lg-4"><button class="btn btn-default">other</button></div>
+        <div class="row">
+            <div class="col-sm-6">
+                <button class="btn btn-danger center-block" name="close">Close popup</button>
+            </div>
+            <div class="col-sm-6">
+                <button class="btn btn-success center-block">Send Donation</button>
+            </div>
+        </div>
     </div>
 </div>
+</div>
 <div class="text-center campus_box">
-    <h3>Campus Box</h3>
-    <h4>Get a taste of Campus from where you are.</h4>
-    <p>
-        Receive for 52 weeks the content of the class from Campus (Self Realization, Wisdom of the World, Healthy mind in a healthy body) to transform your life by finding your path</br>
-        <span>Progress at your own rythm with weekly exercises</span>
-    </p>
-    <button class="btn btn-default center-block">Subscription / Connection</button>
-    <small>*All people working on Campus are volunteer, the money collected will be used to found the school</small>
+<h3>Campus Box</h3>
+<h4>Get a taste of Campus from where you are.</h4>
+<p>
+    Receive for 52 weeks the content of the class from Campus (Self Realization, Wisdom of the World, Healthy mind in a healthy body) to transform your life by finding your path</br>
+    <span>Progress at your own rythm with weekly exercises</span>
+</p>
+<button class="btn btn-default center-block" data-js="open2">Subscription / Connection</button>
+<small>*All people working on Campus are volunteer, the money collected will be used to found the school</small>
+<!-- popup open -->
+<div class="popup2">
+    <div class="row text-center">
+        <h2>Subscriptions</h2>
+        <button class="btn btn-danger" name="close">Close popup</button>
+    </div>
+</div>
 </div>
 
 <div class="container contact">
