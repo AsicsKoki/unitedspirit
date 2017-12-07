@@ -54,36 +54,38 @@
         ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
-    <div class="container marketing">
-
-        <!-- Three columns of text below the carousel -->
-        <div class="row">
-            <div class="col-lg-4" id="selfrel">
-                <div class="marketing_img_holder">
-                    <img src="img/Self_Realization.jpg" alt="self realization">
+    <div class="marketing">
+        
+        <div class="marketing_content">
+            <!-- Three columns of text below the carousel -->
+            <div class="row">
+                <div class="col-lg-4" id="selfrel">
+                    <div class="marketing_img_holder">
+                        <img src="img/Self_Realization.jpg" alt="self realization">
+                    </div>
+                    <p>Questionning who we are and the meaning we want to give to our lives getting our confidence back</p>
+                    <h2>Self realization</h2>
                 </div>
-                <p>Questionning who we are and the meaning we want to give to our lives getting our confidence back</p>
-                <h2>Self realization</h2>
-            </div>
-            <!-- /.col-lg-4 -->
-            <div class="col-lg-4" id="wisdom">
-                <div class="marketing_img_holder">
-                    <img src="img/Wisdom_from_the_World.jpg" alt="wisdom from the world">
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-4" id="wisdom">
+                    <div class="marketing_img_holder">
+                        <img src="img/Wisdom_from_the_World.jpg" alt="wisdom from the world">
+                    </div>
+                    <p>Questionning who we are and the meaning we want to give to our lives getting our confidence back</p>
+                    <h2>Wisdom from the world</h2>
                 </div>
-                <p>Questionning who we are and the meaning we want to give to our lives getting our confidence back</p>
-                <h2>Wisdom from the world</h2>
-            </div>
-            <!-- /.col-lg-4 -->
-            <div class="col-lg-4" id="health">
-                <div class="marketing_img_holder">
-                    <img src="img/healthy_mind_in_healthy_body.jpg" alt="healthy mind in healthy body">
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-4" id="health">
+                    <div class="marketing_img_holder">
+                        <img src="img/healthy_mind_in_healthy_body.jpg" alt="healthy mind in healthy body">
+                    </div>
+                    <p>Questionning who we are and the meaning we want to give to our lives getting our confidence back</p>
+                    <h2>Healthy mind in a healthy body</h2>
                 </div>
-                <p>Questionning who we are and the meaning we want to give to our lives getting our confidence back</p>
-                <h2>Healthy mind in a healthy body</h2>
+                <!-- /.col-lg-4 -->
             </div>
-            <!-- /.col-lg-4 -->
-        </div>
         <!-- /.row -->
+        </div>
     </div>
 
     <!-- self realization -->

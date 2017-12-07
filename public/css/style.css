@@ -28,6 +28,9 @@ a:hover {
     *zoom: 1;
 }
 
+.app_holder {
+    background: #eee;
+}
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
@@ -206,6 +209,11 @@ header .navbar-brand img {
 
 
 /* Center align the text within the three columns below the carousel */
+
+.marketing_content {
+    max-width: 1150px;
+    margin: auto;
+}
 
 .marketing .col-lg-4 {
     margin-bottom: 20px;
