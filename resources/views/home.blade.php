@@ -15,7 +15,7 @@
                 <div class="item active">
                     <!-- <img class="first-slide" src="img/Campus_home.jpg" alt="First slide"> -->
                     <div class="container">
-                        <div class="carousel-caption">
+                        <div class="carousel-caption cf">
                             <h1>the innovative school of self realiztion</br>a non profit project to change ourselves</br> and change the world.</h1>
                         </div>
                     </div>
@@ -23,7 +23,7 @@
                 <div class="item">
                     <!-- <img class="second-slide" src="img/Campus_home.jpg" alt="Second slide"> -->
                     <div class="container">
-                        <div class="carousel-caption">
+                        <div class="carousel-caption cf">
                             <h1>the innovative school of self realiztion</br>a non profit project to change ourselves</br> and change the world.</h1>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
                 <div class="item">
                     <!-- <img class="third-slide" src="img/Campus_home.jpg" alt="Third slide"> -->
                     <div class="container">
-                        <div class="carousel-caption">
+                        <div class="carousel-caption cf">
                             <h1>the innovative school of self realiztion</br>a non profit project to change ourselves</br> and change the world.</h1>
                         </div>
                     </div>
@@ -88,6 +88,8 @@
 
     <!-- self realization -->
     <div class="self_realization">
+
+        <div class="overlay_div"></div>
         <div class="row">
             <div class="col-lg-12">
                 <hr>
@@ -96,13 +98,19 @@
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <h3>Meditation</h3>
+                <h3>
+                    <a href="">Meditation</a>
+                </h3>
             </div>
             <div class="col-lg-4">
-                <h3>Introspection</h3>
+                <h3>
+                    <a href="">Introspection</a>
+                </h3>
             </div>
             <div class="col-lg-4">
-                <h3>Relationship With Others</h3>
+                <h3>
+                    <a href="">Relationship With Others</a>
+                </h3>
             </div>
         </div>
     </div>
@@ -143,6 +151,7 @@
     </div>
     <!--- healthy mind in a healthy body -->
     <div class="healthymind">
+        <div class="overlay_div"></div>
         <div class="row">
             <div class="col-lg-12">
                 <hr>
@@ -177,8 +186,9 @@
         </div>
     </div>
 
-    <div class="experts">
-    <h3 class="text-center">Our Experts</h3>
+    <div class="experts cf">
+    <hr>
+    <h2 class="text-center">Our Experts</h2>
     <div class="text-center row">
         <div class="col-lg-2"><img src="http://simpleicon.com/wp-content/uploads/user1.png" alt=""></div>
         <div class="col-lg-2"><img src="http://simpleicon.com/wp-content/uploads/user1.png" alt=""></div>
