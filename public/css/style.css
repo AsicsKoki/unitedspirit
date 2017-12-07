@@ -10,6 +10,24 @@ body {
     overflow-x: hidden;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
@@ -43,30 +61,44 @@ body {
 }
 
 .navbar-inverse {
-    background-color: #091f31f2;
+    background-color: #fff;
+    border-bottom: none;
 }
 
-.navbar-inverse .navbar-nav>.active>a,
-.navbar-inverse .navbar-nav>.active>a:focus,
-.navbar-inverse .navbar-nav>.active>a:hover {
-    color: #fff;
-    background-color: #08080830;
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+    color: #3e4347;
+    background-color: transparent;
     font-weight: bold;
 }
 
 .navbar-inverse .navbar-nav>li>a {
-    color: #fff;
+    color: #3e4347;
+    line-height: 76px;
+    padding: 0 10px;
 }
 
 .navbar-inverse .navbar-brand {
     color: #fff;
-    ;
 }
 
-.navbar-inverse .navbar-nav>li>a:focus,
-.navbar-inverse .navbar-nav>li>a:hover {
-    color: #fff;
-    background-color: #0000002b;
+header .navbar-brand {
+    max-width: 135px;
+    height: auto;
+    padding: 10px 30px;
+}
+
+header .navbar-brand img {
+    width: 100%;
+}
+
+#navbar {
+    width: calc(100% - 120px);
+    float: right;
+}
+
+.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover {
+    color: #3e4347;
+    background-color: transparent;
 }
 
 .navbar-image {
@@ -81,29 +113,59 @@ body {
 /* Carousel base class */
 
 .carousel {
-    height: 500px;
-    margin-bottom: 60px;
+    height: 70vh;
+    margin-bottom: 0;
 }
 
 
 /* Since positioning the image, we need to help out the caption */
 
 .carousel-caption {
+}
+
+.carousel-caption {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    right: auto;
+    display: table;
+    vertical-align: middle;
+    height: 100%;
     z-index: 10;
+    padding: 0;
+}
+
+.carousel-inner .container {
+    height: 100%;
 }
 
 .carousel-caption h1 {
     text-transform: uppercase;
     font-weight: 600;
     text-align: left;
-    margin-bottom: 93px;
+    margin: 0;
+    line-height: 1.4;
+    font-size: 30px;
+    display: table-cell;
+    vertical-align: middle;
 }
 
+.carousel-indicators li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 1px;
+    text-indent: -999px;
+    cursor: pointer;
+    border: none;
+    background: #97989a;
+    border-radius: 10px;
+}
 
 /* Declare heights because of positioning of img element */
 
 .carousel .item {
-    height: 500px;
+    height: 100%;
 }
 
 #myCarousel {
@@ -114,7 +176,16 @@ body {
 }
 
 #carousel_filter {
-    background: #091f31b0;
+    background: rgba(28, 65, 88, 0.80);
+    height: 100%;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 1150px;
+    overflow: hidden;
+    margin: auto;
+    height: 100%;
 }
 
 .carousel-inner>.item>img {
@@ -144,37 +215,54 @@ body {
 
 .marketing h2 {
     font-weight: normal;
-    background: #091f31;
-    height: 75px;
+    background: #244153;
     color: white;
     margin-top: 0px;
-    line-height: 75px;
+    line-height: 60px;
     margin-bottom: 0;
     overflow: hidden;
-    /* ^ skloni ovo */
+    font-size: 20px;
+}
+
+.overlay_div {
+    background: rgba(28, 65, 88, 0.80);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.marketing .row {   
+    margin: 100px 0;
 }
 
 .marketing .col-lg-4 {
     position: relative;
     top: 0;
+    width: 30%;
+    margin: 1.6%;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
 }
 
 .marketing .col-lg-4 p {
     position: absolute;
     top: 0px;
-    line-height: 2em;
-    font-size: 23px;
+    line-height: 1.5;
+    font-size: 18px;
     left: 0px;
     right: 0;
-    bottom: 75px;
+    bottom: 60px;
     width: 100%;
     text-align: center;
     margin: auto;
-    color: white;
+    color: #fff;
     background: #091f31b0;
-    padding: 5% 2%;
+    padding: 50px 30px;
     opacity: 0;
-    transition: opacity 0.3s linear
+    transition: opacity 0.3s linear;
 }
 
 .marketing_img_holder {
@@ -191,14 +279,24 @@ body {
 --------------------------------------------------*/
 
 .self_realization {
+    position: relative;
     background: url('../img/Self_realization__3rd.jpeg');
     color: #fff;
     background-position: center;
+    padding: 100px 0;
+    padding-top: 70px;
+}
+
+.self_realization .row {
+    max-width: 1150px;
+    margin: auto;
 }
 
 .self_realization hr {
     width: 10%;
-    border-top: 5px solid #fff;
+    border-top: 3px solid #fff;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .self_realization h2 {
@@ -207,28 +305,38 @@ body {
     width: 30%;
     margin: 0 auto;
     border-radius: 15px;
-    color: #091f31;
+    color: #fff;
+    margin-bottom: 30px;
 }
 
 .self_realization h3 {
     text-align: center;
     border: solid 3px #fff;
     width: 80%;
-    margin: 75px auto;
-    border-radius: 30px;
-    line-height: 50px;
-    background: #ffffff90;
-    color: #091f31;
+    margin: auto;
+    border-radius: 3px;
+    color: #fff;
     font-weight: bold;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
 }
 
 .self_realization h3:hover {
-    background: white;
+    background: rgba(255, 255, 255, 0.45);
     color: black;
     font-weight: bold;
 }
 
 
+.self_realization h3 a {
+    color: #fff;
+    display: block;
+    line-height: 50px;
+    font-size: 18px;
+}
 /* welcome from the world */
 
 .wfromthew {
@@ -238,12 +346,19 @@ body {
     background-position: center; */
 }
 
-.wfromthew hr {
+.wfromthew hr, .experts hr {
     width: 10%;
-    border-top: 5px solid #000;
+    border-top: 3px solid #264153;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
-.wfromthew h2 {
+.wfromthew .row {
+    max-width: 1150px;
+    margin: auto;
+}
+
+.wfromthew h2, .experts h2 {
     text-transform: uppercase;
     font-weight: bold;
     width: 50%;
@@ -251,13 +366,19 @@ body {
     border-radius: 15px;
     text-align: center;
     margin-bottom: 30px;
+    color: #254153;
 }
 
 .wfromthew .img-wrapper {
     width: 100%;
     margin: 0 auto;
-    height: 300px;
     position: relative;
+}
+
+.container.wfromthew {
+    width: 100%;
+    background: #eee;
+    padding: 100px 0;
 }
 
 .wfromthew .img-wrapper img {
@@ -266,39 +387,37 @@ body {
 }
 
 .wfromthew .img-wrapper p {
-    position: absolute;
-    top: 20%;
     display: block;
     text-align: center;
-    background: #1516434a;
-    color: #091f31;
+    background: #254153;
+    color: #ffffff;
     width: 80%;
     margin: 0 auto;
     left: 10%;
-    line-height: 75px;
-    font-size: 24px;
+    line-height: 50px;
+    font-size: 18px;
     font-weight: bold;
-    border-radius: 30px;
+    border-radius: 3px;
 }
 
 
 /* healthy mind */
 
 .healthymind {
+    position: relative;
     background: url('../img/healthy_mind_in_healthy_body.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     color: #fff;
-}
-
-.healthymind .row {
-    background: #070719a8;
+    padding: 60px 0 100px 0;
 }
 
 .healthymind hr {
     width: 10%;
-    border-top: 5px solid #000;
+    border-top: 3px solid #fff;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .healthymind h2 {
@@ -311,31 +430,42 @@ body {
     margin-bottom: 30px;
 }
 
+.healthymind .row {
+    max-width: 1150px;
+    margin: auto;
+}
+
 .healthymind .img-wrapper {
     width: 100%;
     margin: 0 auto;
-    height: 300px;
     position: relative;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 .healthymind .img-wrapper img {
     width: 100%;
     height: 200px;
+    opacity: 0.8;
 }
 
 .healthymind .img-wrapper p {
     position: absolute;
-    top: 20%;
+    top: 50%;
     display: block;
     text-align: center;
-    background: #1516434a;
+    background: #eeeeeeeb;
     width: 80%;
     margin: 0 auto;
     left: 10%;
-    line-height: 75px;
-    font-size: 24px;
+    line-height: 50px;
+    font-size: 18px;
     font-weight: bold;
-    border-radius: 30px;
+    border-radius: 3px;
+    color: #264153;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+    margin-top: -25px;
 }
 
 
@@ -343,12 +473,13 @@ body {
 -------------------------------------------------- */
 
 .experts {
+    padding: 60px 0 100px 0;
     background: #eee;
 }
 
-.experts h3 {
+.experts h2 {
     font-size: 30px;
-    color: #000;
+    color: #264153;
     margin-top: 0;
     padding-top: 20px;
     margin-bottom: 45px;
@@ -356,6 +487,17 @@ body {
 
 .experts img {
     width: 100px;
+}
+
+.experts .col-lg-2 {
+    width: 200px;
+    height: 200px;
+    background: #fff;
+}
+
+.experts .row {
+    max-width: 1150px;
+    margin: auto;
 }
 
 
@@ -398,16 +540,19 @@ body {
 @media (min-width: 768px) {
     /* Navbar positioning foo */
     .navbar-wrapper .container {
-        padding-right: 15px;
-        padding-left: 15px;
+        padding-right: 0;
+        padding-left: 0;
+        max-width: 1150px;
+        margin: auto;
     }
     .navbar-wrapper .navbar {
         padding-right: 0;
         padding-left: 0;
+        box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.05);
     }
     /* The navbar becomes detached from the top, so we round the corners */
     .navbar-wrapper .navbar {
-        border-radius: 4px;
+        border-radius: 0;
     }
     /* Bump up size of carousel content */
     .carousel-caption p {
