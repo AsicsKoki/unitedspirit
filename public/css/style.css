@@ -508,6 +508,7 @@ header .navbar-brand img {
     position: relative;
     padding: 60px 0 100px 0;
     background: #eee;
+    border-bottom: 4px solid #fff;
 }
 
 .experts h2 {
@@ -713,7 +714,7 @@ footer {
     border-radius: 10px;
     position: fixed;
     background: #fff;
-    box-shadow: 0px 0px 15px 0px #162A3C;
+    box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.1);
     padding: 30px 15px;
     /* Width of popup can be changed */
     width: 100%;
@@ -723,11 +724,62 @@ footer {
     left: 50%;
     top: 50%;
     text-align: center;
-    border: 5px solid #162A3C;
+}
+
+.popup .wrapper {
+    position: relative;
+    max-width: 700px;
 }
 
 .popup button {
     margin: 10px auto;
+}
+
+.popup .donation_btn {
+    display: block;
+    float: none;
+    width: auto;
+    background: #cacaca;
+}
+
+button.close_popup {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    width: auto;
+    background: transparent;
+    box-shadow: none;
+    color: #e07272;
+    line-height: 1;
+    font-size: 40px;
+}
+
+button.close_popup:hover {
+    background: transparent;
+    color: #e07272;
+}
+
+input.form_group.other_amount {
+    line-height: 50px;
+    margin: 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    display: block;
+    width: 100%;
+    color: #777;
+    font-size: 20px;
+    text-align: center;
+}
+
+.label_custom_donate {
+    color: #777;
+    display: block;
+    text-align: center;
+}
+
+
+.custom_donate_holder {
+    margin-top: 10px;
 }
 
 .popup2 {
@@ -745,9 +797,8 @@ footer {
     border-radius: 10px;
     position: fixed;
     background: #fff;
-    box-shadow: 0px 0px 15px 0px #162A3C;
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.1);
     padding: 30px 15px;
-    /* Width of popup can be changed */
     width: 70%;
     max-width: 600px;
     z-index: 5001;
@@ -755,7 +806,6 @@ footer {
     left: 50%;
     top: 50%;
     text-align: center;
-    border: 5px solid #162A3C;
 }
 
 .popup2 .btn-danger {
