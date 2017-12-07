@@ -10,9 +10,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+<<<<<<< HEAD
+                    <a class="navbar-brand" href="#">United Spirit</a>
+                    <!-- <img class="navbar-image" src="http://www.freeiconspng.com/uploads/res-light-purple-flowers-png-by-hanabell1-d6l6mwr-png-16.png" alt=""> -->
+=======
                     <a class="navbar-brand" href="#">
                         <img src="img/logo.png" alt="self realization">
                     </a>
+>>>>>>> origin/dev
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
