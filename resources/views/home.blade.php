@@ -223,100 +223,130 @@
         </div>
     </div>
 
+<!-- stripe forma -->
+
+<script src='https://js.stripe.com/v2/' type='text/javascript'></script>
+
 <div class="donations">
-<h3 class="text-center">Make a donation</h3>
-<button class="btn btn-default center-block" data-js="open">donate</button>
-<div class="popup">
-    <div class="row text-center">
-    <h2>Donate to us</h2>
-        <div class="col-lg-2"><button class="btn btn-default donation_btn">5e</button></div>
-        <div class="col-lg-2"><button class="btn btn-default donation_btn">10e</button></div>
-        <div class="col-lg-2"><button class="btn btn-default donation_btn">20e</button></div>
-        <div class="col-lg-2"><button class="btn btn-default donation_btn">50e</button></div>
-        <div class="col-lg-4"><label for="other_donation">Custom amount</label><input name="other_donation" type="text" class="form_group other_amount"><span>euros</span><button class="btn btn-default donation_btn_other">donate</button></div>
-    </div>
-    <div class="container">
-        <form accept-charset="UTF-8" action="/" class="require-validation"
-            data-cc-on-file="false"
-            data-stripe-publishable-key="pk_live_cNAAgOnhvXmvXrmFUTt6PPAM"
-            id="payment-form" method="post">
-            {{ csrf_field() }}
-            <input type="hidden" name="hiddenammount" value="">
-            <div class='form-row'>
-                <div class='col-xs-12 form-group required'>
-                    <label class='control-label'>Name on Card</label> <input
-                        class='form-control' size='4' type='text'>
-                </div>
-            </div>
-            <div class='form-row'>
-                <div class='col-xs-12 form-group card required'>
-                    <label class='control-label'>Card Number</label> <input
-                        autocomplete='off' class='form-control card-number' size='20'
-                        type='text'>
-                </div>
-            </div>
-            <div class='form-row'>
-                <div class='col-xs-4 form-group cvc required'>
-                    <label class='control-label'>CVC</label> <input autocomplete='off'
-                        class='form-control card-cvc' placeholder='ex. 311' size='4'
-                        type='text'>
-                </div>
-                <div class='col-xs-4 form-group expiration required'>
-                    <label class='control-label'>Expiration</label> <input
-                        class='form-control card-expiry-month' placeholder='MM' size='2'
-                        type='text'>
-                </div>
-                <div class='col-xs-4 form-group expiration required'>
-                    <label class='control-label'> </label> <input
-                        class='form-control card-expiry-year' placeholder='YYYY' size='4'
-                        type='text'>
-                </div>
-            </div>
-            <div class='form-row'>
-                <div class='col-md-12'>
-                    <div class='form-control total btn btn-info'>
-                        Total: <span class='amount'>$300</span>
+
+    <div class="donations_content">
+        <hr>
+
+        <h3 class="text-center">Make a donation</h3>
+
+        <button class="btn btn-default center-block" data-js="open">donate</button>
+
+        <div class="popup">
+            <div class="row text-center">
+                <h2>Donate to us</h2>
+                    <div class="col-lg-2"><button class="btn btn-default donation_btn">5&euro;</button></div>
+                    <div class="col-lg-2"><button class="btn btn-default donation_btn">10&euro;</button></div>
+                    <div class="col-lg-2"><button class="btn btn-default donation_btn">20&euro;</button></div>
+                    <div class="col-lg-2"><button class="btn btn-default donation_btn">50&euro;</button></div>
+                    <div class="col-lg-4 custom_donate_holder">
+                        <input name="other_donation" type="text" class="form_group other_amount">
+                        <label class="label_custom_donate" for="other_donation">Custom amount</label>
+
+                        <span>euros</span><button class="btn btn-default donation_btn_other">donate</button>
                     </div>
                 </div>
+                <div class="container">
+
+                <form accept-charset="UTF-8" action="/" class="require-validation"
+                    data-cc-on-file="false"
+                    data-stripe-publishable-key="pk_live_cNAAgOnhvXmvXrmFUTt6PPAM"
+                    id="payment-form" method="post">
+                    {{ csrf_field() }}
+                    <div class='form-row'>
+                        <div class='col-xs-12 form-group required'>
+                            <label class='control-label'>Name on Card</label> <input
+                                class='form-control' size='4' type='text'>
+                        </div>
+                    </div>
+                    <div class='form-row'>
+                        <div class='col-xs-12 form-group card required'>
+                            <label class='control-label'>Card Number</label> <input
+                                autocomplete='off' class='form-control card-number' size='20'
+                                type='text'>
+                        </div>
+                    </div>
+                    <div class='form-row'>
+                        <div class='col-xs-4 form-group cvc required'>
+                            <label class='control-label'>CVC</label> <input autocomplete='off'
+                                class='form-control card-cvc' placeholder='ex. 311' size='4'
+                                type='text'>
+                        </div>
+                        <div class='col-xs-4 form-group expiration required'>
+                            <label class='control-label'>Expiration</label> <input
+                                class='form-control card-expiry-month' placeholder='MM' size='2'
+                                type='text'>
+                        </div>
+                        <div class='col-xs-4 form-group expiration required'>
+                            <label class='control-label'> </label> <input
+                                class='form-control card-expiry-year' placeholder='YYYY' size='4'
+                                type='text'>
+                        </div>
+                    </div>
+                    <div class='form-row'>
+                        <div class='col-md-12'>
+                            <div class='form-control total btn btn-info'>
+                                Total: <span class='amount'>$300</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='form-row'>
+                        <div class='col-md-12 form-group'>
+                            <button class='form-control btn btn-primary submit-button'
+                                type='submit' style="margin-top: 10px;">Pay »</button>
+                        </div>
+                    </div>
+                    <div class='form-row'>
+                        <div class='col-md-12 error form-group hide'>
+                            <div class='alert-danger alert'>Please correct the errors and try
+                                again.</div>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class='form-row'>
-                <div class='col-md-12 form-group'>
-                    <button class='form-control btn btn-primary submit-button'
-                        type='submit' style="margin-top: 10px;">Pay »</button>
-                </div>
-            </div>
-            <div class='form-row'>
-                <div class='col-md-12 error form-group hide'>
-                    <div class='alert-danger alert'>Please correct the errors and try
-                        again.</div>
-                </div>
-            </div>
-        </form>
-</div>
-<div class="row">
-            <div class="col-sm-12">
-                <button class="btn btn-danger center-block" name="close">Close popup</button>
+
+
+            <button class="close_popup btn btn-danger center-block" name="close">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+
             </div>
         </div>
-</div>
-</div>
-<div class="text-center campus_box">
-<h3>Campus Box</h3>
-<h4>Get a taste of Campus from where you are.</h4>
-<p>
-    Receive for 52 weeks the content of the class from Campus (Self Realization, Wisdom of the World, Healthy mind in a healthy body) to transform your life by finding your path</br>
-    <span>Progress at your own rythm with weekly exercises</span>
-</p>
-<button class="btn btn-default center-block" data-js="open2">Subscription / Connection</button>
-<small>*All people working on Campus are volunteer, the money collected will be used to found the school</small>
-<!-- popup open -->
-<div class="popup2">
-    <div class="row text-center">
-        <h2>Subscriptions</h2>
-        <a href="{{ route('postSubscribe') }}"><button>Subscribe!</button></a>
-        <button class="btn btn-danger" name="close">Close popup</button>
+
+          <div class="half_logo_right">
+             <img src="img/half-logo.png" alt="Half logo united spirit">
+        </div>
     </div>
 </div>
+
+
+<div class="text-center campus_box">
+    <div class="campus_box_content">
+        <hr>
+        <h3 class="campus_box_title">Campus Box</h3>
+        <h4>Get a taste of Campus from where you are.</h4>
+        <p>
+            Receive for 52 weeks the content of the class from Campus (Self Realization, Wisdom of the World, Healthy mind in a healthy body) to transform your life by finding your path</br>
+            <span>Progress at your own rythm with weekly exercises</span>
+        </p>
+        <button class="btn btn-default center-block" data-js="open2">Subscription / Connection</button>
+        <small>*All people working on Campus are volunteer, the money collected will be used to found the school</small>
+        <!-- popup open -->
+        <div class="popup2">
+            <div class="row text-center">
+                <h2>Subscriptions</h2>
+                <button class="btn btn-danger" name="close">Close popup</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="half_logo_left">
+         <img src="img/half-logo-left.png" alt="Half logo united spirit">
+    </div>
 </div>
 
 <!-- stripe forma -->
@@ -325,21 +355,35 @@
 
 <!-- /stripe forma -->
 
-<div class="container contact">
-    <h2 class="text-center">Contact</h2>
-    <textarea name="" id="" cols="30" rows="10" class="center-block"></textarea>
-    <button class="btn btn-default center-block" type="submit">Send</button>
+<div class="contact cf">
+    <hr>
+    <h2 class="contact_title text-center">Contact</h2>
+
+    <div class="contact_content">
+        <textarea name="" id="" cols="30" rows="10" class="center-block"></textarea>
+        <button class="btn btn-default center-block" type="submit">Send</button>
+    </div>
+    
+    <div class="half_logo_right">
+         <img src="img/half-logo.png" alt="Half logo united spirit">
+    </div>
 </div>
 
-<div class="our_partners">
-    <h3 class="text-center">Our Partners</h3>
-    <div class="text-center row">
-        <div class="col-lg-2">Partner</div>
-        <div class="col-lg-2">Partner</div>
-        <div class="col-lg-2">Partner</div>
-        <div class="col-lg-2">Partner</div>
-        <div class="col-lg-2">Partner</div>
-        <div class="col-lg-2">Partner</div>
+<div class="our_partners cf">
+    <div class="overlay_div"></div>
+    <div class="our_partners_content">
+
+        <hr>
+        <h3 class="text-center our_partners_title">Our Partners</h3>
+        <div class="text-center row">
+            <div class="col-lg-2">Partner</div>
+            <div class="col-lg-2">Partner</div>
+            <div class="col-lg-2">Partner</div>
+            <div class="col-lg-2">Partner</div>
+            <div class="col-lg-2">Partner</div>
+            <div class="col-lg-2">Partner</div>
+        </div>
+
     </div>
 </div>
 

@@ -14,7 +14,7 @@
       <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
 
     <title>United Spirit</title>
-    
+    <script src="https://use.fontawesome.com/8e099a0110.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 @yield('styles')
