@@ -18,6 +18,7 @@ class CreateWeeksTable extends Migration
             $table->integer('admin_id');
             $table->integer('user_id');
             $table->timestamps();
+            $table->string('name');
         });
     }
 

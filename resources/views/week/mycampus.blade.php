@@ -1,15 +1,15 @@
-@extend('layouts.master')
+@extends('layouts.master')
 
 @section('content')
 
 <div class="container myCampus_main">
             <h1 class="text-center">My Campus Box</h1>
             
-            <div class="row">
-                @foreach($weeks as $week)
+            <div class="row">   
+                @foreach($user[0]->weeks as $week)
                 <div class="col-sm-3 center-block">
-                    <div class="campus_week text-center">Week {{$week->id}} : {{ $week->name }}</div>
-                    <a href="{{route('getSpecificWeek',['wid'=> $week->id]) }}"><img src="{{ URL::to('/') . $week[0]->images()->first()->path }}" alt="">
+                    <div class="campus_week text-center"><a href="{{ route('getSpecificWeek',['wid'=> $week->id]) }}"><img src="{{ URL::to('/') . $week->images[0]->path  }}" alt="">Week {{$week->id}} : {{ $week->name }}</a></div>
+                  
 
                 </div>
                 @endforeach  
@@ -194,8 +194,8 @@
                 <div class="col-sm-3 center-block">
                     <div class="campus_week text-center">Weel 52</div>
                 </div>
-            </div>
-        </div> -->
+            </div>-->
+        </div> 
 
 
 

@@ -18,7 +18,7 @@ class UserController extends Controller
         $user = Auth::user();
 
         //Adding first week when subscribed
-        $week = Week::where('id',$w)->get();
+        $week = Week::where('id',1)->get();
         $user->weeks()->attach($week);
 
         $user->subscriptions()->attach($sub);
@@ -44,6 +44,7 @@ class UserController extends Controller
         $week_check = $currdate;
         
         $dur = $user->subscriptions[0]->duration;
+        $week_check->addDays($dur); 
         $w = 0;
 
         $now = Carbon::now();

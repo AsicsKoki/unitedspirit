@@ -21,7 +21,7 @@ Route::post ( '/', function (Request $request) {
 	\Stripe\Stripe::setApiKey ( 'base64:XiuYG0uPYhGxR34WFMs1JSNw+MGP9nn0hZzotIzikBM=' );
 	try {
 		\Stripe\Charge::create ( array (
-				"amount" => 300 * 100,
+				"amount" => $request->input('hiddenammount')* 100,
 				"currency" => "usd",
 				"source" => $request->input ( 'stripeToken' ), // obtained with Stripe.js
 				"description" => "Test payment." 

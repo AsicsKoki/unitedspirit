@@ -101,9 +101,8 @@ class WeekController extends Controller
 
     public function getMyCampus()
     {
-        $weeks = Auth::user()->weeks[0]->with('images')->get();
-       // return $weeks[0]->images()->first()->path;
-        return view('week.mycampus',['weeks'=>$weeks]);
+        $user = User::with('weeks.images')->where('id',  Auth::user()->id)->get();
+        return view('week.mycampus',['user' => $user]);
     }
 
     public static function getImagePath()
