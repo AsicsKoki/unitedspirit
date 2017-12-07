@@ -99,6 +99,20 @@ class WeekController extends Controller
         return view('week.allWeeks',['weeks'=>$weeks]);
     }
 
+    public function getMyCampus()
+    {
+        $weeks = Auth::user()->weeks[0]->with('images')->get();
+       // return $weeks[0]->images()->first()->path;
+        return view('week.mycampus',['weeks'=>$weeks]);
+    }
+
+    public static function getImagePath()
+    {
+        $weeks = Auth::user()->weeks;
+        $image = Image::where('week_id',$weeks->id);
+        return $image;
+    }
+
     public function getWeek($wid)
     {  
         $video = Video::where('week_id',$wid)->first();

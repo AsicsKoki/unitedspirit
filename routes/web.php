@@ -78,7 +78,9 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('/weeks', 'WeekController@getWeeks')->name('getWeeks')->middleware('auth');
+Route::get('/mycampus', 'WeekController@getMyCampus')->name('getMyCampus')->middleware('auth');
 Route::get('/week/{wid}', 'WeekController@getWeek')->name('getSpecificWeek')->middleware('auth');
+
 
 Route::post('/uploadImage', 'WeekController@uploadImage')->name('uploadImage');
 Route::post('/uploadVideo', 'WeekController@uploadVideo')->name('uploadVideo');
