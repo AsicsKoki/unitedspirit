@@ -11,7 +11,7 @@
                     <span class="icon-bar"></span>
                 </button>
                     <a class="navbar-brand" href="#">United Spirit</a>
-                    <img class="navbar-image" src="http://www.freeiconspng.com/uploads/res-light-purple-flowers-png-by-hanabell1-d6l6mwr-png-16.png" alt="">
+                    <!-- <img class="navbar-image" src="http://www.freeiconspng.com/uploads/res-light-purple-flowers-png-by-hanabell1-d6l6mwr-png-16.png" alt=""> -->
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">

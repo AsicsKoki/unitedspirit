@@ -24,6 +24,18 @@ $(document).ready(function() {
     $("[data-js=open2]").on("click", function() {
         popupOpenClose($(".popup2"));
     });
+
+    // donations buttons pop form
+    $('.donation_btn').click(function() {
+        $('.require-validation').css('display', 'block');
+        var amount = $(this).text();
+        $('.amount').text(amount);
+    });
+    $('.donation_btn_other').click(function() {
+        // $('.require-validation').css('display','none');
+        var amount = $('.other_amount').val() + 'e';
+        $('.amount').text(amount);
+    })
 });
 
 
@@ -56,7 +68,3 @@ function popupOpenClose(popup) {
         $(popup).hide();
     });
 }
-
-$(document).ready(function() {
-
-});

@@ -194,43 +194,14 @@
 <button class="btn btn-default center-block" data-js="open">donate</button>
 <div class="popup">
     <div class="row text-center">
-        <div class="col-lg-2"><button class="btn btn-default">5e</button></div>
-        <div class="col-lg-2"><button class="btn btn-default">10e</button></div>
-        <div class="col-lg-2"><button class="btn btn-default">20e</button></div>
-        <div class="col-lg-2"><button class="btn btn-default">50e</button></div>
-        <div class="col-lg-4"><button class="btn btn-default">other</button></div>
-        <div class="row">
-            <div class="col-sm-6">
-                <button class="btn btn-danger center-block" name="close">Close popup</button>
-            </div>
-            <div class="col-sm-6">
-                <button class="btn btn-success center-block">Send Donation</button>
-            </div>
-        </div>
+    <h2>Donate to us</h2>
+        <div class="col-lg-2"><button class="btn btn-default donation_btn">5e</button></div>
+        <div class="col-lg-2"><button class="btn btn-default donation_btn">10e</button></div>
+        <div class="col-lg-2"><button class="btn btn-default donation_btn">20e</button></div>
+        <div class="col-lg-2"><button class="btn btn-default donation_btn">50e</button></div>
+        <div class="col-lg-4"><label for="other_donation">Custom amount</label><input name="other_donation" type="text" class="form_group other_amount"><span>euros</span><button class="btn btn-default donation_btn_other">donate</button></div>
     </div>
-</div>
-</div>
-<div class="text-center campus_box">
-<h3>Campus Box</h3>
-<h4>Get a taste of Campus from where you are.</h4>
-<p>
-    Receive for 52 weeks the content of the class from Campus (Self Realization, Wisdom of the World, Healthy mind in a healthy body) to transform your life by finding your path</br>
-    <span>Progress at your own rythm with weekly exercises</span>
-</p>
-<button class="btn btn-default center-block" data-js="open2">Subscription / Connection</button>
-<small>*All people working on Campus are volunteer, the money collected will be used to found the school</small>
-<!-- popup open -->
-<div class="popup2">
-    <div class="row text-center">
-        <h2>Subscriptions</h2>
-        <button class="btn btn-danger" name="close">Close popup</button>
-    </div>
-</div>
-</div>
-
-<!-- stripe forma -->
-
-<script src='https://js.stripe.com/v2/' type='text/javascript'></script>
+    <div class="container">
 <form accept-charset="UTF-8" action="/" class="require-validation"
     data-cc-on-file="false"
     data-stripe-publishable-key="pk_live_cNAAgOnhvXmvXrmFUTt6PPAM"
@@ -286,6 +257,35 @@
         </div>
     </div>
 </form>
+</div>
+<div class="row">
+            <div class="col-sm-12">
+                <button class="btn btn-danger center-block" name="close">Close popup</button>
+            </div>
+        </div>
+</div>
+</div>
+<div class="text-center campus_box">
+<h3>Campus Box</h3>
+<h4>Get a taste of Campus from where you are.</h4>
+<p>
+    Receive for 52 weeks the content of the class from Campus (Self Realization, Wisdom of the World, Healthy mind in a healthy body) to transform your life by finding your path</br>
+    <span>Progress at your own rythm with weekly exercises</span>
+</p>
+<button class="btn btn-default center-block" data-js="open2">Subscription / Connection</button>
+<small>*All people working on Campus are volunteer, the money collected will be used to found the school</small>
+<!-- popup open -->
+<div class="popup2">
+    <div class="row text-center">
+        <h2>Subscriptions</h2>
+        <button class="btn btn-danger" name="close">Close popup</button>
+    </div>
+</div>
+</div>
+
+<!-- stripe forma -->
+
+<script src='https://js.stripe.com/v2/' type='text/javascript'></script>
 
 <!-- /stripe forma -->
 
@@ -309,11 +309,11 @@
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
-
+$form = $('form.require-validation');
 //validation
 $(function() {
-  $('form.require-validation').bind('submit', function(e) {
-    var $form         = $(e.target).closest('form'),
+  $('.require-validation').bind('submit', function(e) {
+    var $form = $(e.target).closest('form'),
         inputSelector = ['input[type=email]', 'input[type=password]',
                          'input[type=text]', 'input[type=file]',
                          'textarea'].join(', '),
