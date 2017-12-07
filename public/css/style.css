@@ -28,7 +28,7 @@ a:hover {
 }
 
 .app_holder {
-    background: #eee;
+    background: #fff;
 }
 
 /* CUSTOMIZE THE NAVBAR
@@ -353,11 +353,28 @@ header .navbar-brand img {
     background-position: center; */
 }
 
-.wfromthew hr, .experts hr, .campus_box hr {
+.wfromthew hr, .experts hr, .campus_box hr, .contact hr, .donations_content hr {
     width: 10%;
     border-top: 3px solid #264153;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+.contact {
+    position: relative;
+}
+
+.contact hr {
+    width: 90px;
+}
+
+.contact textarea {
+    display: block;
+    width: 65%;
+    border-radius: 3px;
+    margin-bottom: 30px;
+    resize: none;
+    border: 2px solid #eee;
 }
 
 .wfromthew .row {
@@ -367,7 +384,7 @@ header .navbar-brand img {
     z-index: 10;
 }
 
-.wfromthew h2, .experts h2, .campus_box_title {
+.wfromthew h2, .experts h2, .campus_box_title, .contact_title, .donations_content h3 {
     text-transform: uppercase;
     font-weight: bold;
     width: 50%;
@@ -388,7 +405,7 @@ header .navbar-brand img {
 .container.wfromthew {
     position: relative;
     width: 100%;
-    background: #eee;
+    background: #fff;
     padding: 100px 0;
 }
 
@@ -444,14 +461,14 @@ header .navbar-brand img {
     padding: 60px 0 100px 0;
 }
 
-.healthymind hr, .donations_content hr {
+.healthymind hr, .our_partners hr {
     width: 10%;
     border-top: 3px solid #fff;
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
-.healthymind h2, .donations_content h3 {
+.healthymind h2, .our_partners_title {
     text-transform: uppercase;
     font-weight: bold;
     width: 50%;
@@ -460,6 +477,7 @@ header .navbar-brand img {
     text-align: center;
     margin-bottom: 30px;
     font-size: 30px;
+    color: #fff;
 }
 
 .healthymind .row {
@@ -551,14 +569,11 @@ header .navbar-brand img {
 -------------------------------------------------- */
 
 .donations {
-        position: relative;
-    background: url(../img/healthy_mind_in_healthy_body.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    position: relative;
+    background: #fff;
     color: #fff;
     padding: 60px 0 100px 0;
+    border-bottom: 4px solid #fff;
 }
 
 .donations_content {
@@ -583,6 +598,20 @@ header .navbar-brand img {
     transition: all .2s ease;
 }
 
+
+.contact button {
+    background: #55d201;
+    color: #fff;
+    width: 150px;
+    line-height: 30px;
+    border: none;
+    font-size: 18px;
+}
+
+.contact button:hover {
+    background: #55d201;
+    color: #fff;
+}
 
 .donations_content button:hover, .campus_box .btn:hover {
     color: #fff;
@@ -630,12 +659,26 @@ header .navbar-brand img {
 -------------------------------------------------- */
 
 .our_partners {
+    position: relative;
     background: #eee;
+    padding: 60px 0 100px;
+    background: url('../img/Self_realization__3rd.jpeg');
+    color: #fff;
+    background-position: center;
+}
+
+.our_partners_content {
+    position: relative;
+    z-index: 10;
+    color: #fff;
+    max-width: 1150px;
+    margin: auto;
 }
 
 .our_partners h2 {
     padding: 20px 0;
 }
+
 
 
 /* RESPONSIVE CSS
@@ -689,12 +732,39 @@ header .navbar-brand img {
 ======================= */
 
 footer {
-    background: #162A3C;
+    background: #173448;
     padding: 30px;
-    margin-top: 30px;
+    margin-top: 0;
+    color: #fff;
+    line-height: 1;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
     color: #fff;
 }
 
+footer a:hover {
+    color: #fff;
+}
+
+i.fa.fa-caret-up {
+    font-size: 36px;
+    line-height: 1;
+    color: #cc3499;
+    background: rgba(255, 255, 255, 0.9);
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
 
 /* popup styles 
 ======================== */
@@ -814,4 +884,10 @@ input.form_group.other_amount {
 
 .require-validation {
     display: none;
+}
+
+.contact {
+    background: #fff;
+    padding: 60px 0 100px 0;
+    border-top: 3px solid #fff;
 }

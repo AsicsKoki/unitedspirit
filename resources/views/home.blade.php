@@ -223,41 +223,11 @@
         </div>
     </div>
 
-
-    <div class="text-center campus_box cf">
-        <hr>
-        <h3 class="campus_box_title">Campus Box</h3>
-
-        <div class="campus_box_content">
-            <h4>Get a taste of Campus from where you are.</h4>
-            <p>
-                Receive for 52 weeks the content of the class from Campus (Self Realization, Wisdom of the World, Healthy mind in a healthy body) to transform your life by finding your path</br>
-                <span>Progress at your own rythm with weekly exercises</span>
-            </p>
-
-            <button class="btn btn-default center-block" data-js="open2">Subscription / Connection</button>
-
-            <small>*All people working on Campus are volunteer, the money collected will be used to found the school</small>
-            <!-- popup open -->
-            <div class="popup2">
-                <div class="row text-center">
-                    <h2>Subscriptions</h2>
-                    <button class="btn btn-danger" name="close">Close popup</button>
-                </div>
-            </div>
-        </div>
-
-         <div class="half_logo_right">
-            <img src="img/half-logo.png" alt="Half logo united spirit">
-        </div>
-    </div>
-
 <!-- stripe forma -->
 
 <script src='https://js.stripe.com/v2/' type='text/javascript'></script>
 
 <div class="donations">
- <div class="overlay_div"></div>
 
     <div class="donations_content">
         <hr>
@@ -346,6 +316,10 @@
 
             </div>
         </div>
+
+          <div class="half_logo_right">
+             <img src="img/half-logo.png" alt="Half logo united spirit">
+        </div>
     </div>
 </div>
 
@@ -370,10 +344,6 @@
         </div>
     </div>
 
-    <div class="half_logo_right">
-         <img src="img/half-logo.png" alt="Half logo united spirit">
-    </div>
-
     <div class="half_logo_left">
          <img src="img/half-logo-left.png" alt="Half logo united spirit">
     </div>
@@ -385,21 +355,35 @@
 
 <!-- /stripe forma -->
 
-<div class="container contact">
-    <h2 class="text-center">Contact</h2>
-    <textarea name="" id="" cols="30" rows="10" class="center-block"></textarea>
-    <button class="btn btn-default center-block" type="submit">Send</button>
+<div class="contact cf">
+    <hr>
+    <h2 class="contact_title text-center">Contact</h2>
+
+    <div class="contact_content">
+        <textarea name="" id="" cols="30" rows="10" class="center-block"></textarea>
+        <button class="btn btn-default center-block" type="submit">Send</button>
+    </div>
+    
+    <div class="half_logo_right">
+         <img src="img/half-logo.png" alt="Half logo united spirit">
+    </div>
 </div>
 
-<div class="our_partners">
-    <h3 class="text-center">Our Partners</h3>
-    <div class="text-center row">
-        <div class="col-lg-2">Partner</div>
-        <div class="col-lg-2">Partner</div>
-        <div class="col-lg-2">Partner</div>
-        <div class="col-lg-2">Partner</div>
-        <div class="col-lg-2">Partner</div>
-        <div class="col-lg-2">Partner</div>
+<div class="our_partners cf">
+    <div class="overlay_div"></div>
+    <div class="our_partners_content">
+
+        <hr>
+        <h3 class="text-center our_partners_title">Our Partners</h3>
+        <div class="text-center row">
+            <div class="col-lg-2">Partner</div>
+            <div class="col-lg-2">Partner</div>
+            <div class="col-lg-2">Partner</div>
+            <div class="col-lg-2">Partner</div>
+            <div class="col-lg-2">Partner</div>
+            <div class="col-lg-2">Partner</div>
+        </div>
+
     </div>
 </div>
 
