@@ -148,6 +148,10 @@
                 </div>
             </div>
         </div>
+
+        <div class="half_logo_right">
+             <img src="img/half-logo.png" alt="Half logo united spirit">
+        </div>
     </div>
     <!--- healthy mind in a healthy body -->
     <div class="healthymind">
@@ -187,55 +191,90 @@
     </div>
 
     <div class="experts cf">
-    <hr>
-    <h2 class="text-center">Our Experts</h2>
-    <div class="text-center row">
-        <div class="col-lg-2"><img src="http://simpleicon.com/wp-content/uploads/user1.png" alt=""></div>
-        <div class="col-lg-2"><img src="http://simpleicon.com/wp-content/uploads/user1.png" alt=""></div>
-        <div class="col-lg-2"><img src="http://simpleicon.com/wp-content/uploads/user1.png" alt=""></div>
-        <div class="col-lg-2"><img src="http://simpleicon.com/wp-content/uploads/user1.png" alt=""></div>
-        <div class="col-lg-2"><img src="http://simpleicon.com/wp-content/uploads/user1.png" alt=""></div>
-        <div class="col-lg-2"><img src="http://simpleicon.com/wp-content/uploads/user1.png" alt=""></div>
-    </div>
-</div>
-
-<div class="donations">
-<h3 class="text-center">Make a donation</h3>
-<button class="btn btn-default center-block" data-js="open">donate</button>
-<div class="popup">
-    <div class="row text-center">
-        <div class="col-lg-2"><button class="btn btn-default">5e</button></div>
-        <div class="col-lg-2"><button class="btn btn-default">10e</button></div>
-        <div class="col-lg-2"><button class="btn btn-default">20e</button></div>
-        <div class="col-lg-2"><button class="btn btn-default">50e</button></div>
-        <div class="col-lg-4"><button class="btn btn-default">other</button></div>
-        <div class="row">
-            <div class="col-sm-6">
-                <button class="btn btn-danger center-block" name="close">Close popup</button>
+        <hr>
+        <h2 class="text-center">Our Experts</h2>
+        <div class="text-center row">
+            <div class="col-lg-2">
+                <div class="experts_img_holder">
+                    <img src="http://simpleicon.com/wp-content/uploads/user1.png" alt="">
+                </div>
             </div>
-            <div class="col-sm-6">
-                <button class="btn btn-success center-block">Send Donation</button>
+            <div class="col-lg-2">
+                <div class="experts_img_holder">
+                    <img src="http://simpleicon.com/wp-content/uploads/user1.png" alt="">
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="experts_img_holder">
+                    <img src="http://simpleicon.com/wp-content/uploads/user1.png" alt="">
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="experts_img_holder">
+                    <img src="http://simpleicon.com/wp-content/uploads/user1.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="half_logo_left">
+             <img src="img/half-logo-left.png" alt="Half logo united spirit">
+        </div>
+    </div>
+
+<div class="donations cf">
+    
+    <div class="overlay_div"></div>
+
+    <div class="donations_content">
+        <hr>
+        <h3 class="text-center">Make a donation</h3>
+        <button class="btn btn-default center-block" data-js="open">donate</button>
+        <div class="popup">
+            <div class="row text-center">
+                <div class="col-lg-2"><button class="btn btn-default">5e</button></div>
+                <div class="col-lg-2"><button class="btn btn-default">10e</button></div>
+                <div class="col-lg-2"><button class="btn btn-default">20e</button></div>
+                <div class="col-lg-2"><button class="btn btn-default">50e</button></div>
+                <div class="col-lg-4"><button class="btn btn-default">other</button></div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <button class="btn btn-danger center-block" name="close">Close popup</button>
+                    </div>
+                    <div class="col-sm-6">
+                        <button class="btn btn-success center-block">Send Donation</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-</div>
-<div class="text-center campus_box">
-<h3>Campus Box</h3>
-<h4>Get a taste of Campus from where you are.</h4>
-<p>
-    Receive for 52 weeks the content of the class from Campus (Self Realization, Wisdom of the World, Healthy mind in a healthy body) to transform your life by finding your path</br>
-    <span>Progress at your own rythm with weekly exercises</span>
-</p>
-<button class="btn btn-default center-block" data-js="open2">Subscription / Connection</button>
-<small>*All people working on Campus are volunteer, the money collected will be used to found the school</small>
-<!-- popup open -->
-<div class="popup2">
-    <div class="row text-center">
-        <h2>Subscriptions</h2>
-        <button class="btn btn-danger" name="close">Close popup</button>
+
+<div class="text-center campus_box cf">
+    <hr>
+    <h3 class="campus_box_title">Campus Box</h3>
+
+    <div class="campus_box_content">
+        <h4>Get a taste of Campus from where you are.</h4>
+        <p>
+            Receive for 52 weeks the content of the class from Campus (Self Realization, Wisdom of the World, Healthy mind in a healthy body) to transform your life by finding your path</br>
+            <span>Progress at your own rythm with weekly exercises</span>
+        </p>
+
+        <button class="btn btn-default center-block" data-js="open2">Subscription / Connection</button>
+
+        <small>*All people working on Campus are volunteer, the money collected will be used to found the school</small>
+        <!-- popup open -->
+        <div class="popup2">
+            <div class="row text-center">
+                <h2>Subscriptions</h2>
+                <button class="btn btn-danger" name="close">Close popup</button>
+            </div>
+        </div>
     </div>
-</div>
+
+     <div class="half_logo_right">
+        <img src="img/half-logo.png" alt="Half logo united spirit">
+    </div>
 </div>
 
 <!-- stripe forma -->
