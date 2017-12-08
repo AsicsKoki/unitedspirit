@@ -70,6 +70,7 @@ Route::group(['prefix' => 'admin'], function () {
   Route::get('/editPartners', 'AdminController@getEditPartners')->name('getEditPartners');
   Route::get('/editWeeks', 'AdminController@getEditWeeks')->name('getEditWeeks');
   Route::get('/editWeek/{wid}', 'AdminController@getEditWeek')->name('getEditWeek');
+  Route::post('/editWeek', 'AdminController@postEditWeek')->name('postEditWeek');
 
 });
 

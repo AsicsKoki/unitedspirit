@@ -14,12 +14,18 @@
                     </p>
                 </div>
                 <div class="col-sm-6 col-sm-offset-3">
-                    <video controls class="embed-responsive-item center-block" src="{{ URL::to('/') . $vid }}" type="video/mp4"></video>
+                    <!-- <video controls class="embed-responsive-item center-block" src="{{ URL::to('/') . $vid }}" type="video/mp4"></video> -->
+                      <video class="embed-responsive-item center-block" controls>
+                        <source src="{{ URL::to('/') . $vid }}" type="video/mp4">
+                        <source src="{{ URL::to('/') . $vid }}" type="video/ogg">
+                        <source src="{{ URL::to('/') . $vid }}" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
                 <div class="col-sm-12">
                     <div class="audio-player text-center row">
                         <div class="artwork-container col-xs-12">
-                            <img src="#" alt="song art" class="artwork" />
+                            <img src="{{ URL::to('/') . $logo }}" alt="song art" class="artwork" />
                         </div>
                         <div class="controls-container col-xs-12">
                             <p class="meta "><strong>Wisdom from the world</strong> : Gandhi</p>
@@ -39,6 +45,9 @@
                         with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                     </p>
                 </div>
+
+                 <a href="{{ route('getDocument',['wid'=> $week->id]) }}"><button class="submit"> Download documentation! </button></a>
+                 <a href="{{ URL::to('/') . $doc }}" download> Download here </a>
             </div>
   </div>
 @endsection

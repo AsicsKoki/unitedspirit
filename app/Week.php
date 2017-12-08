@@ -6,6 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Week extends Model
 {
+    protected $fillable = [
+        'name', 
+        'about',
+        'exercise', 
+    ];
+
     public function admins()
     {
     	return $this->belongsToMany('App\Admin');

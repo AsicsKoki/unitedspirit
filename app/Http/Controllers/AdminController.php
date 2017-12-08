@@ -41,7 +41,7 @@ class AdminController extends Controller
         $document = Document::where('week_id',$wid)->first();
         $week = Week::where('id', $wid)->first();
 
-        return view('admin.editweek', ['doc' => $document['path'], 'aud' => $audio['path'] , 'vid' => $video['path'], 'logo' => $image['path'], 'week' => $week , 'video' => $video , 'audio' => $audio , 'image' => $image , 'document' => $document ]);
+        return view('admin.editweek', ['doc' => $document['path'], 'aud' => $audio['path'] , 'vid' => $video['path'], 'logo' => $image['path'], 'week' => $week  ]);
     }
 
     public function expertEdit(Request $request)
@@ -130,6 +130,16 @@ class AdminController extends Controller
     {
         $partner = new Partner;
         $partner->save();
+        return redirect()->back();
+    }
+
+    public function postEditWeek()
+    {
+        $week = Week::where('id', $wid)->first();
+        $week->name = Input::get('week_name');
+        $week->about = Input::get('week_paragraph');
+        $week->exercise = Input::get('week_exercise');
+        $week->save();
         return redirect()->back();
     }
 
