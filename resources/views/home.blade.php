@@ -202,7 +202,15 @@
         <hr>
         <h2 class="text-center">Our Experts</h2>
         <div class="text-center row">
+        @foreach($experts as $expert)
             <div class="col-lg-2">
+                <div class="experts_img_holder">
+                    <img src="{{ URL::to('/') . $expert->path }}" alt="">
+                </div>
+                <h3> {{$expert->title}}</h3>
+            </div>
+        @endforeach
+            <!-- <div class="col-lg-2">
                 <div class="experts_img_holder">
                     <img src="http://simpleicon.com/wp-content/uploads/user1.png" alt="">
                 </div>
@@ -217,12 +225,7 @@
                     <img src="http://simpleicon.com/wp-content/uploads/user1.png" alt="">
                 </div>
             </div>
-            <div class="col-lg-2">
-                <div class="experts_img_holder">
-                    <img src="http://simpleicon.com/wp-content/uploads/user1.png" alt="">
-                </div>
-            </div>
-        </div>
+        </div> -->
 
         <div class="half_logo_left">
              <img src="img/half-logo-left.png" alt="Half logo united spirit">
@@ -456,12 +459,18 @@
         <hr>
         <h3 class="text-center our_partners_title">Our Partners</h3>
         <div class="text-center row">
+        @foreach($partners as $partner)
+            <div class="col-lg-2">
+                <p>{{$partner->title }}</p>
+                    <img src="{{ URL::to('/') . $partner->path }}" alt="">
+            </div>
+        @endforeach
+            <!-- <div class="col-lg-2">Partner</div>
             <div class="col-lg-2">Partner</div>
             <div class="col-lg-2">Partner</div>
             <div class="col-lg-2">Partner</div>
             <div class="col-lg-2">Partner</div>
-            <div class="col-lg-2">Partner</div>
-            <div class="col-lg-2">Partner</div>
+            <div class="col-lg-2">Partner</div> -->
         </div>
 
     </div>

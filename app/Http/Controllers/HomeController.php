@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Expert as Expert;
+use App\Partner as Partner;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -9,7 +11,9 @@ class HomeController extends Controller
     
     public function index()
     {
-        return view('home');
+        $experts = Expert::all();
+        $partners = Partner::all();
+        return view('home',['experts' => $experts, 'partners' => $partners]);
     }
 
     public function homeOld()

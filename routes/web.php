@@ -13,7 +13,7 @@
 use Illuminate\Http\Request;
 
 Route::get('/', function () { 
-    return view('home');
+      return redirect('home');
 });
 
 //stripe
@@ -59,6 +59,17 @@ Route::group(['prefix' => 'admin'], function () {
   Route::post('/password/reset', 'AdminAuth\ResetPasswordController@reset')->name('password.email');
   Route::get('/password/reset', 'AdminAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
   Route::get('/password/reset/{token}', 'AdminAuth\ResetPasswordController@showResetForm');
+  Route::post('/expertEdit', 'AdminController@expertEdit')->name('expertEdit');
+  Route::post('/partnerEdit', 'AdminController@partnerEdit')->name('partnerEdit');
+  Route::get('/deleteExpert/{eid}', 'AdminController@deleteExpert')->name('deleteExpert');
+  Route::get('/deletePartner/{pid}', 'AdminController@deletePartner')->name('deletePartner');
+  Route::get('/addExpert', 'AdminController@addExpert')->name('addExpert');
+  Route::get('/addPartner', 'AdminController@addPartner')->name('addPartner');
+
+
+  Route::get('/editExperts', 'AdminController@getEditExperts')->name('getEditExperts');
+
+  Route::get('/editPartners', 'AdminController@getEditPartners')->name('getEditPartners');
 });
 
 
@@ -78,8 +89,14 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('/weeks', 'WeekController@getWeeks')->name('getWeeks')->middleware('auth');
+
+Route::group(['middleware'=>['auth','subscription']],function (){
 Route::get('/mycampus', 'WeekController@getMyCampus')->name('getMyCampus')->middleware('auth');
-Route::get('/week/{wid}', 'WeekController@getWeek')->name('getSpecificWeek');
+Route::get('/week/{wid}', 'WeekController@getWeek')->name('getSpecificWeek')->middleware('auth');
+
+});
+
+
 
 
 Route::post('/uploadImage', 'WeekController@uploadImage')->name('uploadImage');
@@ -94,6 +111,4 @@ Route::get('/subCheck', 'UserController@subCheck')->name('subCheck');
 
 Route::get('/editWeeks', 'AdminController@getEditWeeks')->name('getEditWeeks');
 
-Route::get('/editExperts', 'AdminController@getEditExperts')->name('getEditExperts');
 
-Route::get('/editPartners', 'AdminController@getEditPartners')->name('getEditPartners');
