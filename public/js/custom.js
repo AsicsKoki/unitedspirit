@@ -36,6 +36,12 @@ $(document).ready(function() {
         var amount = $('.other_amount').val() + 'e';
         $('.amount').text(amount);
     })
+
+    $('.subscription_btn').click(function () {
+        $('.require-validation').css('display', 'block');
+        var amount = $(this).text();
+        $('.amount').text(amount);
+    });
 });
 
 

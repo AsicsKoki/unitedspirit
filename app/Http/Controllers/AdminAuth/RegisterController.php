@@ -110,7 +110,7 @@ class RegisterController extends Controller
         $admin = new Admin(Input::all());
         $admin->password = Hash::make(Input::get('password'));
         $admin->save();
-        return redirect()->route('admin.home');
+        return redirect()->route('getAdminlogin');
     } else {
         return Redirect::back()->withErrors(['error', "Password does not match!"]);
         }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\User as User;
 use App\Week;
 use App\Subscription;
 use Illuminate\Http\Request;
@@ -36,6 +36,8 @@ class UserController extends Controller
     { 
         $user = Auth::user();
         $user->subscriptions[0]->pivot->touch();
+        $sub = $user::has('subscriptions')->get();
+        return $sub;
     
         $startdate = $user->subscriptions[0]->pivot->updated_at;
         $currdate = $user->subscriptions[0]->pivot->created_at;
