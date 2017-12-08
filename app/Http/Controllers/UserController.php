@@ -34,7 +34,12 @@ class UserController extends Controller
 
     public function subCheck()
     { 
-        $user = Auth::user();
+        $user = User::with('subscriptions')->where('id',  Auth::user()->id)->first();
+       // $user = Auth::user()->with('subscriptions')->get();
+        return $user->subscriptions->first();
+        $su = $user[0]->subscriptions[0]->id;
+        return $su;
+
         $user->subscriptions[0]->pivot->touch();
         $sub = $user::has('subscriptions')->get();
         return $sub;
