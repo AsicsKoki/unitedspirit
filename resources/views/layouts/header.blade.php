@@ -17,10 +17,14 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#experts">Our Experts</a></li>
+                        @if(Request::is('home'))
+                         <li><a href="#experts">Our Experts</a></li>
+                        @endif
                         <li><a href="{{ route('getMyCampus') }}">Campus Box</a></li>
+                        @if(Request::is('home'))
                         <li><a href="#about">Donate</a></li>
                         <li><a href="#contact">Contact</a></li>
+                        @endif
                         <!-- Authentication Links -->
                         @guest
                         <li><a href="{{ route('getUserLogin') }}">Login</a></li>
