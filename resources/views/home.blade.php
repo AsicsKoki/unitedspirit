@@ -54,34 +54,40 @@
         ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
-    <div class="marketing">
+    <div class="marketing" id="marketing">
         
         <div class="marketing_content">
             <!-- Three columns of text below the carousel -->
             <div class="row">
-                <div class="col-lg-4" id="selfrel">
-                    <div class="marketing_img_holder">
-                        <img src="img/Self_Realization.jpg" alt="self realization">
+                <a href="#self_realization">
+                    <div class="col-lg-4" id="selfrel">
+                        <div class="marketing_img_holder">
+                            <img src="img/Self_Realization.jpg" alt="self realization">
+                        </div>
+                        <p>Questionning who we are and the meaning we want to give to our lives getting our confidence back</p>
+                        <h2>Self realization</h2>
                     </div>
-                    <p>Questionning who we are and the meaning we want to give to our lives getting our confidence back</p>
-                    <h2>Self realization</h2>
-                </div>
+                </a>
                 <!-- /.col-lg-4 -->
-                <div class="col-lg-4" id="wisdom">
-                    <div class="marketing_img_holder">
-                        <img src="img/Wisdom_from_the_World.jpg" alt="wisdom from the world">
+                <a href="#wfromthew">
+                    <div class="col-lg-4" id="wisdom">
+                        <div class="marketing_img_holder">
+                            <img src="img/Wisdom_from_the_World.jpg" alt="wisdom from the world">
+                        </div>
+                        <p>Questionning who we are and the meaning we want to give to our lives getting our confidence back</p>
+                        <h2>Wisdom from the world</h2>
                     </div>
-                    <p>Questionning who we are and the meaning we want to give to our lives getting our confidence back</p>
-                    <h2>Wisdom from the world</h2>
-                </div>
+                </a>
                 <!-- /.col-lg-4 -->
-                <div class="col-lg-4" id="health">
-                    <div class="marketing_img_holder">
-                        <img src="img/healthy_mind_in_healthy_body.jpg" alt="healthy mind in healthy body">
+                <a href="#healthymind">
+                    <div class="col-lg-4" id="health">
+                        <div class="marketing_img_holder">
+                            <img src="img/healthy_mind_in_healthy_body.jpg" alt="healthy mind in healthy body">
+                        </div>
+                        <p>Questionning who we are and the meaning we want to give to our lives getting our confidence back</p>
+                        <h2>Healthy mind in a healthy body</h2>
                     </div>
-                    <p>Questionning who we are and the meaning we want to give to our lives getting our confidence back</p>
-                    <h2>Healthy mind in a healthy body</h2>
-                </div>
+                </a>
                 <!-- /.col-lg-4 -->
             </div>
         <!-- /.row -->
@@ -89,7 +95,7 @@
     </div>
 
     <!-- self realization -->
-    <div class="self_realization">
+    <div class="self_realization" id="self_realization">
 
         <div class="overlay_div"></div>
         <div class="row">
@@ -117,11 +123,11 @@
         </div>
     </div>
     <!-- Welcome from the world -->
-    <div class="container wfromthew">
+    <div class="container wfromthew" id="wfromthew">
         <div class="row">
             <div class="col-lg-12">
                 <hr>
-                <h2>Welcome from the world</h2>
+                <h2>Wisdom from the world</h2>
             </div>
         </div>
         <div class="row">
@@ -156,7 +162,7 @@
         </div>
     </div>
     <!--- healthy mind in a healthy body -->
-    <div class="healthymind">
+    <div class="healthymind" id="healthymind">
         <div class="overlay_div"></div>
         <div class="row">
             <div class="col-lg-12">
@@ -192,7 +198,7 @@
         </div>
     </div>
 
-    <div class="experts cf">
+    <div class="experts cf" id="experts">
         <hr>
         <h2 class="text-center">Our Experts</h2>
         <div class="text-center row">
@@ -227,14 +233,14 @@
 
 <script src='https://js.stripe.com/v2/' type='text/javascript'></script>
 
-<div class="donations">
+<div class="donations" id="donations">
 
     <div class="donations_content">
         <hr>
 
         <h3 class="text-center">Make a donation</h3>
 
-        <button class="btn btn-default center-block" data-js="open">donate</button>
+        <button class="btn btn-default center-block main_donation_btn" data-js="open">donate</button>
 
         <div class="popup">
             <div class="row text-center">
@@ -244,14 +250,12 @@
                     <div class="col-lg-2"><button class="btn btn-default donation_btn">20&euro;</button></div>
                     <div class="col-lg-2"><button class="btn btn-default donation_btn">50&euro;</button></div>
                     <div class="col-lg-4 custom_donate_holder">
-                        <input name="other_donation" type="text" class="form_group other_amount">
-                        <label class="label_custom_donate" for="other_donation">Custom amount</label>
+                        <input name="other_donation" type="number" class="form_group other_amount">
+                        <label class="label_custom_donate" for="other_donation">Custom amount<small> (number)</small></label>
 
                         <span>euros</span><button class="btn btn-default donation_btn_other">donate</button>
                     </div>
-                </div>
-                <div class="container">
-
+                         
                 <form accept-charset="UTF-8" action="/" class="require-validation"
                     data-cc-on-file="false"
                     data-stripe-publishable-key="pk_live_cNAAgOnhvXmvXrmFUTt6PPAM"
@@ -291,7 +295,7 @@
                     <div class='form-row'>
                         <div class='col-md-12'>
                             <div class='form-control total btn btn-info'>
-                                Total: <span class='amount'>$300</span>
+                                Total: <span class='amount'>300</span>
                             </div>
                         </div>
                     </div>
@@ -308,9 +312,9 @@
                         </div>
                     </div>
                 </form>
-            </div>
-
-
+          
+                </div>
+         
             <button class="close_popup btn btn-danger center-block" name="close">
                 <i class="fa fa-times" aria-hidden="true"></i>
             </button>
@@ -321,11 +325,10 @@
           <div class="half_logo_right">
              <img src="img/half-logo.png" alt="Half logo united spirit">
         </div>
-    </div>
 </div>
 
 
-<div class="text-center campus_box">
+<div class="text-center campus_box" id="campus_box">
     <div class="campus_box_content">
         <hr>
         <h3 class="campus_box_title">Campus Box</h3>
@@ -346,7 +349,7 @@
                     <div class="col-lg-2"><button class="btn btn-default subscription_btn">200&euro;/52weeks</button></div>
                 <button class="btn btn-danger" name="close">Close popup</button>
                 <!-- added stripe form -->
-                <form accept-charset="UTF-8" action="/" class="require-validation"
+                <!-- <form accept-charset="UTF-8" action="/" class="require-validation"
                     data-cc-on-file="false"
                     data-stripe-publishable-key="pk_live_cNAAgOnhvXmvXrmFUTt6PPAM"
                     id="payment-form" method="post">
@@ -401,7 +404,7 @@
                                 again.</div>
                         </div>
                     </div>
-                </form>
+                </form> -->
             </div>
 
             <!-- added stripe form -->
@@ -423,12 +426,24 @@
 <div class="contact cf">
     <hr>
     <h2 class="contact_title text-center">Contact</h2>
-
-    <div class="contact_content">
-        <textarea name="" id="" cols="30" rows="10" class="center-block"></textarea>
-        <button class="btn btn-default center-block" type="submit">Send</button>
-    </div>
-    
+    <form action="">
+            <div class="contact_content text-center">
+                <div class="container">
+                <div class="form-group">
+                    <label for="contact_name" class="text-center">Your name</label>
+                    <input type="text" class="center-block form-control" id="contact_name" placeholder="Your name">
+                </div>
+                <!-- Email input-->
+                <div class="form-group">
+                    <label for="contact_email" class="text-center">Your e-mail</label>
+                    <input type="email" class="center-block form-control" id="contact_email" placeholder="Your email">
+                </div>
+                </div>
+             <label class="text-center">Your message</label>
+            <textarea name="" id="" cols="30" rows="10" class="center-block"></textarea>
+            <button class="btn btn-default center-block" type="submit">Send</button>
+        </div>
+    </form>
     <div class="half_logo_right">
          <img src="img/half-logo.png" alt="Half logo united spirit">
     </div>

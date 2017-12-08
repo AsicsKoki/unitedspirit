@@ -32,12 +32,12 @@ $(document).ready(function() {
         $('.amount').text(amount);
     });
     $('.donation_btn_other').click(function() {
-        // $('.require-validation').css('display','none');
-        var amount = $('.other_amount').val() + 'e';
-        $('.amount').text(amount);
+        $('.require-validation').css('display', 'block');
+        var amount = $('.other_amount').val().replace(/\D/g, '');
+        $('.amount').text(amount + '€');
     })
 
-    $('.subscription_btn').click(function () {
+    $('.subscription_btn').click(function() {
         $('.require-validation').css('display', 'block');
         var amount = $(this).text();
         $('.amount').text(amount);
@@ -74,3 +74,13 @@ function popupOpenClose(popup) {
         $(popup).hide();
     });
 }
+
+// smooth scroll 
+
+$(document).on('click', 'a[href^="#"]', function(event) {
+    event.preventDefault();
+
+    $('html, body').animate({
+        scrollTop: $($.attr(this, 'href')).offset().top
+    }, 500);
+});
