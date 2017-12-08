@@ -42,6 +42,12 @@ $(document).ready(function() {
         var amount = $(this).text();
         $('.amount').text(amount);
     });
+    // $("#login-button").click(function(event) {
+    //     event.preventDefault();
+
+    //     $('login_form').fadeOut(500);
+    //     $('.wrapper1').addClass('form-success');
+    // });
 });
 
 
