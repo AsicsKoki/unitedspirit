@@ -4,11 +4,19 @@
 
 <div class="container myCampus_main">
             <h1 class="text-center">My Campus Box</h1>
-            
+            <hr>
             <div class="row">   
                 @foreach($user[0]->weeks as $week)
                 <div class="col-sm-3 center-block">
-                    <div class="campus_week text-center"><a href="{{ route('getSpecificWeek',['wid'=> $week->id]) }}"><img src="{{ URL::to('/') . $week->images[0]->path  }}" alt="">Week {{$week->id}} : {{ $week->name }}</a></div>
+                    <div class="campus_week text-center">
+                        <a href="{{ route('getSpecificWeek',['wid'=> $week->id]) }}">
+                            <span class="campus_week_img">
+                                <img src="{{ URL::to('/') . $week->images[0]->path  }}" alt="">
+                            </span>
+                            <span>Week {{$week->id}} : {{ $week->name }}</span>
+                        </a>
+
+                    </div>
                   
 
                 </div>

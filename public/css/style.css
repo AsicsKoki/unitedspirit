@@ -36,9 +36,16 @@ a:hover {
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
-
+button:active, input:active, textarea:active,
+button:focus, input:focus, textarea:focus {
+    outline: none;
+}
 
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
+    background-color: #cc3499;
+}
 
 .navbar-wrapper {
     position: absolute;
@@ -46,6 +53,31 @@ a:hover {
     right: 0;
     left: 0;
     z-index: 20;
+}
+
+.week_number {
+    margin-top: 100px;
+    color: #d450a7;
+    font-size: 38px;
+}
+
+.week_desc_text {
+    font-size: 18px;
+    width: 90%;
+    line-height: 1.5;
+    margin: auto;
+}
+
+.video_holder video {
+    max-width: 90%;
+    padding: 0 50px;
+}
+
+.col-sm-6.col-sm-offset-3.video_holder {
+    width: 100%;
+    margin: auto;
+    margin-top: 30px;
+    float: none;
 }
 
 .download_links_holder {
@@ -911,6 +943,11 @@ header .navbar-brand img {
         background: rgba(255, 255, 255, 0.9);
     }
 
+    .video_holder video {
+        max-width: 95%;
+        padding: 0;
+    }
+
     footer .pull-right {
         float: none !important;
         width: 100%;
@@ -961,12 +998,46 @@ header .navbar-brand img {
 /* MY CAMPUS PAGE STYLES 
 ======================== */
 
+.myCampus_main {
+    min-height: 100vh;
+}
+
+span.campus_week_img {
+    width: 160px;
+    margin: auto;
+    height: 160px;
+    overflow: hidden;
+}
+
+.myCampus_main + footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.myCampus_main .campus_week a {
+    display: block;
+    font-size: 17px;
+    color: #464646;
+    background: #eee;
+    padding: 10px;
+    border-radius: 3px;
+}
+
 .myCampus_main h1 {
-    margin: 75px 0;
+    margin-top: 100px;
+    color: #d450a7;
+    font-size: 38px;
+}
+
+
+.campus_week span {
+    display: block;
+    margin-top: 10px;
 }
 
 .myCampus_main .col-sm-3 .campus_week {
-    border: solid 1px #000;
     height: 200px;
     width: 200px;
     margin: 0 auto;
