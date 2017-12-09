@@ -429,21 +429,22 @@
 <div class="contact cf" id="contact">
     <hr>
     <h2 class="contact_title text-center">Contact</h2>
-    <form action="">
+    <form action="{{ route('sendContactMail') }}" method="POST">
             <div class="contact_content text-center">
                 <div class="container">
                 <div class="form-group">
                     <label for="contact_name" class="text-center">Your name</label>
-                    <input type="text" class="center-block form-control" id="contact_name" placeholder="Your name">
+                    <input type="text" name="contact_name" class="center-block form-control" id="contact_name" placeholder="Your name">
                 </div>
                 <!-- Email input-->
                 <div class="form-group">
                     <label for="contact_email" class="text-center">Your e-mail</label>
-                    <input type="email" class="center-block form-control" id="contact_email" placeholder="Your email">
+                    <input type="email" name="email" class="center-block form-control" id="contact_email" placeholder="Your email">
                 </div>
                 </div>
              <label class="text-center">Your message</label>
-            <textarea name="" id="" cols="30" rows="10" class="center-block"></textarea>
+            <textarea name="text" id="" cols="30" rows="10" class="center-block"></textarea>
+            {{ csrf_field() }}
             <button class="btn btn-default center-block" type="submit">Send</button>
         </div>
     </form>
