@@ -22,7 +22,7 @@
                         @endif
                         <li><a href="{{ route('getMyCampus') }}">Campus Box</a></li>
                         @if(Request::is('home'))
-                        <li><a href="#about">Donate</a></li>
+                        <li><a href="#donations">Donate</a></li>
                         <li><a href="#contact">Contact</a></li>
                         @endif
                         <!-- Authentication Links -->
