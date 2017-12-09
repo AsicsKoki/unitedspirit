@@ -11,6 +11,7 @@
                 <li data-target="#myCarousel" data-slide-to="1"></li>
                 <li data-target="#myCarousel" data-slide-to="2"></li>
             </ol>
+
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
                     <!-- <img class="first-slide" src="img/Campus_home.jpg" alt="First slide"> -->
@@ -212,36 +213,36 @@
         <hr>
         <h2 class="text-center">Our Experts</h2>
         <div class="text-center row">
-        @foreach($experts as $expert)
-            <div class="col-lg-2">
-                <div class="experts_img_holder">
-                    <img src="{{ URL::to('/') . $expert->path }}" alt="">
+            @foreach($experts as $expert)
+                <div class="col-lg-2">
+                    <div class="experts_img_holder">
+                        <img src="{{ URL::to('/') . $expert->path }}" alt="">
+                    </div>
+                    <h3> {{$expert->title}}</h3>
                 </div>
-                <h3> {{$expert->title}}</h3>
-            </div>
-        @endforeach
-            <!-- <div class="col-lg-2">
-                <div class="experts_img_holder">
-                    <img src="http://simpleicon.com/wp-content/uploads/user1.png" alt="">
+            @endforeach
+                <!-- <div class="col-lg-2">
+                    <div class="experts_img_holder">
+                        <img src="http://simpleicon.com/wp-content/uploads/user1.png" alt="">
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="experts_img_holder">
-                    <img src="http://simpleicon.com/wp-content/uploads/user1.png" alt="">
+                <div class="col-lg-2">
+                    <div class="experts_img_holder">
+                        <img src="http://simpleicon.com/wp-content/uploads/user1.png" alt="">
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="experts_img_holder">
-                    <img src="http://simpleicon.com/wp-content/uploads/user1.png" alt="">
+                <div class="col-lg-2">
+                    <div class="experts_img_holder">
+                        <img src="http://simpleicon.com/wp-content/uploads/user1.png" alt="">
+                    </div>
                 </div>
-            </div>
-        </div> -->
+            </div> -->
 
-        <div class="half_logo_left">
-             <img src="img/half-logo-left.png" alt="Half logo united spirit">
+            <div class="half_logo_left">
+                 <img src="img/half-logo-left.png" alt="Half logo united spirit">
+            </div>
         </div>
     </div>
-
 <!-- stripe forma -->
 
 <script src='https://js.stripe.com/v2/' type='text/javascript'></script>
@@ -255,90 +256,14 @@
 
         <button class="btn btn-default center-block main_donation_btn" data-js="open">donate</button>
 
-        <div class="popup">
-            <div class="row text-center">
-                <h2>Donate to us</h2>
-                    <div class="col-lg-2"><button class="btn btn-default donation_btn">5&euro;</button></div>
-                    <div class="col-lg-2"><button class="btn btn-default donation_btn">10&euro;</button></div>
-                    <div class="col-lg-2"><button class="btn btn-default donation_btn">20&euro;</button></div>
-                    <div class="col-lg-2"><button class="btn btn-default donation_btn">50&euro;</button></div>
-                    <div class="col-lg-4 custom_donate_holder">
-                        <input name="other_donation" type="number" class="form_group other_amount">
-                        <label class="label_custom_donate" for="other_donation">Custom amount<small> (number)</small></label>
+    </div>
 
-                        <span>euros</span><button class="btn btn-default donation_btn_other">donate</button>
-                    </div>
-                         
-                <form accept-charset="UTF-8" action="/" class="require-validation"
-                    data-cc-on-file="false"
-                    data-stripe-publishable-key="pk_live_cNAAgOnhvXmvXrmFUTt6PPAM"
-                    id="payment-form" method="post">
-                    {{ csrf_field() }}
-                    <input type="hidden" name="hiddenammount" value="">
-                    <div class='form-row'>
-                        <div class='col-xs-12 form-group required'>
-                            <label class='control-label'>Name on Card</label> <input
-                                class='form-control' size='4' type='text'>
-                        </div>
-                    </div>
-                    <div class='form-row'>
-                        <div class='col-xs-12 form-group card required'>
-                            <label class='control-label'>Card Number</label> <input
-                                autocomplete='off' class='form-control card-number' size='20'
-                                type='text'>
-                        </div>
-                    </div>
-                    <div class='form-row'>
-                        <div class='col-xs-4 form-group cvc required'>
-                            <label class='control-label'>CVC</label> <input autocomplete='off'
-                                class='form-control card-cvc' placeholder='ex. 311' size='4'
-                                type='text'>
-                        </div>
-                        <div class='col-xs-4 form-group expiration required'>
-                            <label class='control-label'>Expiration</label> <input
-                                class='form-control card-expiry-month' placeholder='MM' size='2'
-                                type='text'>
-                        </div>
-                        <div class='col-xs-4 form-group expiration required'>
-                            <label class='control-label'> </label> <input
-                                class='form-control card-expiry-year' placeholder='YYYY' size='4'
-                                type='text'>
-                        </div>
-                    </div>
-                    <div class='form-row'>
-                        <div class='col-md-12'>
-                            <div class='form-control total btn btn-info'>
-                                Total: <span class='amount'>300</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='form-row'>
-                        <div class='col-md-12 form-group'>
-                            <button class='form-control btn btn-primary submit-button'
-                                type='submit' style="margin-top: 10px;">Pay »</button>
-                        </div>
-                    </div>
-                    <div class='form-row'>
-                        <div class='col-md-12 error form-group hide'>
-                            <div class='alert-danger alert'>Please correct the errors and try
-                                again.</div>
-                        </div>
-                    </div>
-                </form>
-          
-                </div>
-         
-            <button class="close_popup btn btn-danger center-block" name="close">
-                <i class="fa fa-times" aria-hidden="true"></i>
-            </button>
+    <div class="half_logo_right">
+        <img src="img/half-logo.png" alt="Half logo united spirit">
+    </div>
 
-            </div>
-        </div>
-
-          <div class="half_logo_right">
-             <img src="img/half-logo.png" alt="Half logo united spirit">
-        </div>
 </div>
+
 
 
 <div class="text-center campus_box" id="campus_box">
@@ -352,144 +277,80 @@
         </p>
         <button class="btn btn-default center-block" data-js="open2">Subscription / Connection</button>
         <small>*All people working on Campus are volunteer, the money collected will be used to found the school</small>
-        <!-- popup open -->
-        <div class="popup2">
-            <div class="row text-center">
-                <h2>Subscriptions</h2>
-                    <div class="col-lg-2"><button class="btn btn-default subscription_btn">20&euro;/month</button></div>
-                    <div class="col-lg-2"><button class="btn btn-default subscription_btn">55&euro;/13weeks</button></div>
-                    <div class="col-lg-2"><button class="btn btn-default subscription_btn">100&euro;/26weeks</button></div>
-                    <div class="col-lg-2"><button class="btn btn-default subscription_btn">200&euro;/52weeks</button></div>
-                <button class="btn btn-danger" name="close">Close popup</button>
-                <!-- added stripe form -->
-                <!-- <form accept-charset="UTF-8" action="/" class="require-validation"
-                    data-cc-on-file="false"
-                    data-stripe-publishable-key="pk_live_cNAAgOnhvXmvXrmFUTt6PPAM"
-                    id="payment-form" method="post">
-                    {{ csrf_field() }}
-                    <input type="hidden" name="hiddenammount" value="">
-                    <div class='form-row'>
-                        <div class='col-xs-12 form-group required'>
-                            <label class='control-label'>Name on Card</label> <input
-                                class='form-control' size='4' type='text'>
-                        </div>
-                    </div>
-                    <div class='form-row'>
-                        <div class='col-xs-12 form-group card required'>
-                            <label class='control-label'>Card Number</label> <input
-                                autocomplete='off' class='form-control card-number' size='20'
-                                type='text'>
-                        </div>
-                    </div>
-                    <div class='form-row'>
-                        <div class='col-xs-4 form-group cvc required'>
-                            <label class='control-label'>CVC</label> <input autocomplete='off'
-                                class='form-control card-cvc' placeholder='ex. 311' size='4'
-                                type='text'>
-                        </div>
-                        <div class='col-xs-4 form-group expiration required'>
-                            <label class='control-label'>Expiration</label> <input
-                                class='form-control card-expiry-month' placeholder='MM' size='2'
-                                type='text'>
-                        </div>
-                        <div class='col-xs-4 form-group expiration required'>
-                            <label class='control-label'> </label> <input
-                                class='form-control card-expiry-year' placeholder='YYYY' size='4'
-                                type='text'>
-                        </div>
-                    </div>
-                    <div class='form-row'>
-                        <div class='col-md-12'>
-                            <div class='form-control total btn btn-info'>
-                                Total: <span class='amount'>$300</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='form-row'>
-                        <div class='col-md-12 form-group'>
-                            <button class='form-control btn btn-primary submit-button'
-                                type='submit' style="margin-top: 10px;">Pay »</button>
-                        </div>
-                    </div>
-                    <div class='form-row'>
-                        <div class='col-md-12 error form-group hide'>
-                            <div class='alert-danger alert'>Please correct the errors and try
-                                again.</div>
-                        </div>
-                    </div>
-                </form> -->
-            </div>
+        
 
-            <!-- added stripe form -->
-            </div>
-        </div>
     </div>
 
     <div class="half_logo_left">
          <img src="img/half-logo-left.png" alt="Half logo united spirit">
     </div>
+
 </div>
 
-<!-- stripe forma -->
 
-<script src='https://js.stripe.com/v2/' type='text/javascript'></script>
 
-<!-- /stripe forma -->
+    <!-- stripe forma -->
 
-<div class="contact cf" id="contact">
-    <hr>
-    <h2 class="contact_title text-center">Contact</h2>
-    <form action="{{ route('sendContactMail') }}" method="POST">
+    <script src='https://js.stripe.com/v2/' type='text/javascript'></script>
+
+    <!-- /stripe forma -->
+
+    <div class="contact cf" id="contact">
+        <hr>
+        <h2 class="contact_title text-center">Contact</h2>
+        <form action="{{ route('sendContactMail') }}" method="POST">
             <div class="contact_content text-center">
                 <div class="container">
-                <div class="form-group">
-                    <label for="contact_name" class="text-center">Your name</label>
-                    <input type="text" class="center-block form-control" id="contact_name" placeholder="Your name">
+                    <div class="form-group">
+                        <label for="contact_name" class="text-center">Your name</label>
+                        <input type="text" class="center-block form-control" id="contact_name" placeholder="Your name">
+                    </div>
+                    <!-- Email input-->
+                    <div class="form-group">
+                        <label for="contact_email" class="text-center">Your e-mail</label>
+                        <input type="email" class="center-block form-control" id="contact_email" placeholder="Your email">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="text" id="" cols="30" rows="10" class="center-block"></textarea>
+                        {{ csrf_field() }}
+                        <button class="btn btn-default center-block" type="submit">Send</button>
+                    </div>
+                 <label class="text-center">Your message</label>
                 </div>
-                <!-- Email input-->
-                <div class="form-group">
-                    <label for="contact_email" class="text-center">Your e-mail</label>
-                    <input type="email" class="center-block form-control" id="contact_email" placeholder="Your email">
-                </div>
-                <div class="form-group">
-                    <label class="text-center">Your message</label>
-                    <textarea name="" id="" cols="30" rows="10" class="center-block"></textarea>
-                </div>
-             <label class="text-center">Your message</label>
-            <textarea name="text" id="" cols="30" rows="10" class="center-block"></textarea>
-            {{ csrf_field() }}
-            <button class="btn btn-default center-block" type="submit">Send</button>
-        </div>
-    </form>
-    <div class="half_logo_right">
-         <img src="img/half-logo.png" alt="Half logo united spirit">
-    </div>
-</div>
-
-<div class="our_partners cf">
-    <div class="overlay_div"></div>
-    <div class="our_partners_content">
-
-        <hr>
-        <h3 class="text-center our_partners_title">Our Partners</h3>
-        <div class="text-center row">
-        @foreach($partners as $partner)
-            <div class="col-lg-2">
-                <p>{{$partner->title }}</p>
-                    <img src="{{ URL::to('/') . $partner->path }}" alt="">
             </div>
-        @endforeach
-            <!-- <div class="col-lg-2">Partner</div>
-            <div class="col-lg-2">Partner</div>
-            <div class="col-lg-2">Partner</div>
-            <div class="col-lg-2">Partner</div>
-            <div class="col-lg-2">Partner</div>
-            <div class="col-lg-2">Partner</div> -->
+        </form>
+        <div class="half_logo_right">
+             <img src="img/half-logo.png" alt="Half logo united spirit">
         </div>
-
     </div>
-</div>
 
+    <div class="our_partners cf">
+        <div class="overlay_div"></div>
+            <div class="our_partners_content">
+
+                <hr>
+                <h3 class="text-center our_partners_title">Our Partners</h3>
+                <div class="text-center row">
+                @foreach($partners as $partner)
+                    <div class="col-lg-2 partner_holder">
+                        <div class="partner_img">
+                            <img src="{{ URL::to('/') . $partner->path }}" alt="">
+                        </div>
+                        <p class="partner_name">{{$partner->title }}</p>
+                    </div>
+                @endforeach
+                    <!-- <div class="col-lg-2">Partner</div>
+                    <div class="col-lg-2">Partner</div>
+                    <div class="col-lg-2">Partner</div>
+                    <div class="col-lg-2">Partner</div>
+                    <div class="col-lg-2">Partner</div>
+                    <div class="col-lg-2">Partner</div> -->
+                </div>
+
+            </div>
+    </div>
+
+</div>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
 $form = $('form.require-validation');
