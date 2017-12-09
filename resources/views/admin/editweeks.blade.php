@@ -1,4 +1,4 @@
-@extends('admin.layout.auth')
+@extends('layouts.master')
 
 @section('content')
 <style>
