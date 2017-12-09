@@ -66,10 +66,12 @@ Route::group(['prefix' => 'admin'], function () {
   Route::get('/addExpert', 'AdminController@addExpert')->name('addExpert');
   Route::get('/addPartner', 'AdminController@addPartner')->name('addPartner');
 
-
   Route::get('/editExperts', 'AdminController@getEditExperts')->name('getEditExperts');
-
   Route::get('/editPartners', 'AdminController@getEditPartners')->name('getEditPartners');
+  Route::get('/editWeeks', 'AdminController@getEditWeeks')->name('getEditWeeks');
+  Route::get('/editWeek/{wid}', 'AdminController@getEditWeek')->name('getEditWeek');
+  Route::post('/editWeek', 'AdminController@postEditWeek')->name('postEditWeek');
+
 });
 
 
@@ -109,6 +111,6 @@ Route::get('/getDocument/{wid}', 'WeekController@getDocument')->name('getDocumen
 Route::get('/subscribe', 'UserController@subscribe')->name('postSubscribe');
 Route::get('/subCheck', 'UserController@subCheck')->name('subCheck');
 
-Route::get('/editWeeks', 'AdminController@getEditWeeks')->name('getEditWeeks');
+
 
 
