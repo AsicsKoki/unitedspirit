@@ -444,20 +444,20 @@
                 <div class="container">
                 <div class="form-group">
                     <label for="contact_name" class="text-center">Your name</label>
-                    <input type="text" class="center-block form-control" id="contact_name" placeholder="Your name">
+                    <input type="text" name="contact_name" class="center-block form-control" id="contact_name" placeholder="Your name">
                 </div>
                 <!-- Email input-->
                 <div class="form-group">
                     <label for="contact_email" class="text-center">Your e-mail</label>
-                    <input type="email" class="center-block form-control" id="contact_email" placeholder="Your email">
+                    <input type="email" name="contact_email" class="center-block form-control" id="contact_email" placeholder="Your email">
                 </div>
                 <div class="form-group">
                     <label class="text-center">Your message</label>
-                    <textarea name="" id="" cols="30" rows="10" class="center-block"></textarea>
+                    <textarea name="text" id="" cols="30" rows="10" class="center-block"></textarea>
+                    {{ csrf_field() }}
                 </div>
              <label class="text-center">Your message</label>
-            <textarea name="text" id="" cols="30" rows="10" class="center-block"></textarea>
-            {{ csrf_field() }}
+
             <button class="btn btn-default center-block" type="submit">Send</button>
         </div>
     </form>

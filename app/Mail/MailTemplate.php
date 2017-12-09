@@ -12,6 +12,7 @@ class MailTemplate extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $contact;
     /**
      * Create a new message instance.
      *

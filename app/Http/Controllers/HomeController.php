@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Expert as Expert;
+use App\Contact as Contact;
 use App\Partner as Partner;
+use App\Mail\MailTemplate as MailTemplate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Mail\Mailer;
+use Mail;
 
 
 class HomeController extends Controller
@@ -42,8 +46,9 @@ class HomeController extends Controller
         $contact->email = Input::get('contact_email');
         $contact->text = Input::get('text');
 
-        Mail::to('unitedspirit@gmail.com')->send(new MailTemplate($contact));
-        return $contact;
+        Mail::to('joskekostic@gmail.com')->send(new MailTemplate($contact));
+
+        return redirect()->back();
     }
 
 
