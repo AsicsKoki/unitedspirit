@@ -40,8 +40,25 @@ Route::get('/homeOld', 'HomeController@homeOld')->name('homeOld');
 
 Route::get('/logout', 'HomeController@logout')->name('logout');
 
-Route::group(['middleware'=>'admin'],function (){
+Route::group(['middleware'=>'admin', 'prefix'=>'admin'],function (){
+
 Route::get('/adminHome', 'AdminAuth\LoginController@getAdminHome')->name('getAdminHome');
+
+ Route::get('/editExperts', 'AdminController@getEditExperts')->name('getEditExperts');
+ Route::get('/editPartners', 'AdminController@getEditPartners')->name('getEditPartners');
+ Route::get('/editWeeks', 'AdminController@getEditWeeks')->name('getEditWeeks');
+ Route::get('/editWeek/{wid}', 'AdminController@getEditWeek')->name('getEditWeek');
+
+Route::post('/expertEdit', 'AdminController@expertEdit')->name('expertEdit');
+Route::post('/partnerEdit', 'AdminController@partnerEdit')->name('partnerEdit');
+Route::get('/deleteExpert/{eid}', 'AdminController@deleteExpert')->name('deleteExpert');
+Route::get('/deletePartner/{pid}', 'AdminController@deletePartner')->name('deletePartner');
+Route::get('/addExpert', 'AdminController@addExpert')->name('addExpert');
+Route::get('/addPartner', 'AdminController@addPartner')->name('addPartner');
+
+Route::get('/changePassword', 'AdminController@getAdminChangePassword')->name('getAdminChangePassword');
+Route::post('/postChangePassword', 'AdminController@postAdminChangePassword')->name('postAdminChangePassword');
+Route::post('/editWeek', 'AdminController@postEditWeek')->name('postEditWeek');
 
 });
 
@@ -59,18 +76,7 @@ Route::group(['prefix' => 'admin'], function () {
   Route::post('/password/reset', 'AdminAuth\ResetPasswordController@reset')->name('password.email');
   Route::get('/password/reset', 'AdminAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
   Route::get('/password/reset/{token}', 'AdminAuth\ResetPasswordController@showResetForm');
-  Route::post('/expertEdit', 'AdminController@expertEdit')->name('expertEdit');
-  Route::post('/partnerEdit', 'AdminController@partnerEdit')->name('partnerEdit');
-  Route::get('/deleteExpert/{eid}', 'AdminController@deleteExpert')->name('deleteExpert');
-  Route::get('/deletePartner/{pid}', 'AdminController@deletePartner')->name('deletePartner');
-  Route::get('/addExpert', 'AdminController@addExpert')->name('addExpert');
-  Route::get('/addPartner', 'AdminController@addPartner')->name('addPartner');
 
-  Route::get('/editExperts', 'AdminController@getEditExperts')->name('getEditExperts');
-  Route::get('/editPartners', 'AdminController@getEditPartners')->name('getEditPartners');
-  Route::get('/editWeeks', 'AdminController@getEditWeeks')->name('getEditWeeks');
-  Route::get('/editWeek/{wid}', 'AdminController@getEditWeek')->name('getEditWeek');
-  Route::post('/editWeek', 'AdminController@postEditWeek')->name('postEditWeek');
 
 });
 
@@ -79,6 +85,10 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('userLogin', 'Auth\LoginController@getUserLogin')->name('getUserLogin');
 Route::post('userLogin', 'Auth\LoginController@postUserLogin')->name('postUserLogin');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+Route::get('/changePassword', 'UserController@getChangePassword')->name('getChangePassword');
+Route::post('/postChangePassword', 'UserController@postChangePassword')->name('postChangePassword');
+
 
 // Registration Routes...
 Route::get('userRegister', 'Auth\RegisterController@getUserRegister')->name('getUserRegister');
@@ -93,6 +103,7 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 Route::get('/weeks', 'WeekController@getWeeks')->name('getWeeks')->middleware('auth');
 
 Route::group(['middleware'=>['auth','subscription']],function (){
+
 Route::get('/mycampus', 'WeekController@getMyCampus')->name('getMyCampus')->middleware('auth');
 Route::get('/week/{wid}', 'WeekController@getWeek')->name('getSpecificWeek')->middleware('auth');
 

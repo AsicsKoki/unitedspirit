@@ -12,9 +12,39 @@ use App\Document as Document;
 use App\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Hash as Hash;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth as Auth;
 
 class AdminController extends Controller
 {
+        public function getAdminChangePassword()
+    {
+        return view('admin.auth.passwords.change');
+    }
+
+    public function postAdminChangePassword(Request $request)
+    {
+        $request->validate([
+            'oldpassword'           => 'required',
+            'password'              => 'required',
+            'password_confirmation' => 'required',
+        ]);
+        $admin = Auth::guard('admin')->user();
+        if(Hash::check(Input::get('oldpassword'), $admin->password))
+        {
+            if (!strcmp(Input::get('password'), Input::get('password_confirmation'))){
+                $admin->password = Hash::make(Input::get('password'));
+                $admin->save();
+                return redirect()->route('getAdminHome');
+            }else{
+                return Redirect::back()->withErrors(['error', "Password does not match!"]);
+            }
+        }else{
+             return redirect()->back()->withErrors(['error', 'Wrong old password!']);
+        }
+    }
+
     public function getEditWeeks()
     {
         $weeks = Week::all();
@@ -135,9 +165,9 @@ class AdminController extends Controller
 
     public function postEditWeek()
     {
-        $week = Week::where('id', $wid)->first();
+        $week = Week::where('id', Input::get('wid'))->first();
         $week->name = Input::get('week_name');
-        $week->about = Input::get('week_paragraph');
+        $week->about = Input::get('week_about');
         $week->exercise = Input::get('week_exercise');
         $week->save();
         return redirect()->back();
