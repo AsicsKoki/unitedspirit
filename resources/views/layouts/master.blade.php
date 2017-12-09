@@ -39,7 +39,8 @@
 
 
 <!-- popup open -->
-<div class="popup2">
+
+<!-- <div class="popup2">
     <div class="row text-center">
         <h2>Subscriptions</h2>
 
@@ -56,9 +57,7 @@
               <i class="fa fa-times" aria-hidden="true"></i>
           </button>
     </div>
-
-    <!-- added stripe form -->
-</div>
+</div> -->
 
 
 <div class="popup">

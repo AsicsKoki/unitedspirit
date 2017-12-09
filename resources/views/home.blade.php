@@ -275,7 +275,7 @@
             Receive for 52 weeks the content of the class from Campus (Self Realization, Wisdom of the World, Healthy mind in a healthy body) to transform your life by finding your path</br>
             <span>Progress at your own rythm with weekly exercises</span>
         </p>
-        <button class="btn btn-default center-block" data-js="open2">Subscription / Connection</button>
+        <a href="{{ route('getSubscriptions') }}"><button class="btn btn-default center-block">Subscription / Connection</button></a>
         <small>*All people working on Campus are volunteer, the money collected will be used to found the school</small>
         
 
@@ -311,11 +311,12 @@
                         <input type="email" name="contact_email" class="center-block form-control" id="contact_email" placeholder="Your email">
                     </div>
                     <div class="form-group">
+                        <label for="text" class="text-center">Your message</label>
                         <textarea name="text" id="" cols="30" rows="10" class="center-block"></textarea>
                         {{ csrf_field() }}
                         <button class="btn btn-default center-block" type="submit">Send</button>
                     </div>
-                 <label class="text-center">Your message</label>
+                 
                 </div>
             </div>
         </form>
