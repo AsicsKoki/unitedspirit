@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Contact as Contact;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
@@ -16,9 +17,9 @@ class MailTemplate extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Contact $contact)
     {
-        //
+        $this->contact = $contact;
     }
 
     /**
@@ -28,6 +29,7 @@ class MailTemplate extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+            return $this->from($this->contact->email) 
+                ->view('emails.contact');
     }
 }

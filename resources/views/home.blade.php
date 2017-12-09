@@ -439,7 +439,7 @@
 <div class="contact cf" id="contact">
     <hr>
     <h2 class="contact_title text-center">Contact</h2>
-    <form action="">
+    <form action="{{ route('sendContactMail') }}" method="POST">
             <div class="contact_content text-center">
                 <div class="container">
                 <div class="form-group">
@@ -455,8 +455,9 @@
                     <label class="text-center">Your message</label>
                     <textarea name="" id="" cols="30" rows="10" class="center-block"></textarea>
                 </div>
-                </div>
-           
+             <label class="text-center">Your message</label>
+            <textarea name="text" id="" cols="30" rows="10" class="center-block"></textarea>
+            {{ csrf_field() }}
             <button class="btn btn-default center-block" type="submit">Send</button>
         </div>
     </form>
