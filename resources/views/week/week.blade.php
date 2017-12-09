@@ -43,7 +43,9 @@
                 </div>
 
             </div>
-            <a href="{{ route('getDocument',['wid'=> $week->id]) }}"><button class="submit"> Download documentation! </button></a>
-                 <a href="{{ URL::to('/') . $doc }}" download> Download here </a>
+            <div class="download_links_holder">
+                <a href="{{ route('getDocument',['wid'=> $week->id]) }}"><button class="submit"> Download documentation! </button></a>
+                <a href="{{ URL::to('/') . $doc }}" download> Download here </a>
+            </div>
   </div>
 @endsection
