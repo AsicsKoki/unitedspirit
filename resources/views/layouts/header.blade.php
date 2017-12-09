@@ -19,7 +19,7 @@
                         <li class="active"><a href="#">Home</a></li>
                         <li><a href="#experts">Our Experts</a></li>
                         <li><a href="{{ route('getMyCampus') }}">Campus Box</a></li>
-                        <li><a href="#about">Donate</a></li>
+                        <li><a href="#donations">Donate</a></li>
                         <li><a href="#contact">Contact</a></li>
                         <!-- Authentication Links -->
                         @guest
