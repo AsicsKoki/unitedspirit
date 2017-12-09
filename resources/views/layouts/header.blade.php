@@ -22,7 +22,7 @@
                         @endif
                         <li><a href="{{ route('getMyCampus') }}">Campus Box</a></li>
                         @if(Request::is('home'))
-                        <li><a href="#about">Donate</a></li>
+                        <li><a href="#donations">Donate</a></li>
                         <li><a href="#contact">Contact</a></li>
                         @endif
                         <!-- Authentication Links -->
@@ -36,6 +36,8 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+
+                                    <li><a href="{{ route('getChangePassword') }}">Change password</a></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -47,6 +49,7 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+                                    
                                 </ul>
                             </li>
                         @endguest

@@ -426,7 +426,7 @@
 
 <!-- /stripe forma -->
 
-<div class="contact cf">
+<div class="contact cf" id="contact">
     <hr>
     <h2 class="contact_title text-center">Contact</h2>
     <form action="">

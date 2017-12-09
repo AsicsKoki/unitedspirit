@@ -8,9 +8,40 @@ use App\Subscription;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth as Auth;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Hash as Hash;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
 {
+    
+    public function getChangePassword()
+    {
+        return view('auth.passwords.change');
+    }
+
+    public function postChangePassword(Request $request)
+    {
+        $request->validate([
+            'oldpassword'           => 'required',
+            'password'              => 'required',
+            'password_confirmation' => 'required',
+        ]);
+        $user = Auth::user();
+        if(Hash::check(Input::get('oldpassword'), $user->password))
+        {
+            if (!strcmp(Input::get('password'), Input::get('password_confirmation'))){
+                $user->password = Hash::make(Input::get('password'));
+                $user->save();
+                return redirect()->route('home');
+            }else{
+                return Redirect::back()->withErrors(['error', "Password does not match!"]);
+            }
+        }else{
+             return redirect()->back()->withErrors(['error', 'Wrong old password!']);
+        }
+    }
+    
     public function subscribe()
     {
         $sub = new Subscription();
