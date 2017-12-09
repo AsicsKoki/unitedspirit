@@ -59,35 +59,45 @@
         <div class="marketing_content">
             <!-- Three columns of text below the carousel -->
             <div class="row">
-                <a href="#self_realization">
+                
                     <div class="col-lg-4" id="selfrel">
                         <div class="marketing_img_holder">
-                            <img src="img/Self_Realization.jpg" alt="self realization">
+                            <a href="#self_realization">
+                                <img src="img/Self_Realization.jpg" alt="self realization">
+                            </a>
                         </div>
-                        <p>Questionning who we are and the meaning we want to give to our lives getting our confidence back</p>
-                        <h2>Self realization</h2>
+                        <a href="#self_realization">
+                            <p>Questionning who we are and the meaning we want to give to our lives getting our confidence back</p>
+                        </a>
+                        <h2><a href="#self_realization">Self realization</a></h2>
                     </div>
-                </a>
+                
                 <!-- /.col-lg-4 -->
-                <a href="#wfromthew">
+               
                     <div class="col-lg-4" id="wisdom">
                         <div class="marketing_img_holder">
-                            <img src="img/Wisdom_from_the_World.jpg" alt="wisdom from the world">
+                             <a href="#wfromthew">
+                                <img src="img/Wisdom_from_the_World.jpg" alt="wisdom from the world">
+                            </a>
                         </div>
-                        <p>Questionning who we are and the meaning we want to give to our lives getting our confidence back</p>
-                        <h2>Wisdom from the world</h2>
+                        <a href="#wfromthew">
+                            <p>Questionning who we are and the meaning we want to give to our lives getting our confidence back</p>
+                        </a>
+                        <h2><a href="#wfromthew">Wisdom from the world</a></h2>
                     </div>
-                </a>
+               
                 <!-- /.col-lg-4 -->
-                <a href="#healthymind">
+                
                     <div class="col-lg-4" id="health">
                         <div class="marketing_img_holder">
                             <img src="img/healthy_mind_in_healthy_body.jpg" alt="healthy mind in healthy body">
                         </div>
-                        <p>Questionning who we are and the meaning we want to give to our lives getting our confidence back</p>
-                        <h2>Healthy mind in a healthy body</h2>
+                        <a href="#healthymind">
+                            <p>Questionning who we are and the meaning we want to give to our lives getting our confidence back</p>
+                        </a>
+                        <h2><a href="#healthymind">Healthy mind in a healthy body</a></h2>
                     </div>
-                </a>
+
                 <!-- /.col-lg-4 -->
             </div>
         <!-- /.row -->
@@ -434,13 +444,16 @@
                 <div class="container">
                 <div class="form-group">
                     <label for="contact_name" class="text-center">Your name</label>
-                    <input type="text" name="contact_name" class="center-block form-control" id="contact_name" placeholder="Your name">
+                    <input type="text" class="center-block form-control" id="contact_name" placeholder="Your name">
                 </div>
                 <!-- Email input-->
                 <div class="form-group">
                     <label for="contact_email" class="text-center">Your e-mail</label>
-                    <input type="email" name="email" class="center-block form-control" id="contact_email" placeholder="Your email">
+                    <input type="email" class="center-block form-control" id="contact_email" placeholder="Your email">
                 </div>
+                <div class="form-group">
+                    <label class="text-center">Your message</label>
+                    <textarea name="" id="" cols="30" rows="10" class="center-block"></textarea>
                 </div>
              <label class="text-center">Your message</label>
             <textarea name="text" id="" cols="30" rows="10" class="center-block"></textarea>
