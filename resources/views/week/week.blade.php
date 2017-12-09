@@ -4,13 +4,11 @@
  <div class="container">
             <h1 class="text-center">Week {{ $week->id }}</h1>
             <hr>
-            <h3 class="text-center">{{ $week->name }} Finding the meaning of life</h3>
+            <h3 class="text-center">{{ $week->name }}</h3>
             <div class="row">
                 <div class="col-sm-12">
                     <p class="text-center">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
-                        survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
-                        with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    {{ $week->about }}
                     </p>
                 </div>
                 <div class="col-sm-6 col-sm-offset-3">
@@ -40,14 +38,12 @@
                 <div class="col-sm-12">
                     <h3 class="text-center">Week {{ $week->id }}: practical exercise</h3>
                     <p class="text-center">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
-                        survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
-                        with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    {{ $week->exercise }}
                     </p>
                 </div>
 
-                 <a href="{{ route('getDocument',['wid'=> $week->id]) }}"><button class="submit"> Download documentation! </button></a>
-                 <a href="{{ URL::to('/') . $doc }}" download> Download here </a>
             </div>
+            <a href="{{ route('getDocument',['wid'=> $week->id]) }}"><button class="submit"> Download documentation! </button></a>
+                 <a href="{{ URL::to('/') . $doc }}" download> Download here </a>
   </div>
 @endsection
