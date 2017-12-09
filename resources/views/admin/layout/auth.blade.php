@@ -58,9 +58,8 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ route('getAdminChangePassword') }}">Change password</a></li>
                                 <li>
-                                <li><a href="{{ route('getAdminChangePassword') }}">Change password</a></li>
-
                                     <a href="{{ url('/logout') }}"
                                         onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">

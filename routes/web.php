@@ -58,6 +58,7 @@ Route::get('/addPartner', 'AdminController@addPartner')->name('addPartner');
 
 Route::get('/changePassword', 'AdminController@getAdminChangePassword')->name('getAdminChangePassword');
 Route::post('/postChangePassword', 'AdminController@postAdminChangePassword')->name('postAdminChangePassword');
+Route::post('/editWeek', 'AdminController@postEditWeek')->name('postEditWeek');
 
 });
 
