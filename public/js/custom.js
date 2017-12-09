@@ -37,17 +37,33 @@ $(document).ready(function() {
         $('.amount').text(amount + '€');
     })
 
-    $('.subscription_btn').click(function() {
+
+    $('#sub_20').click(function() {
         $('.require-validation').css('display', 'block');
         var amount = $(this).text();
-        $('.amount').text(amount);
+        $('#hidden_input_val').val('20');
+        $('.amount').text('20€');
     });
-    // $("#login-button").click(function(event) {
-    //     event.preventDefault();
+    $('#sub_55').click(function() {
+        $('.require-validation').css('display', 'block');
+        var amount = $(this).text();
+        $('#hidden_input_val').val('55');
+        $('.amount').text('55€');
+    });
 
-    //     $('login_form').fadeOut(500);
-    //     $('.wrapper1').addClass('form-success');
-    // });
+    $('#sub_100').click(function() {
+        $('.require-validation').css('display', 'block');
+        var amount = $(this).text();
+        $('#hidden_input_val').val('100');
+        $('.amount').text('100€');
+    });
+
+    $('#sub_200').click(function() {
+        $('.require-validation').css('display', 'block');
+        var amount = $(this).text();
+        $('#hidden_input_val').val('200');
+        $('.amount').text('200€');
+    });
 });
 
 
@@ -79,7 +95,7 @@ function popupOpenClose(popup) {
         }
         $(popup).hide();
     });
-}
+};
 
 // smooth scroll 
 
