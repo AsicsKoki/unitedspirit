@@ -82,4 +82,9 @@ class SubscriptionController extends Controller
     {
         //
     }
+
+    public function getSubcriptions()
+    {
+        return view('subscription');
+    }
 }

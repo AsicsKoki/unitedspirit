@@ -103,6 +103,8 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('/weeks', 'WeekController@getWeeks')->name('getWeeks')->middleware('auth');
 
+Route::get('/subscriptions' , 'SubscriptionController@getSubcriptions')->name('getSubscriptions');
+
 Route::group(['middleware'=>['auth','subscription']],function (){
 
 Route::get('/mycampus', 'WeekController@getMyCampus')->name('getMyCampus')->middleware('auth');

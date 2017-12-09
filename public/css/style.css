@@ -1251,6 +1251,10 @@ input.form_group.other_amount {
     transform: translateY(85px);
 }
 
+.wrapper1 .container .btn-primary:hover {
+    color: red;
+}
+
 .container1 {
     max-width: 600px;
     margin: 0 auto;
@@ -1319,6 +1323,7 @@ input.form_group.other_amount {
 
 .login_form button:hover {
     background-color: #f5f7f9;
+    color: #cc359a;
 }
 
 .container1 a {
