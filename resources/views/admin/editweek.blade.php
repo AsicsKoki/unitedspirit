@@ -27,9 +27,10 @@
                     <div class="form-group">
                     {{Form::open(array('route' => 'uploadVideo','method'=>'POST', 'files'=>true))}}
                     <label for="uploaded_video">Choose a video</label>
+                    <hr>
                          <input type="file" name="video" id="uploaded_video" value="Upload video!">
                          {{ csrf_field() }}
-                        <input type="submit" value="Update" id="upload_video_submit">
+                        <input class="edit_btns" type="submit" value="Update" id="upload_video_submit">
                         <input type="hidden" name="wid" value="{{ $week->id }}">
                         <p class="help-block">Preferably of type mp4,ogg,webm</p>
                     {{Form::close()}}
@@ -46,9 +47,10 @@
                     <div class="form-group">
                     {{Form::open(array('route' => 'uploadAudio','method'=>'POST', 'files'=>true))}}
                     <label for="week_audio">Choose audio</label>
+                    <hr>
                         <input type="file" class="form-control" id="week_audio" name="audio">
                         {{ csrf_field() }}
-                        <input type="submit" value="Update" id="upload_audio_submit">
+                        <input class="edit_btns" type="submit" value="Update" id="upload_audio_submit">
                         <input type="hidden" name="wid" value="{{ $week->id }}">
                         <p class="help-block">Preferably of type mp3,ogg</p>
                     {{Form::close()}}
@@ -66,7 +68,7 @@
                     <label for="week_audio">Choose week logo</label>
                         <input type="file" name="photo" id="uploaded_photo" value="Upload photo!">
                         {{ csrf_field() }}
-                        <input type="submit" value="Update" id="upload_photo_submit">
+                        <input class="edit_btns" type="submit" value="Update" id="upload_photo_submit">
                         <input type="hidden" name="wid" value="{{ $week->id }}">
                         <p class="help-block">Preferably of type jpeg,png</p>
                     {{Form::close()}}
@@ -87,15 +89,15 @@
                         <input type="file" name="document" id="uploaded_document" value="Upload document!">
                         {{ csrf_field() }}
                     <div>
-                        <input type="submit" value="Update" id="upload_document_submit">
+                        <input class="edit_btns" type="submit" value="Update" id="upload_document_submit">
                         <input type="hidden" name="wid" value="{{ $week->id }}">
                         {{ Form::close() }}
                         <a href="{{ route('getDocument',['wid'=> $week->id]) }}" class="btn btn-primary">Download documentation!</a>
             
                     </div>
                 </div>
-                <p class="help-block">Make sure that all fields are filled before submitting!</p>
-                <button class="btn btn-default" type="submit">Submit</button> 
+       
+
 
                 
                 {{Form::close()}}
