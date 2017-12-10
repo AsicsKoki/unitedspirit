@@ -37,6 +37,17 @@ a:hover {
     background: #fff;
 }
 
+.app_holder .card_holder {
+    max-width: 500px;
+    min-height: 400px;
+    height: auto;
+}
+
+.app_holder .card_holder .btn-primary {
+    color: #fff;
+    background-color: #df7ebe;
+    border: none;
+}
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
@@ -1466,6 +1477,14 @@ input.form_group.other_amount {
 
     .myCampus_main h1 {
         font-size: 30px;
+    }
+
+    .jumbotron .h1, .jumbotron h1 {
+        font-size: 40px;
+    }
+
+    .container .jumbotron, .container-fluid .jumbotron {
+        margin-top: 100px;
     }
 }
 
