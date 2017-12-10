@@ -98,11 +98,16 @@ function popupOpenClose(popup) {
 };
 
 // smooth scroll 
+var $root = $('html, body');
 
-$(document).on('click', 'a[href^="#"]', function(event) {
-    event.preventDefault();
+$('a[href^="#"]').click(function() {
+    var href = $.attr(this, 'href');
 
-    $('html, body').animate({
-        scrollTop: $($.attr(this, 'href')).offset().top
-    }, 500);
+    $root.animate({
+        scrollTop: $(href).offset().top
+    }, 500, function() {
+        window.location.hash = href;
+    });
+
+    return false;
 });
