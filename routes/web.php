@@ -105,9 +105,10 @@ Route::get('/weeks', 'WeekController@getWeeks')->name('getWeeks')->middleware('a
 
 Route::get('/subscriptions' , 'SubscriptionController@getSubcriptions')->name('getSubscriptions');
 
+Route::get('/mycampus', 'WeekController@getMyCampus')->name('getMyCampus')->middleware('auth');
+
 Route::group(['middleware'=>['auth','subscription']],function (){
 
-Route::get('/mycampus', 'WeekController@getMyCampus')->name('getMyCampus')->middleware('auth');
 Route::get('/week/{wid}', 'WeekController@getWeek')->name('getSpecificWeek')->middleware('auth');
 
 });

@@ -46,7 +46,7 @@ class HomeController extends Controller
         $contact->email = Input::get('contact_email');
         $contact->text = Input::get('text');
 
-        Mail::to('joskekostic@gmail.com')->send(new MailTemplate($contact));
+        Mail::to('gaspard.dm@hotmail.fr')->send(new MailTemplate($contact)); //gaspard.dm@hotmail.fr
 
         return redirect()->back();
     }

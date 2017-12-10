@@ -22,7 +22,7 @@
 
 @foreach($weeks as $week)
 <a href="{{route('getEditWeek',['wid'=> $week->id]) }}" style="display: block;">
-<div class="col-sm-12 text-center weeks_as_week">Week {{ $week->id }}</div></a>
+<div class="col-sm-12 text-center weeks_as_week">Week {{ $week->id }} : {{ $week->name }}</div></a>
 @endforeach
 
 </div>

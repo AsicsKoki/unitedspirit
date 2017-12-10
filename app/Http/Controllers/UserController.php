@@ -44,12 +44,19 @@ class UserController extends Controller
     
     public function subscribe()
     {
+     //   return $user->weeks->last()->id;
         $sub = new Subscription();
         $sub->save();
         $user = Auth::user();
+        $wid = 0;
 
         //Adding first week when subscribed
-        $week = Week::where('id',1)->get();
+        if($user->weeks->last())
+        {
+            $wid = $user->weeks->last()->id;
+        }
+        $wid++;
+        $week = Week::where('id',$wid)->get();
         $user->weeks()->attach($week);
 
         $user->subscriptions()->attach($sub);
@@ -65,11 +72,14 @@ class UserController extends Controller
 
     public function subCheck()
     { 
-        $user = User::with('subscriptions')->where('id',  Auth::user()->id)->first();
+        $user = User::with('weeks')->where('id',  Auth::user()->id)->first();
        // $user = Auth::user()->with('subscriptions')->get();
-        return $user->subscriptions->first();
-        $su = $user[0]->subscriptions[0]->id;
-        return $su;
+     //   $wee = $user->with('weeks')->first();
+     //   return $wee;
+     //   return $user->weeks->contains(1);
+     
+        // $su = $user[0]->subscriptions[0]->id;
+        // return $su;
 
         $user->subscriptions[0]->pivot->touch();
         $sub = $user::has('subscriptions')->get();

@@ -16,7 +16,7 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="#">Home</a></li>
+                        <li class="active"><a href="{{ URL::to('/')}}">Home</a></li>
                         @if(Request::is('home'))
                          <li><a href="#experts">Our Experts</a></li>
                         @endif
