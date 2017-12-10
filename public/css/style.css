@@ -1463,6 +1463,10 @@ input.form_group.other_amount {
     .experts .col-lg-2 {
         width: 35%;
     }
+
+    .myCampus_main h1 {
+        font-size: 30px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1544,4 +1548,18 @@ input.form_group.other_amount {
     }
 }
 
+@media (max-height: 600px) {
+    .navbar-inverse .navbar-nav>li>a {
+        line-height: 3;
+    }
 
+    .myCampus_main+footer {
+        position: static;
+    }
+}
+
+@media (max-height: 400px) {
+    .navbar-inverse .navbar-nav>li>a {
+        line-height: 2;
+    }
+}
