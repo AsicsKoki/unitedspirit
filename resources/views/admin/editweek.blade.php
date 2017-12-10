@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <h1 class="text-center">Week {{ $week->id }} : {{ $week->name }} </h1>
-            <form action="{{ route('postEditWeek') }}" method="POST">
+            <form class="col-sm-12" action="{{ route('postEditWeek') }}" method="POST">
                 {{Form::open(array('route' => 'postEditWeek','method'=>'POST', 'files'=>true))}}
                 {{ csrf_field() }}
                 <div class="form-group">
@@ -26,11 +26,13 @@
                 <div class="col-sm-6">
                     <div class="form-group">
                     {{Form::open(array('route' => 'uploadVideo','method'=>'POST', 'files'=>true))}}
-                    <label for="uploaded_video">Choose a video</label>
-                    <hr>
-                         <input type="file" name="video" id="uploaded_video" value="Upload video!">
-                         {{ csrf_field() }}
-                        <input class="edit_btns" type="submit" value="Update" id="upload_video_submit">
+                        <div class="admin_btn_holder">
+                            <label class="upload_video_btn" for="uploaded_video">Choose a video</label>
+                            <input type="file" name="video" id="uploaded_video" value="Upload video!">
+                            {{ csrf_field() }}
+                            <input class="edit_btns" type="submit" value="Update" id="upload_video_submit">
+                        </div>
+                         
                         <input type="hidden" name="wid" value="{{ $week->id }}">
                         <p class="help-block">Preferably of type mp4,ogg,webm</p>
                     {{Form::close()}}
@@ -46,11 +48,13 @@
                 <div class="col-sm-6">
                     <div class="form-group">
                     {{Form::open(array('route' => 'uploadAudio','method'=>'POST', 'files'=>true))}}
-                    <label for="week_audio">Choose audio</label>
-                    <hr>
-                        <input type="file" class="form-control" id="week_audio" name="audio">
-                        {{ csrf_field() }}
+                        <div class="admin_btn_holder">
+                            <label class="choose_audio_btn" for="week_audio">Choose audio</label>
+                            <input type="file" class="form-control" id="week_audio" name="audio">
+                            {{ csrf_field() }}
                         <input class="edit_btns" type="submit" value="Update" id="upload_audio_submit">
+                        </div>
+                        
                         <input type="hidden" name="wid" value="{{ $week->id }}">
                         <p class="help-block">Preferably of type mp3,ogg</p>
                     {{Form::close()}}

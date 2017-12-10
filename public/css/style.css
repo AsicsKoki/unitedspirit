@@ -4,6 +4,10 @@
 
 /* Padding below the footer and lighter body text */
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     color: #5a5a5a;
     overflow-x: hidden;
@@ -33,17 +37,36 @@ a:hover {
     background: #fff;
 }
 
+.app_holder .card_holder {
+    max-width: 500px;
+    min-height: 400px;
+    height: auto;
+}
+
+.app_holder .card_holder .btn-primary {
+    color: #fff;
+    background-color: #df7ebe;
+    border: none;
+}
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
-button:active, input:active, textarea:active,
-button:focus, input:focus, textarea:focus {
+
+button:active,
+input:active,
+textarea:active,
+button:focus,
+input:focus,
+textarea:focus {
     outline: none;
 }
 
+
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
 
-.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
+.navbar-inverse .navbar-nav>.open>a,
+.navbar-inverse .navbar-nav>.open>a:focus,
+.navbar-inverse .navbar-nav>.open>a:hover {
     background-color: #cc3499;
 }
 
@@ -86,7 +109,8 @@ button:focus, input:focus, textarea:focus {
     margin-top: 20px;
 }
 
-.campus_week img, .artwork-container img {
+.campus_week img,
+.artwork-container img {
     width: 100%;
 }
 
@@ -103,6 +127,7 @@ button:focus, input:focus, textarea:focus {
     margin: 50px auto;
     float: none;
 }
+
 
 /* Flip around the padding for proper display in narrow viewports */
 
@@ -139,7 +164,12 @@ button:focus, input:focus, textarea:focus {
     padding: 0 10px;
 }
 
-.navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
+.bg-bubbles {
+    overflow: hidden;
+}
+
+.navbar-fixed-bottom .navbar-collapse,
+.navbar-fixed-top .navbar-collapse {
     max-height: initial;
 }
 
@@ -454,7 +484,11 @@ header .navbar-brand img {
     background-position: center; */
 }
 
-.wfromthew hr, .experts hr, .campus_box hr, .contact hr, .donations_content hr {
+.wfromthew hr,
+.experts hr,
+.campus_box hr,
+.contact hr,
+.donations_content hr {
     width: 10%;
     border-top: 3px solid #264153;
     margin-top: 5px;
@@ -462,7 +496,7 @@ header .navbar-brand img {
 }
 
 .contact {
-    position: relative; 
+    position: relative;
 }
 
 .contact hr {
@@ -511,7 +545,11 @@ header .navbar-brand img {
     margin-top: 10px;
 }
 
-.wfromthew h2, .experts h2, .campus_box_title, .contact_title, .donations_content h3 {
+.wfromthew h2,
+.experts h2,
+.campus_box_title,
+.contact_title,
+.donations_content h3 {
     text-transform: uppercase;
     font-weight: bold;
     margin: 0 auto;
@@ -596,7 +634,8 @@ header .navbar-brand img {
     margin-bottom: 5px;
 }
 
-.healthymind h2, .our_partners_title {
+.healthymind h2,
+.our_partners_title {
     text-transform: uppercase;
     font-weight: bold;
     margin: 0 auto;
@@ -832,169 +871,6 @@ header .navbar-brand img {
 }
 
 
-/* RESPONSIVE CSS
--------------------------------------------------- */
-
-@media (min-width: 768px) {
-    /* Navbar positioning foo */
-    .navbar-wrapper .container {
-        padding-right: 0;
-        padding-left: 0;
-        max-width: 1150px;
-        margin: auto;
-    }
-
-    .navbar-wrapper .navbar {
-        padding-right: 0;
-        padding-left: 0;
-        box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.05);
-    }
-    /* The navbar becomes detached from the top, so we round the corners */
-    .navbar-wrapper .navbar {
-        border-radius: 0;
-    }
-    /* Bump up size of carousel content */
-    .carousel-caption p {
-        margin-bottom: 20px;
-        font-size: 21px;
-        line-height: 1.4;
-    }
-}
-
-@media (max-width: 1200px) {
-    .wfromthew .row .col-lg-4 {
-        max-width: 500px;
-        margin: auto;
-        margin-bottom: 30px;
-    }
-
-    .campus_box_content {
-        max-width: 90%;
-    }
-
-    .col-lg-2.partner_holder {
-        max-width: 200px;
-        margin: 50px auto;
-    }
-
-    .self_realization .col-lg-4 {
-        max-width: 500px;
-        margin: auto;
-        margin-bottom: 30px;
-    }
-    
-    .healthymind .img-wrapper {
-        width: 300px;
-        height: 150px;
-        margin-bottom: 30px;
-    }
-}
-
-@media (max-width: 1127px) {
-    .marketing .col-lg-4 {
-        float: none;
-        margin: auto;
-        margin-bottom: 30px;
-        width: 340px;
-    }
-
-    .our_partners {
-        position: relative;
-        background: #eee;
-        padding: 60px 0 100px;
-        background: url(../img/Self_realization__3rd.jpeg);
-        color: #fff;
-        background-position: right top;
-        background-size: cover;
-    }
-}
-
-@media (max-width: 950px) {
-    .carousel-caption h1 {
-        font-size: 20px;
-    }
-
-    .experts .col-lg-2 {
-        width: 35%;
-    }
-}
-
-@media (max-width: 768px) {
-    #navbar {
-        width: 100%;
-        float: none;
-        text-align: center;
-    }
-
-    .experts .col-lg-2 {
-        width: 90%;
-    }
-
-    .campus_box .btn {
-        font-size: 15px;
-    }
-}
-
-@media (max-width: 600px) {
-    #contact_name, #contact_email, .contact textarea {
-        width: 100%;
-        z-index: 10;
-        position: relative;
-        background: rgba(255, 255, 255, 0.9);
-    }
-
-    .video_holder video {
-        max-width: 95%;
-        padding: 0;
-    }
-
-    footer .pull-right {
-        float: none !important;
-        width: 100%;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    footer p {
-        text-align: center;
-    }
-
-    .carousel-inner {
-        width: 100%;
-    }
-
-    .self_realization h2, .wfromthew h2, .experts h2, .campus_box_title, .contact_title, .donations_content h3, .healthymind h2, .our_partners_title {
-        font-size: 25px;
-    }
-}
-
-@media (max-width: 550px) {
-    .carousel-caption h1 {
-        font-size: 15px;
-    }
-    .popup2 h2 {
-        font-size: 15px;
-    }
-}
-
-@media (max-width: 440px) {
-    .carousel-caption h1 {
-        font-size: 15px;
-        height: 300px;
-        line-height: 1.6;
-        width: auto;
-    }
-
-    .marketing .col-lg-4, .healthymind .img-wrapper {
-        width: 90%;
-    }
-}
-
-
-@media (max-width: 430px) {
-    
-}
-
 /* MY CAMPUS PAGE STYLES 
 ======================== */
 
@@ -1009,7 +885,7 @@ span.campus_week_img {
     overflow: hidden;
 }
 
-.myCampus_main + footer {
+.myCampus_main+footer {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -1030,7 +906,6 @@ span.campus_week_img {
     color: #d450a7;
     font-size: 38px;
 }
-
 
 .campus_week span {
     display: block;
@@ -1081,6 +956,7 @@ i.fa.fa-caret-up {
     position: fixed;
     bottom: 50px;
     right: 50px;
+    z-index: 100000;
 }
 
 
@@ -1116,7 +992,7 @@ i.fa.fa-caret-up {
 }
 
 .popup .col-lg-2 {
-   display: inline-block;
+    display: inline-block;
 }
 
 .popup .wrapper {
@@ -1150,7 +1026,8 @@ p.partner_name {
     font-size: 15px;
 }
 
-button.close_popup, button.close_popup.btn.btn-danger.center-block {
+button.close_popup,
+button.close_popup.btn.btn-danger.center-block {
     position: absolute;
     top: -10px;
     right: 0;
@@ -1175,9 +1052,10 @@ button.close_popup:hover {
     width: auto;
 }
 
-.btn-danger.focus, .btn-danger:focus {
+.btn-danger.focus,
+.btn-danger:focus {
     background: transparent;
-    color: #e07272; 
+    color: #e07272;
 }
 
 .donation_btn_other.btn-default {
@@ -1312,8 +1190,8 @@ input.form_group.other_amount {
     bottom: 0;
     left: 0;
     right: 0;
-    position: absolute;
-    height: 94vh;
+    position: static;
+    min-height: 94vh;
     margin-top: 6vh;
     overflow: hidden;
 }
@@ -1329,9 +1207,10 @@ input.form_group.other_amount {
 .container1 {
     max-width: 600px;
     margin: 0 auto;
-    padding: 80px 0;
-    height: 400px;
+    /* height: 400px; */
     text-align: center;
+    padding-top: 15%;
+    padding-bottom: 0;
 }
 
 .container1 h1 {
@@ -1414,6 +1293,7 @@ input.form_group.other_amount {
     width: 100%;
     height: 100%;
     z-index: 1;
+    padding: 0;
 }
 
 .bg-bubbles li {
@@ -1422,8 +1302,8 @@ input.form_group.other_amount {
     display: block;
     width: 40px;
     height: 40px;
-    background-color: rgba(255, 255, 255, 0.15);
-    bottom: -160px;
+    background-color: rgba(255, 255, 255, 0.05);
+    bottom: 0px;
     -webkit-animation: square 25s infinite;
     animation: square 25s infinite;
     -webkit-transition-timing-function: linear;
@@ -1513,5 +1393,192 @@ input.form_group.other_amount {
     }
     100% {
         transform: translateY(-700px) rotate(600deg);
+    }
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+    /* Navbar positioning foo */
+    .navbar-wrapper .container {
+        padding-right: 0;
+        padding-left: 0;
+        max-width: 1150px;
+        margin: auto;
+    }
+    .navbar-wrapper .navbar {
+        padding-right: 0;
+        padding-left: 0;
+        box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.05);
+    }
+    /* The navbar becomes detached from the top, so we round the corners */
+    .navbar-wrapper .navbar {
+        border-radius: 0;
+    }
+    /* Bump up size of carousel content */
+    .carousel-caption p {
+        margin-bottom: 20px;
+        font-size: 21px;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 1200px) {
+    .wfromthew .row .col-lg-4 {
+        max-width: 500px;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+    .campus_box_content {
+        max-width: 90%;
+    }
+    .col-lg-2.partner_holder {
+        max-width: 200px;
+        margin: 50px auto;
+    }
+    .self_realization .col-lg-4 {
+        max-width: 500px;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+    .healthymind .img-wrapper {
+        width: 300px;
+        height: 150px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 1127px) {
+    .marketing .col-lg-4 {
+        float: none;
+        margin: auto;
+        margin-bottom: 30px;
+        width: 340px;
+    }
+    .our_partners {
+        position: relative;
+        background: #eee;
+        padding: 60px 0 100px;
+        background: url(../img/Self_realization__3rd.jpeg);
+        color: #fff;
+        background-position: right top;
+        background-size: cover;
+    }
+}
+
+@media (max-width: 950px) {
+    .carousel-caption h1 {
+        font-size: 20px;
+    }
+    .experts .col-lg-2 {
+        width: 35%;
+    }
+
+    .myCampus_main h1 {
+        font-size: 30px;
+    }
+
+    .jumbotron .h1, .jumbotron h1 {
+        font-size: 40px;
+    }
+
+    .container .jumbotron, .container-fluid .jumbotron {
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    #navbar {
+        width: 100%;
+        float: none;
+        text-align: center;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .experts .col-lg-2 {
+        width: 90%;
+    }
+    .campus_box .btn {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    #contact_name,
+    #contact_email,
+    .contact textarea {
+        width: 100%;
+        z-index: 10;
+        position: relative;
+        background: rgba(255, 255, 255, 0.9);
+    }
+    .video_holder video {
+        max-width: 95%;
+        padding: 0;
+    }
+    footer .pull-right {
+        float: none !important;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    footer p {
+        text-align: center;
+    }
+    .carousel-inner {
+        width: 100%;
+    }
+    .self_realization h2,
+    .wfromthew h2,
+    .experts h2,
+    .campus_box_title,
+    .contact_title,
+    .donations_content h3,
+    .healthymind h2,
+    .our_partners_title {
+        font-size: 25px;
+    }
+    i.fa.fa-caret-up {
+        right: 10px;
+    }
+}
+
+@media (max-width: 550px) {
+    .carousel-caption h1 {
+        font-size: 15px;
+    }
+    .popup2 h2 {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 440px) {
+    .carousel-caption h1 {
+        font-size: 15px;
+        height: 300px;
+        line-height: 1.6;
+        width: auto;
+    }
+    .marketing .col-lg-4,
+    .healthymind .img-wrapper {
+        width: 90%;
+    }
+}
+
+@media (max-height: 600px) {
+    .navbar-inverse .navbar-nav>li>a {
+        line-height: 3;
+    }
+
+    .myCampus_main+footer {
+        position: static;
+    }
+}
+
+@media (max-height: 400px) {
+    .navbar-inverse .navbar-nav>li>a {
+        line-height: 2;
     }
 }
