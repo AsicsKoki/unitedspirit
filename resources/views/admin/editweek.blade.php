@@ -48,10 +48,11 @@
 
                 <div class="col-sm-6">
                     <div class="form-group">
-                    {{Form::open(array('route' => 'embededVideo','method'=>'POST', 'files'=>true))}}
+                    {{Form::open(array('route' => 'embededVideo','method'=>'POST'))}}
                         <div class="admin_btn_holder">
                             <label class="upload_video_btn" for="uploaded_video">Enter a youtube video link</label>
-                            <input type="text" name="yt_video" id="uploaded_video" value="{{ $week->videos[0]->path }}">
+                            <p>It should be in this format : <i>https://www.youtube.com/<b>embed</b>/MEAr2vPV7Sw</i> </p>
+                            <input type="text" name="yt_video" id="uploaded_video" value="{{ $vid }}">
                             {{ csrf_field() }}
                             <input class="edit_btns" type="submit" value="Update" id="upload_video_submit">
                         </div>
@@ -59,10 +60,8 @@
                         <input type="hidden" name="wid" value="{{ $week->id }}">
                     {{Form::close()}}
 
-                    <iframe width="420" height="315"
-                                src="{{ $vid }}">
-                    </iframe> 
-
+                    
+                    <iframe width="560" height="315" src="{{ $vid }}" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 
                     </div>
                 </div>

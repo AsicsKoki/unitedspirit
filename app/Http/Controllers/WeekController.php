@@ -191,11 +191,20 @@ class WeekController extends Controller
     public function embededVideo(Request $request)
     {
         $week = Week::where('id', Input::get('wid'))->with('videos')->first();
+        if($week->videos->isEmpty())
+        {
         $video = new Video;
         $video->week_id = $week->id;
         $video->path = $request->yt_video;
         $video->save();
-        return redirect()->back();
+        }else{
+            $video = $week->videos->first();
+            $video->week_id = $week->id;
+            $video->path = $request->yt_video;
+            $video->save();
+        }
+        return redirect()->back();  
+
     }
 
     public function uploadAudio(Request $request)

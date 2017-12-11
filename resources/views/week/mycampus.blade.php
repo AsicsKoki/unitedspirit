@@ -11,7 +11,9 @@
                     <div class="campus_week text-center">
                         <a href="{{ route('getSpecificWeek',['wid'=> $week->id]) }}">
                             <span class="campus_week_img">
+                                @if(isset($week->images[0]->path))
                                 <img src="{{ URL::to('/') . $week->images[0]->path  }}" alt="">
+                                @endif
                             </span>
                             <span>Week {{$week->id}} : {{ $week->name }}</span>
                         </a>
