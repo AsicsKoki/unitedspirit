@@ -106,11 +106,11 @@ var $root = $('html, body');
 
 $('a[href^="#"]').click(function() {
     var href = $.attr(this, 'href');
-
+    console.log($(href).offset().top);
     $root.animate({
-        scrollTop: $(href).offset().top
+        scrollTop: $(href).offset().top - 100
     }, 500, function() {
-        window.location.hash = href;
+        window.location.hash = href - 100;
     });
 
     return false;

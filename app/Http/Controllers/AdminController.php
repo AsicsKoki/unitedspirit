@@ -9,6 +9,7 @@ use App\Video as Video;
 use App\Audio as Audio;
 use App\Image as Image;
 use App\Document as Document;
+use App\User as User;
 use App\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -18,9 +19,15 @@ use Illuminate\Support\Facades\Auth as Auth;
 
 class AdminController extends Controller
 {
-        public function getAdminChangePassword()
+    public function getAdminChangePassword()
     {
         return view('admin.auth.passwords.change');
+    }
+
+
+    public function getGenerateAccount()
+    {
+        return view('admin.generateaccount');
     }
 
     public function postAdminChangePassword(Request $request)
@@ -189,6 +196,28 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+    public function postGenerateAccount(Request $request)
+    {
+        $request->validate([
+            'first_name'            => 'required',
+            'last_name'             => 'required',
+            'email'                 => 'required',
+            'birthdate'             => 'required',
+            'phone'                 => 'required',
+            'password'              => 'required',
+            'password_confirmation' => 'required',
+        ]);
+        if (!strcmp(Input::get('password'), Input::get('password_confirmation'))){
+            $user = new User(Input::all());
+            $user->password = Hash::make(Input::get('password'));
+            $user->is_subscribed = 2;
+            $user->m_week = $request->m_week;
+            $user->save();
+            return redirect()->route('getAdminHome');
+        } else {
+            return Redirect::back()->withErrors(['error', "Password does not match!"]);
+            }
+    }
 
 
 }

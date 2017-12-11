@@ -13,6 +13,7 @@
                         <li><a href="{{ route('getEditWeeks') }}">Edit weeks</a></li>
                         <li><a href="{{ route('getEditExperts') }}">Edit experts</a></li>
                         <li><a href="{{ route('getEditPartners') }}">Edit partners</a></li>
+                        <li><a href="{{ route('getGenerateAccount') }}">Generate a subscribed account</a></li>
                     </nav>
                 </div>
             </div>
