@@ -78,28 +78,37 @@ class AdminController extends Controller
     {
         // get current time and append the upload file extension to it,
         // then put that name to $photoName variable.
+        if($request->photo)
+        {
         $photoName = time().'.'.$request->photo->getClientOriginalExtension();
+        $request->photo->move(public_path('img'), $photoName);
+        }
         /*
             talk the select file and move it public directory and make avatars
             folder if doesn't exsit then give it that unique name.
         */
         $expert = Expert::where('id', Input::get('eid'))->first();
-        $request->photo->move(public_path('img'), $photoName);
+
         if(!isset($expert->path))
         {
-        $expert->path = '/img/' . $photoName;
+            if($request->photo){
+            $expert->path = '/img/' . $photoName;
+            }
         $expert->title = $request->title;
+        $expert->role = $request->role;
         $expert->save();
         }else{
+            if($request->photo){
             $oldimage = public_path($expert->path);
             $expert->path = '/img/' . $photoName;
-            $expert->title = $request->title;
-            $expert->save();
-
             if(file_exists($oldimage))
-            {
-                unlink($oldimage);
+                {
+                    unlink($oldimage);
+                }
             }
+            $expert->title = $request->title;
+            $expert->role = $request->role;
+            $expert->save();
         }
         return redirect()->back();
     }
@@ -109,28 +118,35 @@ class AdminController extends Controller
     {
         // get current time and append the upload file extension to it,
         // then put that name to $photoName variable.
+        if($request->photo)
+        {
         $photoName = time().'.'.$request->photo->getClientOriginalExtension();
+        $request->photo->move(public_path('img'), $photoName);
+        }
         /*
             talk the select file and move it public directory and make avatars
             folder if doesn't exsit then give it that unique name.
         */
         $partner = Partner::where('id', Input::get('pid'))->first();
-        $request->photo->move(public_path('img'), $photoName);
+
         if(!isset($partner->path))
         {
-        $partner->path = '/img/' . $photoName;
+            if($request->photo){
+            $partner->path = '/img/' . $photoName;
+            }
         $partner->title = $request->title;
         $partner->save();
         }else{
+            if($request->photo){
             $oldimage = public_path($partner->path);
             $partner->path = '/img/' . $photoName;
+            if(file_exists($oldimage))
+                {
+                    unlink($oldimage);
+                }
+            }
             $partner->title = $request->title;
             $partner->save();
-
-            if(file_exists($oldimage))
-            {
-                unlink($oldimage);
-            }
         }
         return redirect()->back();
     }

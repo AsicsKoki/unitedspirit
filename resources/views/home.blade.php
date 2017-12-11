@@ -218,7 +218,8 @@
                     <div class="experts_img_holder">
                         <img src="{{ URL::to('/') . $expert->path }}" alt="">
                     </div>
-                    <h3> {{$expert->title}}</h3>
+                    <h3> {{$expert->title}} </h3>
+                    <h6> {{$expert->role}} </h6>
                 </div>
             @endforeach
                 <!-- <div class="col-lg-2">

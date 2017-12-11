@@ -303,7 +303,7 @@ header .navbar-brand img {
 }
 
 #carousel_filter {
-    background: rgba(28, 65, 88, 0.80);
+    background: rgba(20, 119, 181, 0.65);
     height: 100%;
 }
 
@@ -461,17 +461,14 @@ header .navbar-brand img {
     transition: all .2s ease;
 }
 
-.self_realization h3:hover {
-    background: rgba(255, 255, 255, 0.45);
-    color: black;
-    font-weight: bold;
-}
+
 
 .self_realization h3 a {
     color: #fff;
     display: block;
     line-height: 50px;
     font-size: 18px;
+    cursor: default;
 }
 
 
@@ -1192,7 +1189,9 @@ input.form_group.other_amount {
     right: 0;
     position: static;
     min-height: 94vh;
-    margin-top: 6vh;
+    display: block;
+    vertical-align: middle;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -1209,8 +1208,8 @@ input.form_group.other_amount {
     margin: 0 auto;
     /* height: 400px; */
     text-align: center;
-    padding-top: 15%;
     padding-bottom: 0;
+    vertical-align: middle;
 }
 
 .container1 h1 {
@@ -1218,6 +1217,7 @@ input.form_group.other_amount {
     transition-duration: 1s;
     transition-timing-function: ease-in-put;
     font-weight: 200;
+    margin-top: 100px;
 }
 
 .login_form {

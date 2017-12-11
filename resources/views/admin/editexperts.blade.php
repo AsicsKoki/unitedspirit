@@ -24,6 +24,8 @@
                     <h4>expert id : {{$expert->id}}</h4>
                     <p>Enter expert's title:</p>
                     <input type="text" value="{{$expert->title }}" name="title">
+                    <p>Enter expert's role:</p>
+                    <input type="text" value="{{$expert->role }}" name="role">
                     <input type="file" name="photo" id="uploaded_photo" value="Upload photo!" class="btn btn-default">
                     {{ csrf_field() }}
                     <div>

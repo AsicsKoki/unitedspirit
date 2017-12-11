@@ -9,5 +9,6 @@ class Expert extends Model
     protected $fillable = [
         'path',
         'title',
+        'role',
     ];
 }
