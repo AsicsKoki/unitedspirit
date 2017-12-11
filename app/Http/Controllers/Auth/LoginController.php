@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash as Hash;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Session;
+use App\Http\Controllers\UserController;
 
 class LoginController extends Controller
 {
@@ -62,6 +63,8 @@ class LoginController extends Controller
 
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
             // Authentication passed...
+       //     app('App\Http\Controllers\UserController')->subCheck();
+            app('App\Http\Controllers\UserController')->weekCheck();
             return redirect()->route('home');
         } else {
             // Auth failed...

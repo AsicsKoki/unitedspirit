@@ -51,7 +51,8 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'subscription' => \App\Http\Middleware\RedirectIfSubscribed::class,
+        'weekcheck' => \App\Http\Middleware\WeekContain::class,
+        'subscription' => \App\Http\Middleware\RedirectIfNotSubscribed::class,
         'admin' => \App\Http\Middleware\RedirectIfNotAdmin::class,
         'admin.guest' => \App\Http\Middleware\RedirectIfAdmin::class,
         'auth' => \Illuminate\Auth\Middleware\Authenticate::class,

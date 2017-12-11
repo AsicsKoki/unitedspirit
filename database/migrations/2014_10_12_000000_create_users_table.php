@@ -24,6 +24,8 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->softDeletes();
             $table->integer('phone')->unsigned()->nullable();
+            $table->integer('is_subscribed', 2)->unsigned()->default(0);
+            $table->integer('m_week',3)->unsigned()->default(0);
 
 
         });
