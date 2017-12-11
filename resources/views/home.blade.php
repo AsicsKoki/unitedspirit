@@ -82,7 +82,7 @@
                             </a>
                         </div>
                         <a href="#wfromthew">
-                            <p>Questionning who we are and the meaning we want to give to our lives getting our confidence back</p>
+                            <p>Learning from well known thinkers and philosophy of all over the world</p>
                         </a>
                         <h2><a href="#wfromthew">Wisdom from the world</a></h2>
                     </div>
@@ -94,7 +94,7 @@
                             <img src="img/healthy_mind_in_healthy_body.jpg" alt="healthy mind in healthy body">
                         </div>
                         <a href="#healthymind">
-                            <p>Questionning who we are and the meaning we want to give to our lives getting our confidence back</p>
+                            <p>Taking care of the intellect and the body</p>
                         </a>
                         <h2><a href="#healthymind">Healthy mind in a healthy body</a></h2>
                     </div>
@@ -256,7 +256,7 @@
         <h3 class="text-center">Make a donation</h3>
 
         <button class="btn btn-default center-block main_donation_btn" data-js="open">donate</button>
-
+    
     </div>
 
     <div class="half_logo_right">
@@ -290,9 +290,7 @@
 
 
 
-    <!-- stripe forma -->
 
-    <script src='https://js.stripe.com/v2/' type='text/javascript'></script>
 
     <!-- /stripe forma -->
 
@@ -353,7 +351,7 @@
     </div>
 
 </div>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
 $form = $('form.require-validation');
 //validation
@@ -409,7 +407,7 @@ $form.on('submit', function(e) {
     }
 }
 
-</script>
+</script> -->
 
 
 
