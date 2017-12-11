@@ -188,6 +188,16 @@ class WeekController extends Controller
         return redirect()->back();
     }
 
+    public function embededVideo(Request $request)
+    {
+        $week = Week::where('id', Input::get('wid'))->with('videos')->first();
+        $video = new Video;
+        $video->week_id = $week->id;
+        $video->path = $request->yt_video;
+        $video->save();
+        return redirect()->back();
+    }
+
     public function uploadAudio(Request $request)
     {
         // get current time and append the upload file extension to it,

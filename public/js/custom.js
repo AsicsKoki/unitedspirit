@@ -64,6 +64,10 @@ $(document).ready(function() {
         $('#hidden_input_val').val('200');
         $('.amount').text('200€');
     });
+
+    $('.self_realization h3 a').click(function(e) {
+        e.preventDefault();
+    });
 });
 
 

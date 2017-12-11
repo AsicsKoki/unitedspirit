@@ -67,7 +67,7 @@
 	    <div class="container1">
 		    <h1>Welcome to United Spirit</h1>
             <h2>Please Login</h2>
-		<form class="login_form"  method="POST" action="{{ route('postUserLogin') }}">
+		<form class="login_form cf"  method="POST" action="{{ route('postUserLogin') }}">
          {{ csrf_field() }}
          <div class="col-sm-12">
 			<input type="email" placeholder="e-mail" name="email" value="{{ old('email') }}" required autofocus>

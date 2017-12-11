@@ -120,6 +120,7 @@ Route::post('/uploadImage', 'WeekController@uploadImage')->name('uploadImage');
 Route::post('/uploadVideo', 'WeekController@uploadVideo')->name('uploadVideo');
 Route::post('/uploadAudio', 'WeekController@uploadAudio')->name('uploadAudio');
 Route::post('/uploadDocument', 'WeekController@uploadDocument')->name('uploadDocument');
+Route::post('/embededVideo', 'WeekController@embededVideo')->name('embededVideo');
 
 Route::get('/getDocument/{wid}', 'WeekController@getDocument')->name('getDocument');
 

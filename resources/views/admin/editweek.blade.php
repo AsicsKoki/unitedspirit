@@ -23,7 +23,7 @@
                 </div>
                  <input type="submit" value="Submit text edits" id="text_submit">
             </form>
-                <div class="col-sm-6">
+                <!-- <div class="col-sm-6">
                     <div class="form-group">
                     {{Form::open(array('route' => 'uploadVideo','method'=>'POST', 'files'=>true))}}
                         <div class="admin_btn_holder">
@@ -44,7 +44,29 @@
                         Your browser does not support the video tag.
                     </video>
                     </div>
+                </div> -->
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                    {{Form::open(array('route' => 'embededVideo','method'=>'POST', 'files'=>true))}}
+                        <div class="admin_btn_holder">
+                            <label class="upload_video_btn" for="uploaded_video">Enter a youtube video link</label>
+                            <input type="text" name="yt_video" id="uploaded_video" value="{{ $week->videos[0]->path }}">
+                            {{ csrf_field() }}
+                            <input class="edit_btns" type="submit" value="Update" id="upload_video_submit">
+                        </div>
+                         
+                        <input type="hidden" name="wid" value="{{ $week->id }}">
+                    {{Form::close()}}
+
+                    <iframe width="420" height="315"
+                                src="{{ $vid }}">
+                    </iframe> 
+
+
+                    </div>
                 </div>
+
                 <div class="col-sm-6">
                     <div class="form-group">
                     {{Form::open(array('route' => 'uploadAudio','method'=>'POST', 'files'=>true))}}

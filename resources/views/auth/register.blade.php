@@ -6,7 +6,7 @@
 	    <div class="container1">
 		    <h1>Welcome to United Spirit</h1>
             <h2>Please Register</h2>
-		<form class="login_form"  method="POST" action="{{ route('postUserRegister') }}">
+		<form class="login_form cf"  method="POST" action="{{ route('postUserRegister') }}">
          {{ csrf_field() }}
          <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
          <label for="first_name" class="col-md-4 control-label">First Name</label>
