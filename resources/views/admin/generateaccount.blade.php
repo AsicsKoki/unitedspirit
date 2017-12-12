@@ -1,12 +1,8 @@
-@extends('layouts.master')
-
+@extends('admin.layout.auth')
 
 @section('content')
-<div class="wrapper1">
-	    <div class="container1">
-		    <h1>Welcome to United Spirit</h1>
-            <h2>Please Register</h2>
-		<form class="login_form cf"  method="POST" action="{{ route('postUserRegister') }}">
+
+<form class="login_form cf"  method="POST" action="{{ route('postGenerateAccount') }}">
          {{ csrf_field() }}
          <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
          <label for="first_name" class="col-md-4 control-label">First Name</label>
@@ -93,11 +89,27 @@
          </div>
      </div>
 
+
+
      <div class="form-group">
          <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
 
          <div class="col-md-6">
              <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+         </div>
+     </div>
+
+    <div class="form-group{{ $errors->has('m_week') ? ' has-error' : '' }}">
+         <label for="mweek" class="col-md-4 control-label">Number of weeks:</label>
+
+         <div class="col-md-6">
+             <input id="mweek" type="text" class="form-control" name="m_week" required>
+
+             @if ($errors->has('m_week'))
+                 <span class="help-block">
+                     <strong>{{ $errors->first('m_week') }}</strong>
+                 </span>
+             @endif
          </div>
      </div>
 
@@ -110,20 +122,6 @@
          </div>
      </div>
         </form>
-    
-	    </div>
-	
-	<ul class="bg-bubbles">
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-	</ul>
-    </div>
+
+
 @endsection

@@ -48,6 +48,9 @@ Route::get('/adminHome', 'AdminAuth\LoginController@getAdminHome')->name('getAdm
  Route::get('/editPartners', 'AdminController@getEditPartners')->name('getEditPartners');
  Route::get('/editWeeks', 'AdminController@getEditWeeks')->name('getEditWeeks');
  Route::get('/editWeek/{wid}', 'AdminController@getEditWeek')->name('getEditWeek');
+ Route::get('/generateAccount', 'AdminController@getGenerateAccount')->name('getGenerateAccount');
+
+Route::post('/postGenerateAccount', 'AdminController@postGenerateAccount')->name('postGenerateAccount');
 
 Route::post('/expertEdit', 'AdminController@expertEdit')->name('expertEdit');
 Route::post('/partnerEdit', 'AdminController@partnerEdit')->name('partnerEdit');
@@ -120,12 +123,12 @@ Route::post('/uploadImage', 'WeekController@uploadImage')->name('uploadImage');
 Route::post('/uploadVideo', 'WeekController@uploadVideo')->name('uploadVideo');
 Route::post('/uploadAudio', 'WeekController@uploadAudio')->name('uploadAudio');
 Route::post('/uploadDocument', 'WeekController@uploadDocument')->name('uploadDocument');
+Route::post('/embededVideo', 'WeekController@embededVideo')->name('embededVideo');
 
 Route::get('/getDocument/{wid}', 'WeekController@getDocument')->name('getDocument');
 
 Route::get('/subscribe', 'UserController@subscribe')->name('postSubscribe');
 Route::get('/subCheck', 'UserController@subCheck')->name('subCheck');
-
 
 
 

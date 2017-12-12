@@ -17,6 +17,7 @@
 .card-img-top {
     width: 100%;
 }
+
 </style>
      <!-- Page Content -->
      <div class="container">
@@ -87,7 +88,7 @@
       <!-- /.row -->
         <!-- stripe form payment -->
 
-         <form accept-charset="UTF-8" action="/" class="require-validation"
+         <!-- <form accept-charset="UTF-8" action="/" class="require-validation"
                     data-cc-on-file="false"
                     data-stripe-publishable-key="pk_live_cNAAgOnhvXmvXrmFUTt6PPAM"
                     id="payment-form" method="post">
@@ -142,8 +143,28 @@
                                 again.</div>
                         </div>
                     </div>
+                </form> --> 
+
+    <!-- The needed JS files -->
+    <!-- Stripe JS -->
+
+    <!-- Your JS File -->
+   
+
+                <form action="charge.php" method="post" id="payment-form">
+                    <div class="form-row">
+                        <label for="card-element">Credit or debit card</label>
+                        <div id="card-element">
+                        <!-- a Stripe Element will be inserted here. -->
+                        </div>
+                        <!-- Used to display form errors -->
+                        <div id="card-errors"></div>
+                    </div>
+                    <button>Submit Payment</button>
                 </form>
     </div>
     <!-- /.container -->
+
+
 
 @endsection

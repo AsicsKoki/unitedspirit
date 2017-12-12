@@ -13,12 +13,13 @@
                 </div>
                 <div class="col-sm-6 col-sm-offset-3 video_holder">
                     <!-- <video controls class="embed-responsive-item center-block" src="{{ URL::to('/') . $vid }}" type="video/mp4"></video> -->
-                      <video class="embed-responsive-item center-block" controls>
+                      <!-- <video class="embed-responsive-item center-block" controls>
                         <source src="{{ URL::to('/') . $vid }}" type="video/mp4">
                         <source src="{{ URL::to('/') . $vid }}" type="video/ogg">
                         <source src="{{ URL::to('/') . $vid }}" type="video/webm">
                         Your browser does not support the video tag.
-                    </video>
+                    </video> -->
+                    <iframe width="560" height="315" src="{{ $vid }}" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
                 </div>
                 <div class="col-sm-12">
                     <div class="audio-player text-center row">

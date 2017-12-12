@@ -258,10 +258,13 @@ header .navbar-brand img {
     height: 100%;
     z-index: 10;
     padding: 0;
+    width: 100%;
 }
 
 .carousel-inner .container {
     height: 100%;
+    width: 100%;
+    padding: 0;
 }
 
 .carousel-caption h1 {
@@ -273,6 +276,8 @@ header .navbar-brand img {
     font-size: 30px;
     display: table-cell;
     vertical-align: middle;
+    text-align: center;
+    width: 100%;
 }
 
 .carousel-indicators li {
@@ -298,18 +303,18 @@ header .navbar-brand img {
     background: url('../img/Campus_home.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 0 62%;
+    background-position: center center;
     margin-top: 75px;
 }
 
 #carousel_filter {
-    background: rgba(20, 119, 181, 0.65);
+    background: transparent;
     height: 100%;
 }
 
 .carousel-inner {
     position: relative;
-    width: 1150px;
+    width: 100%;
     overflow: hidden;
     margin: auto;
     height: 100%;
