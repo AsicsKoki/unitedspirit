@@ -42,11 +42,12 @@ class UserController extends Controller
         }
     }
     
+    //treba menjati duration u zavisnosti od subskripcije
     public function subscribe()
     {
      //   return $user->weeks->last()->id;
         $sub = new Subscription();
-        $sub->duration = 7; //ovo menjati
+        $sub->duration = 30; //ovo menjati
         $sub->save();
         $dur = $sub->duration;
         $user = Auth::user();
@@ -76,67 +77,83 @@ class UserController extends Controller
 
     public function subCheck()
     { 
-        $user = Auth::user()->with('subscriptions')->first();
-       
-        $user->subscriptions[0]->pivot->touch();
-       // return $user->subscriptions->first()->pivot;
-
-        $currdate = $user->subscriptions[0]->pivot->updated_at;
-        $startdate = $user->subscriptions[0]->pivot->created_at;
-        $eqdate = $currdate->diffInDays($startdate);
-      //  return $eqdate;
-
-        $wid = 0;
-
-      //  return $user->subscriptions[0];
-        $dur = $user->subscriptions[0]->duration;
-
-        if($eqdate>$dur)
+        $user = User::where('id', Auth::user()->id)->with('subscriptions')->first();
+     
+        if($user->subscriptions->first())
         {
-            $user->subscriptions[0]->delete();
-            $user->is_subscribed = 1;  // subscription expired
-            $user->save();
+            $user->subscriptions->first()->pivot->touch();
+
+            //  return $user->subscriptions[0]->pivot;
+            // return $user->subscriptions->first()->pivot;
+
+            $currdate = $user->subscriptions[0]->pivot->updated_at;
+            $startdate = $user->subscriptions[0]->pivot->created_at;
+            $eqdate = $currdate->diffInDays($startdate);
+            //return $eqdate;
+
+            $wid = 0;
+
+        //  return $user->subscriptions[0];
+            $dur = $user->subscriptions[0]->duration;
+
+            if($eqdate>$dur)
+            {
+                $user->last_s_start = $user->subscriptions[0]->pivot->created_at;
+                $user->last_s_exp = $startdate->addDays($dur);
+                $user->subscriptions[0]->delete();
+                $user->subscriptions[0]->pivot->delete();
+                $user->is_subscribed = 1;  // subscription expired
+                $user->save();
+            }
         }
     }
 
     public function weekCheck()
     {
-        $user = Auth::user()->with('subscriptions')->first();
-        // if last week, check is'nt needed
-        $wid = $user->weeks->last()->id;
-        if($wid==52)
+        $user = User::where('id', Auth::user()->id)->with('subscriptions')->first();
+
+        
+        if($user->weeks->last())
         {
-            return;
-        }
-
-        $startdate = $user->subscriptions[0]->pivot->created_at;
-        $pnow = $user->subscriptions[0]->pivot->updated_at;
-        $week_check = $startdate->addDays(7);
-
-        $dur = $user->subscriptions[0]->duration;
-        $exp_sub = $startdate->addDays($dur);
-
-        $now = Carbon::now();
-        $user_w = User::with('weeks')->where('id',  Auth::user()->id)->first();
-
-        $wid++;
-        if($user->is_subscribed == 2 && $wid<=$user->m_week)
-        {
-            while($week_check<=$pnow && $wid<53 && $wid<=$user->m_week)
+            // if last week, check is'nt needed
+            $wid = $user->weeks->last()->id;
+            if($wid==52)
             {
-                $week = Week::where('id',$wid)->get();
-                $user->weeks()->attach($week);
-                $week_check->addDays(7);
-                $wid++;
+                return;
             }
-        }elseif($user->is_subscribed == 1 && $wid<=$user->m_week)
-        {
-            while($week_check<=$exp_sub && $wid<53 && $wid<=$user->m_week)
+
+         // return  $eqdate = $pnow->diffInDays($startdate);
+
+
+            // $now = Carbon::now();
+            // $user_w = User::with('weeks')->where('id',  Auth::user()->id)->first();
+
+            $wid++;
+           // return $wid;
+            if($user->is_subscribed == 2 && $wid<=$user->m_week)
             {
-                $week = Week::where('id',$wid)->get();
-                $user->weeks()->attach($week);
-                $week_check->addDays(7);
-                $wid++;
+                $startdate = Carbon::parse($user->subscriptions[0]->pivot->created_at);
+                $pnow = Carbon::parse($user->subscriptions[0]->pivot->updated_at);
+                $week_check = $startdate->addDays(7);
+                    while($pnow>=$week_check && $wid<53 && $wid<=$user->m_week)
+                    {
+                        $week = Week::where('id',$wid)->get();
+                        $user->weeks()->attach($week);
+                        $week_check->addDays(7);
+                        $wid++;
+                    }
+            }elseif($user->is_subscribed == 1 && $wid<=$user->m_week)
+            {
+                $week_check = $user->last_s_start;
+                $week_check = Carbon::parse($week_check)->addDays(7);
+                $exp_sub = Carbon::parse($user->last_s_exp);
+                while($week_check<=$exp_sub && $wid<53 && $wid<=$user->m_week)
+                {
+                    $week = Week::where('id',$wid)->get();
+                    $user->weeks()->attach($week);
+                    $week_check->addDays(7);
+                    $wid++;
+                }
             }
         }
 

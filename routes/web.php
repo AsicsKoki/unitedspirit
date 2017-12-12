@@ -132,6 +132,7 @@ Route::get('/getDocument/{wid}', 'WeekController@getDocument')->name('getDocumen
 
 Route::get('/subscribe', 'UserController@subscribe')->name('postSubscribe');
 Route::get('/subCheck', 'UserController@subCheck')->name('subCheck');
+Route::get('/weekCheck', 'UserController@weekCheck')->name('weekCheck');
 
 
 
