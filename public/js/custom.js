@@ -27,7 +27,7 @@ $(document).ready(function() {
 
     // donations buttons pop form
     $('.donation_btn').click(function() {
-        $('.require-validation').css('display', 'block');
+        $('#payment-form').css('display', 'block');
         var amount = $(this).text();
         $('.amount').text(amount);
     });
@@ -39,30 +39,30 @@ $(document).ready(function() {
 
 
     $('#sub_20').click(function() {
-        $('.require-validation').css('display', 'block');
-        var amount = $(this).text();
-        $('#hidden_input_val').val('20');
-        $('.amount').text('20€');
+        $('#payment-form').css('display', 'block');
+        $('.sub_amount').text('20€');
+        $('#plan').text('monthly');
+        $('#planName').val('monthly');
     });
     $('#sub_55').click(function() {
-        $('.require-validation').css('display', 'block');
-        var amount = $(this).text();
-        $('#hidden_input_val').val('55');
-        $('.amount').text('55€');
+        $('#payment-form').css('display', 'block');
+        $('.sub_amount').text('55€');
+        $('#plan').text('13 weeks');
+        $('#planName').val('13 weeks');
     });
 
     $('#sub_100').click(function() {
-        $('.require-validation').css('display', 'block');
-        var amount = $(this).text();
-        $('#hidden_input_val').val('100');
-        $('.amount').text('100€');
+        $('#payment-form').css('display', 'block');
+        $('.sub_amount').text('100€');
+        $('#plan').text('26 weeks');
+        $('#planName').val('26 weeks');
     });
 
     $('#sub_200').click(function() {
-        $('.require-validation').css('display', 'block');
-        var amount = $(this).text();
-        $('#hidden_input_val').val('200');
-        $('.amount').text('200€');
+        $('#payment-form').css('display', 'block');
+        $('.sub_amount').text('200€');
+        $('#plan').text('52 weeks');
+        $('#planName').val('52 weeks');
     });
 
     $('.self_realization h3 a').click(function(e) {

@@ -17,6 +17,21 @@
 .card-img-top {
     width: 100%;
 }
+#payment-form {
+    background: #eeeeee54;
+    padding: 30px;
+    display: none;
+}
+
+#payment-form label {
+    padding: 10px;
+}
+#card-element {
+    border: solid 2px #eee;
+    border-radius: 330px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
 
 </style>
      <!-- Page Content -->
@@ -83,85 +98,74 @@
             </div>
           </div>
         </div>
-
-      </div>
-      <!-- /.row -->
-        <!-- stripe form payment -->
-
-         <!-- <form accept-charset="UTF-8" action="/" class="require-validation"
-                    data-cc-on-file="false"
-                    data-stripe-publishable-key="pk_live_cNAAgOnhvXmvXrmFUTt6PPAM"
-                    id="payment-form" method="post">
-                    {{ csrf_field() }}
-                    <input type="hidden" name="hiddenammount" value="" id="hidden_input_val">
-                    <div class='form-row'>
-                        <div class='col-xs-12 form-group required'>
-                            <label class='control-label'>Name on Card</label> <input
-                                class='form-control' size='4' type='text'>
-                        </div>
+      </div>   
+        <form action="charge.php" method="post" id="payment-form">
+                <div class="form-row">
+                 <div class="row">
+                    <div class="col-md-6">
+                      <label> First Name </label>
+                      <input type="text" class="form-control" name="name" placeholder="First name" required>
                     </div>
-                    <div class='form-row'>
-                        <div class='col-xs-12 form-group card required'>
-                            <label class='control-label'>Card Number</label> <input
-                                autocomplete='off' class='form-control card-number' size='20'
-                                type='text'>
-                        </div>
+                    <div class="col-md-6">
+                     <label> Last Name </label>
+                     <input type="text" class="form-control" name="lastName" placeholder="Last name" required>
                     </div>
-                    <div class='form-row'>
-                        <div class='col-xs-4 form-group cvc required'>
-                            <label class='control-label'>CVC</label> <input autocomplete='off'
-                                class='form-control card-cvc' placeholder='ex. 311' size='4'
-                                type='text'>
-                        </div>
-                        <div class='col-xs-4 form-group expiration required'>
-                            <label class='control-label'>Expiration</label> <input
-                                class='form-control card-expiry-month' placeholder='MM' size='2'
-                                type='text'>
-                        </div>
-                        <div class='col-xs-4 form-group expiration required'>
-                            <label class='control-label'> </label> <input
-                                class='form-control card-expiry-year' placeholder='YYYY' size='4'
-                                type='text'>
-                        </div>
+                    <div class="col-md-12">
+                     <label> Your E-mail </label>
+                     <input type="e-mail" class="form-control" name="email" placeholder="Adresse email" required >
                     </div>
-                    <div class='form-row'>
-                        <div class='col-md-12'>
-                            <div class='form-control total btn btn-info'>
-                                Total: <span class='amount'>$300</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='form-row'>
-                        <div class='col-md-12 form-group'>
-                            <button class='form-control btn btn-primary submit-button'
-                                type='submit' style="margin-top: 10px;">Pay »</button>
-                        </div>
-                    </div>
-                    <div class='form-row'>
-                        <div class='col-md-12 error form-group hide'>
-                            <div class='alert-danger alert'>Please correct the errors and try
-                                again.</div>
-                        </div>
-                    </div>
-                </form> --> 
-
-    <!-- The needed JS files -->
-    <!-- Stripe JS -->
-
-    <!-- Your JS File -->
-   
-
-                <form action="charge.php" method="post" id="payment-form">
-                    <div class="form-row">
+                 </div>
+                </div>
+                <div class="row">
+                <div class="form-group col-md-6">
+                 <label for="inputCity">Ville</label>
+                    <input type="text" class="form-control" name="city" id="inputCity" placeholder="Ville">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputState">State</label>
+                    <select id="inputState" class="form-control">
+                        <option selected>France</option>
+                        <option>...</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputZip">Zip</label>
+                    <input type="text" class="form-control" id="inputZip" placeholder="Code Postal">
+                </div>
+                </div>
+                <div class="row">
+                <div class="form-group col-md-4">
+                    <label for="statenum">Numero de estat</label>
+                    <select id="statenum" class="form-control">
+                        <option selected>France(+33)</option>
+                        <option>...</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-8">
+                <label for="statenum">Numero de telephone</label>
+                    <input type="text" class="form-control" id="telnum" placeholder="Numero de telephone" >
+                </div>
+                <div class="col-md-12">
+                     <label> Adrese Postale </label>
+                     <input type="text" class="form-control" placeholder="Adresse postale" >
+                 </div>
+                </div>
+                <div class="form-row">
                         <label for="card-element">Credit or debit card</label>
                         <div id="card-element">
                         <!-- a Stripe Element will be inserted here. -->
                         </div>
                         <!-- Used to display form errors -->
                         <div id="card-errors"></div>
-                    </div>
-                    <button>Submit Payment</button>
-                </form>
+                 </div>
+            <div class="col-md-12">
+                <label class="text-center">Total amount to pay: <span class="sub_amount"></span>, your selected plan is : <span id="plan"></span></label>
+                <input type="hidden" value="" name="hidden_plan" id="planName">
+            </div>
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary center-block">Submit Payment</button>
+            </div>
+        </form>
     </div>
     <!-- /.container -->
 
