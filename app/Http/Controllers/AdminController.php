@@ -10,6 +10,7 @@ use App\Audio as Audio;
 use App\Image as Image;
 use App\Document as Document;
 use App\User as User;
+use App\SubscriptionType as SubscriptionType;
 use App\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -28,6 +29,12 @@ class AdminController extends Controller
     public function getGenerateAccount()
     {
         return view('admin.generateaccount');
+    }
+
+    public function getEditSubscriptions()
+    {
+        $sub_t = SubscriptionType::all();
+        return view('admin.editsubscriptions',['subscription_types' => $sub_t]);
     }
 
     public function postAdminChangePassword(Request $request)
@@ -217,6 +224,16 @@ class AdminController extends Controller
         } else {
             return Redirect::back()->withErrors(['error', "Password does not match!"]);
             }
+    }
+    
+    public function postEditSubscriptions(Request $request)
+    {
+        $sub_t=SubscriptionType::where('id', Input::get('sub_id'))->first();
+        //return $sub_t;
+        $sub_t->name = $request->sub_name;
+        $sub_t->price = $request->sub_price;
+        $sub_t->save();
+        return redirect()->back();
     }
 
 

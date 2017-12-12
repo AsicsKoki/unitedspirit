@@ -15,8 +15,8 @@ class CreateAdminsWeeksTable extends Migration
     {
         Schema::create('admin_week', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('admin_id');
-            $table->integer('week_id');
+            $table->integer('admin_id')->onDelete('cascade');
+            $table->integer('week_id')->onDelete('cascade');
             $table->timestamps();
         });
     }
