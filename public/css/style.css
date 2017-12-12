@@ -49,6 +49,7 @@ a:hover {
     border: none;
 }
 
+
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
@@ -465,8 +466,6 @@ header .navbar-brand img {
     -o-transition: all .2s ease;
     transition: all .2s ease;
 }
-
-
 
 .self_realization h3 a {
     color: #fff;
@@ -887,12 +886,13 @@ span.campus_week_img {
     overflow: hidden;
 }
 
-.myCampus_main+footer {
+
+/* .myCampus_main+footer {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-}
+} */
 
 .myCampus_main .campus_week a {
     display: block;
@@ -1480,16 +1480,15 @@ input.form_group.other_amount {
     .experts .col-lg-2 {
         width: 35%;
     }
-
     .myCampus_main h1 {
         font-size: 30px;
     }
-
-    .jumbotron .h1, .jumbotron h1 {
+    .jumbotron .h1,
+    .jumbotron h1 {
         font-size: 40px;
     }
-
-    .container .jumbotron, .container-fluid .jumbotron {
+    .container .jumbotron,
+    .container-fluid .jumbotron {
         margin-top: 100px;
     }
 }
@@ -1576,7 +1575,6 @@ input.form_group.other_amount {
     .navbar-inverse .navbar-nav>li>a {
         line-height: 3;
     }
-
     .myCampus_main+footer {
         position: static;
     }
