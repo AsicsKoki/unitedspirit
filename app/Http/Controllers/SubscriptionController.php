@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Subscription;
 use Illuminate\Http\Request;
+use App\SubscriptionType as SubscriptionType;
 
 class SubscriptionController extends Controller
 {
@@ -85,6 +86,7 @@ class SubscriptionController extends Controller
 
     public function getSubcriptions()
     {
-        return view('subscription');
+        $sub_t = SubscriptionType::all();
+        return view('subscription',['subscription_types' => $sub_t]);
     }
 }

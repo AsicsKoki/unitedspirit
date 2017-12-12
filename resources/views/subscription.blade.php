@@ -36,7 +36,7 @@
           <div class="card_holder">
             <img class="card-img-top" src="http://placehold.it/500x325" alt="">
             <div class="card-body">
-              <h4 class="card-title">20€/month</h4>
+              <h4 class="card-title">{{ $subscription_types[0]->price }}€/{{ $subscription_types[0]->name }}</h4>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
             </div>
             <div class="card-footer">
@@ -49,7 +49,7 @@
           <div class="card_holder">
             <img class="card-img-top" src="http://placehold.it/500x325" alt="">
             <div class="card-body">
-              <h4 class="card-title">55€/13 weeks</h4>
+              <h4 class="card-title">{{ $subscription_types[1]->price }}€/{{ $subscription_types[1]->name }}</h4>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
             </div>
             <div class="card-footer">
@@ -62,7 +62,7 @@
           <div class="card_holder">
             <img class="card-img-top" src="http://placehold.it/500x325" alt="">
             <div class="card-body">
-              <h4 class="card-title">100€/26 weeks</h4>
+              <h4 class="card-title">{{ $subscription_types[2]->price }}€/{{ $subscription_types[2]->name }}</h4>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
             </div>
             <div class="card-footer">
@@ -75,7 +75,7 @@
           <div class="card_holder">
             <img class="card-img-top" src="http://placehold.it/500x325" alt="">
             <div class="card-body">
-              <h4 class="card-title">200€/52 weeks</h4>
+              <h4 class="card-title">{{ $subscription_types[3]->price }}€/{{ $subscription_types[3]->name }}</h4>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
             </div>
             <div class="card-footer">

@@ -49,8 +49,11 @@ Route::get('/adminHome', 'AdminAuth\LoginController@getAdminHome')->name('getAdm
  Route::get('/editWeeks', 'AdminController@getEditWeeks')->name('getEditWeeks');
  Route::get('/editWeek/{wid}', 'AdminController@getEditWeek')->name('getEditWeek');
  Route::get('/generateAccount', 'AdminController@getGenerateAccount')->name('getGenerateAccount');
+ Route::get('/editSubscriptions', 'AdminController@getEditSubscriptions')->name('getEditSubscriptions');
 
 Route::post('/postGenerateAccount', 'AdminController@postGenerateAccount')->name('postGenerateAccount');
+Route::post('/postEditSubscriptions', 'AdminController@postEditSubscriptions')->name('postEditSubscriptions');
+
 
 Route::post('/expertEdit', 'AdminController@expertEdit')->name('expertEdit');
 Route::post('/partnerEdit', 'AdminController@partnerEdit')->name('partnerEdit');

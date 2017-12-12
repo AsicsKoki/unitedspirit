@@ -15,8 +15,8 @@ class CreateUsersWeeksTable extends Migration
     {
         Schema::create('user_week', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
-            $table->integer('week_id');
+            $table->integer('user_id')->onDelete('cascade');
+            $table->integer('week_id')->onDelete('cascade');
             $table->timestamps();
         });
     }
