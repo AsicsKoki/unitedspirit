@@ -4,10 +4,17 @@ require_once('../vendor/autoload.php');
 \Stripe\Stripe::setApiKey('sk_test_sQWHOV4aMUS3Y3kO321JlF1i');
 // Get the token from the JS script
 $token = $_POST['stripeToken'];
+// user info
+$plan = $_POST['hidden_plan'];
+$name = $_POST['name'];
+$lastName = $_POST['lastName'];
+$email = $_POST['email'];
+$city = $_POST['city'];
 // Create a Customer
 $customer = \Stripe\Customer::create(array(
-    "email" => "paying.user@example.com",
+    "email" => $email,
     "source" => $token,
+    'metadata' => array("name" => $name, "last_name" => $lastName, "city" => $city)
 ));
 // or you can fetch customer id from the database too.
 // Creates a subscription plan. This can also be done through the Stripe dashboard.
@@ -20,8 +27,10 @@ $customer = \Stripe\Customer::create(array(
 //     "id" => "52 weeks"
 // ));
 // Subscribe the customer to the plan
+
 $subscription = \Stripe\Subscription::create(array(
     "customer" => $customer->id,
-    "plan" => "52 weeks"
+    "plan" => $plan,
+    'metadata' => array("name" => $name, "last_name" => $lastName, "city" => $city)
 ));
 print_r($subscription);
