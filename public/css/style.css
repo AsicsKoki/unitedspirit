@@ -281,6 +281,12 @@ header .navbar-brand img {
     width: 100%;
 }
 
+.carousel-caption h1 span {
+    display: block;
+    font-size: 26px;
+    font-weight: 400;
+}
+
 .carousel-indicators li {
     display: inline-block;
     width: 10px;
@@ -371,9 +377,10 @@ header .navbar-brand img {
 }
 
 .marketing h2 a {
-    line-height: 60px;
+    line-height: 45px;
     display: block;
     color: #fff;
+    font-size: 18px;
 }
 
 .overlay_div {
@@ -396,7 +403,7 @@ header .navbar-brand img {
     font-size: 18px;
     left: 0px;
     right: 0;
-    bottom: 60px;
+    bottom: 45px;
     width: 100%;
     text-align: center;
     margin: auto;
@@ -415,8 +422,9 @@ header .navbar-brand img {
 
 .marketing .col-lg-4 img {
     width: 100%;
-    height: auto: ;
+    height: auto ;
 }
+
 
 
 /* SELF REALIZATION 
@@ -1480,6 +1488,11 @@ input.form_group.other_amount {
     .experts .col-lg-2 {
         width: 35%;
     }
+
+    .carousel-caption h1 span {
+        font-size: 17px;
+    }
+
     .myCampus_main h1 {
         font-size: 30px;
     }
@@ -1555,6 +1568,9 @@ input.form_group.other_amount {
     }
     .popup2 h2 {
         font-size: 15px;
+    }
+    .carousel-caption h1 span {
+        font-size: 13px;
     }
 }
 

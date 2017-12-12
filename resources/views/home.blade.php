@@ -17,7 +17,7 @@
                     <!-- <img class="first-slide" src="img/Campus_home.jpg" alt="First slide"> -->
                     <div class="container">
                         <div class="carousel-caption cf">
-                            <h1>the innovative school of self realiztion</br>a non profit project to change ourselves</br> and change the world.</h1>
+                            <h1>the innovative school of self realiztion<span>a non profit project to change ourselves</br> and change the world.</span></h1>
                         </div>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
                     <!-- <img class="second-slide" src="img/Campus_home.jpg" alt="Second slide"> -->
                     <div class="container">
                         <div class="carousel-caption cf">
-                            <h1>the innovative school of self realiztion</br>a non profit project to change ourselves</br> and change the world.</h1>
+                            <h1>the innovative school of self realiztion<span>a non profit project to change ourselves</br> and change the world.</span></h1>
                         </div>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                     <!-- <img class="third-slide" src="img/Campus_home.jpg" alt="Third slide"> -->
                     <div class="container">
                         <div class="carousel-caption cf">
-                            <h1>the innovative school of self realiztion</br>a non profit project to change ourselves</br> and change the world.</h1>
+                            <h1>the innovative school of self realiztion<span>a non profit project to change ourselves</br> and change the world.</span></h1>
                         </div>
                     </div>
                 </div>
