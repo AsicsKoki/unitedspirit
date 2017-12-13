@@ -102,16 +102,10 @@ function popupOpenClose(popup) {
 };
 
 // smooth scroll 
-var $root = $('html, body');
-
 $('a[href^="#"]').click(function() {
-    var href = $.attr(this, 'href');
-    console.log($(href).offset().top);
-    $root.animate({
-        scrollTop: $(href).offset().top - 100
-    }, 500, function() {
-        window.location.hash = href - 100;
-    });
-
+    var target = $(this.hash);
+    if (target.length == 0) target = $('a[href="' + this.hash.substr(1) + '"]');
+    if (target.length == 0) target = $('html');
+    $('html, body').animate({ scrollTop: target.offset().top - 70 }, 700);
     return false;
 });

@@ -1,7 +1,14 @@
 @extends('layouts.master')
 
 @section('content')
+<style>
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+  .col-sm-3 {
+    margin: 3%;
+  }
+}
 
+</style>
 <div class="container myCampus_main">
             <h1 class="text-center">My Campus Box</h1>
             <hr>

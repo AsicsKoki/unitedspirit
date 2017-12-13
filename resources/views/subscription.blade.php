@@ -18,9 +18,11 @@
     width: 100%;
 }
 #payment-form {
-    background: #eeeeee54;
-    padding: 30px;
-    display: none;
+  background: #eeeeee54;
+  padding: 30px;
+  display: none;
+  padding-bottom: 90px;
+  margin-bottom: 15px;
 }
 
 #payment-form label {
@@ -32,7 +34,6 @@
     padding: 5px;
     margin-bottom: 10px;
 }
-
 </style>
      <!-- Page Content -->
      <div class="container">
@@ -55,7 +56,7 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
             </div>
             <div class="card-footer">
-              <button class="btn btn-primary subscriptions_btn" id="sub_20">Subscribe</button>
+            <a href="#payment-form"><button class="btn btn-primary subscriptions_btn" id="sub_20">Subscribe</button></a>
             </div>
           </div>
         </div>
@@ -68,7 +69,7 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
             </div>
             <div class="card-footer">
-              <button class="btn btn-primary subscriptions_btn" id="sub_55">Subscribe</button>
+            <a href="#payment-form"><button class="btn btn-primary subscriptions_btn" id="sub_55">Subscribe</button></a>
             </div>
           </div>
         </div>
@@ -81,7 +82,7 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
             </div>
             <div class="card-footer">
-              <button class="btn btn-primary subscriptions_btn" id="sub_100">Subscribe</button>
+            <a href="#payment-form"><button class="btn btn-primary subscriptions_btn" id="sub_100">Subscribe</button></a>
             </div>
           </div>
         </div>
@@ -94,7 +95,7 @@
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
             </div>
             <div class="card-footer">
-              <button class="btn btn-primary subscriptions_btn" id="sub_200">Subscribe</button>
+            <a href="#payment-form"><button class="btn btn-primary subscriptions_btn" id="sub_200">Subscribe</button></a>
             </div>
           </div>
         </div>
@@ -168,7 +169,4 @@
         </form>
     </div>
     <!-- /.container -->
-
-
-
 @endsection

@@ -17,17 +17,19 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                     
-                        <li class="active"><a href="{{ URL::to('/') }}">Home</a></li>
+                        <li class="{{ Request::is('home') ? 'active' : '' }}"><a href="{{ URL::to('/') }}">Home</a></li>
                         @if(Request::is('home'))
                         <li><a href="#experts">Our Experts</a></li>
-                        <li><a href="{{ route('getMyCampus') }}">Campus Box</a></li>
                         <li><a href="#donations">Donate</a></li>
                         <li><a href="#contact">Contact</a></li>
+                        <li><a href="{{ route('getSubscriptions') }}">Subscriptions</a></li>
+                        <li><a href="{{ route('getMyCampus') }}">Campus Box</a></li>
                         @else
                         <li><a href="{{ URL::to('/home') }}#experts">Our Experts</a></li>
-                        <li><a href="{{ route('getMyCampus') }}">Campus Box</a></li>
                         <li><a href="{{ URL::to('/home') }}#donations">Donate</a></li>
                         <li><a href="{{ URL::to('/home') }}#contact">Contact</a></li>
+                        <li class="{{ Request::is('subscriptions') ? 'active' : '' }}"><a href="{{ route('getSubscriptions') }}">Subscriptions</a></li>
+                        <li class="{{ Request::is('mycampus') ? 'active' : '' }}"><a href="{{ route('getMyCampus') }}">Campus Box</a></li>
                         @endif
                         <!-- <li class="active"><a href="{{ URL::to('/')}}">Home</a></li>
                         @if(Request::is('home'))

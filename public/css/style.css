@@ -5,12 +5,12 @@
 /* Padding below the footer and lighter body text */
 
 html {
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 body {
     color: #5a5a5a;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 a:hover {
@@ -422,9 +422,8 @@ header .navbar-brand img {
 
 .marketing .col-lg-4 img {
     width: 100%;
-    height: auto ;
+    height: auto;
 }
-
 
 
 /* SELF REALIZATION 
@@ -1488,11 +1487,9 @@ input.form_group.other_amount {
     .experts .col-lg-2 {
         width: 35%;
     }
-
     .carousel-caption h1 span {
         font-size: 17px;
     }
-
     .myCampus_main h1 {
         font-size: 30px;
     }
