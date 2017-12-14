@@ -28,6 +28,8 @@ class CreateUsersTable extends Migration
             $table->integer('m_week',3)->unsigned()->default(0);
             $table->timestamp('last_s_start')->nullable();
             $table->timestamp('last_s_exp')->nullable();
+            $table->integer('active',2)->unsigned()->default(0);
+            $table->string('token', 250);
 
 
         });

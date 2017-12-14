@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\User as User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
@@ -13,17 +14,24 @@ class EmailConfirmation extends Mailable
 
     public $client = null;
     public $subject = '';
+    public $user;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($subject, $client)
+    public function __construct(User $user,$subject)
     {
-        $this->client = $client;
+      //  $this->client = $client;
+        $this->user = $user;
         $this->subject = $subject;
     }
+    // public function __construct($subject, $client)
+    // {
+    //     $this->client = $client;
+    //     $this->subject = $subject;
+    // }
 
     /**
      * Build the message.
@@ -32,6 +40,6 @@ class EmailConfirmation extends Mailable
      */
     public function build()
     {
-        return $this->subject($this->subject)->view('emails.email-confirmation');
+        return $this->subject($this->subject)->view('emails.confirmation');
     }
 }

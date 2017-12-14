@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Mail\Mailer;
 use Mail;
+use App\User as User;
 
 
 class HomeController extends Controller
@@ -46,9 +47,21 @@ class HomeController extends Controller
         $contact->email = Input::get('contact_email');
         $contact->text = Input::get('text');
 
-        Mail::to('gaspard.dm@hotmail.fr')->send(new MailTemplate($contact)); //gaspard.dm@hotmail.fr
+        Mail::to('joskekostic@gmail.com')->send(new MailTemplate($contact)); //gaspard.dm@hotmail.fr
 
         return redirect()->back();
+    }
+
+    public function confirmUser($token)
+    {
+        $user = User::where('token', $token)->first();
+        if ($user) {
+            $user->active = 1;
+            $user->save();
+            return redirect()->route('home')->with('success','It is successMessage');
+        }
+        
+        return view('auth.register')->withErrors(['error', 'Tokens do not match!']);
     }
 
 

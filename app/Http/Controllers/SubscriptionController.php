@@ -157,36 +157,27 @@ class SubscriptionController extends Controller
         // Get the token from the JS script
         $token = Input::get('stripeToken');
         // user info
-        $plan = Input::get('hidden_plan');
+        $amount = Input::get('hidden_donation');
         $name = Input::get('name');
         $lastName = Input::get('lastName');
         $email = Input::get('email');
-        $city = Input::get('city');
         // Create a Customer
         $customer = \Stripe\Customer::create(array(
             "email" => $email,
-            "source" => $token,
-            'metadata' => array("name" => $name, "last_name" => $lastName, "city" => $city)
-        ));
-        // or you can fetch customer id from the database too.
-        // Creates a subscription plan. This can also be done through the Stripe dashboard.
-        // You only need to create the plan once.
-        // $subscription = \Stripe\Plan::create(array(
-        //     "amount" => 20000,
-        //     "interval" => "month",
-        //     "name" => "52 weeks",
-        //     "currency" => "eur",
-        //     "id" => "52 weeks"
-        // ));
-        // Subscribe the customer to the plan
-
-        $subscription = \Stripe\Subscription::create(array(
-            "customer" => $customer->id,
-            "plan" => $plan,
-            'metadata' => array("name" => $name, "last_name" => $lastName, "city" => $city)
+            "source" => "tok_amex",
+            'metadata' => array("name" => $name, "last_name" => $lastName)
         ));
 
-        if ($subscription) {
+        $charge = \Stripe\Charge::create(array(
+            "amount" => $amount*100,
+            "currency" => "eur",
+            "source" => $token, // obtained with Stripe.js
+            'metadata' => array("name" => $name, "last_name" => $lastName)
+        ));
+
+        return $charge;
+
+        if ($charge) {
             $user = User::where('id',Auth::user()->id)->with('invoices')->first();
             $invoice = new Invoice;
             $invoice->first_name = Input::get('name');

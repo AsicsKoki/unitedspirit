@@ -10,6 +10,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth as Auth;
 use Illuminate\Support\Facades\Hash as Hash;
+use App\Mail\EmailConfirmation as EmailConfirmation;
+use Illuminate\Mail\Mailer;
+use Mail;
+
 
 class RegisterController extends Controller
 {
@@ -78,6 +82,7 @@ class RegisterController extends Controller
         return view('auth.register');
     }
 
+
     
     public function postUserRegister(Request $request)
     {
@@ -91,13 +96,46 @@ class RegisterController extends Controller
         'password_confirmation' => 'required',
     ]);
     if (!strcmp(Input::get('password'), Input::get('password_confirmation'))){
+        $key = app('App\Http\Controllers\Auth\RegisterController')->RandomString();
         $user = new User(Input::all());
         $user->password = Hash::make(Input::get('password'));
+        $user->token = $key;
+        $user->active = 0;
         $user->save();
+
+        Mail::to($user->email)->send(new EmailConfirmation($user,'Welcome to unitedspirit.com. Please verify your account!')); //gaspard.dm@hotmail.fr
+
+      //  return redirect()->back();
         return redirect()->route('getUserLogin');
     } else {
         return Redirect::back()->withErrors(['error', "Password does not match!"]);
         }
+
+
     }
 
+    
+    public function confirmUser($token)
+    {
+        $user = User::where('token', $token)->first();
+        if ($user) {
+            $user->active = 1;
+            $user->save();
+            return redirect::route('home')->with('success','It is successMessage');
+        }
+        
+        return view('auth.register')->withErrors(['error', 'Tokens do not match!']);
+    }
+
+    public function RandomString()
+    {
+     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+     $charactersLength = strlen($characters);
+     $randomString = '';
+     for ($i = 0; $i < $charactersLength ; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+     }
+    return $randomString;
+    }
+    
 }

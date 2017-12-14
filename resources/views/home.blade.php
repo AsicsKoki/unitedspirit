@@ -346,25 +346,19 @@
 <div class="row text-center">
     <h2>Donate to us</h2>
         <div class="col-lg-2"><button class="btn btn-default donation_btn">5&euro;</button></div>
-
         <div class="col-lg-2"><button class="btn btn-default donation_btn">10&euro;</button></div>
-
         <div class="col-lg-2"><button class="btn btn-default donation_btn">20&euro;</button></div>
-
         <div class="col-lg-2"><button class="btn btn-default donation_btn">50&euro;</button></div>
-
          <div class="col-lg-4 custom_donate_holder">
             <input name="other_donation" type="number" class="form_group other_amount"><span class="euros_text">&euro;</span>
-
             <label class="label_custom_donate" for="other_donation">Custom amount<small> (number)</small></label>
             <button class="btn btn-default donation_btn_other">donate</button>
           </div>
-           
-              <form action="charge.php" method="post" id="payment-form2">
+              <form action="{{ route('submitDonation') }}" method="post" id="payment-form2">
+                  {{ csrf_field() }}
                   <div class="form-row">
-                  <div class="row">
                       <div class="col-md-6">
-                          <label> First Name </label>
+                      <label> First Name </label>
                       <input type="text" class="form-control" name="name" placeholder="First name" required>
                       </div>
                       <div class="col-md-6">
@@ -376,20 +370,20 @@
                       <input type="e-mail" class="form-control" name="email" placeholder="Adresse email" required >
                       </div>
                   </div>
-                  </div>
-                  <div class="form-row">
-                          <label for="card-element2">Credit or debit card</label>
-                          <div id="card-element2">
-                          <!-- a Stripe Element will be inserted here. -->
-                          </div>
-                          <!-- Used to display form errors -->
-                          <div id="card-errors"></div>
-                  </div>
-                  <label class="text-center">Total amount to pay: <span class="don_amount">
-                  <input type="hidden" value="" name="hidden_donation" id="donation_sum">
-                  <button type="submit" class="btn btn-primary center-block">Submit Payment</button>
-              </div>
+                    <div class="form-row">
+                            <label for="card-element2">Credit or debit card</label>
+                            <div id="card-element2">
+                            <!-- a Stripe Element will be inserted here. -->
+                            </div>
+                            <!-- Used to display form errors -->
+                            <div id="card-errors"></div>
+                    </div>
+                  <label class="text-center">Total amount to pay: <span class="don_amount"></span>
+                <input type="hidden" value="" name="hidden_donation" id="donation_sum"> 
+            <input type="submit" class="btn btn-primary center-block" value="Submit Payment"></input>
+
           </form>
+     </div>
 </div>
 
 <button class="close_popup btn btn-danger center-block" name="close">

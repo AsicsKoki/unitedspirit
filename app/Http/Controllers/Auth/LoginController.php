@@ -63,6 +63,10 @@ class LoginController extends Controller
 
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
             // Authentication passed...
+            if ($user->active === 0) 
+            {
+            return redirect('/home')->withErrors('msg', 'Your account is not confirmed!');
+            }
             app('App\Http\Controllers\UserController')->subCheck();
             app('App\Http\Controllers\UserController')->weekCheck();
             return redirect()->route('home');

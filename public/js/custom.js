@@ -30,7 +30,7 @@ $(document).ready(function() {
         $('#payment-form2').css('display', 'block');
         var amount = $(this).text();
         $('.don_amount').text(amount);
-        $('#donation_sum').val(amount);
+        $('#donation_sum').val(amount.slice(0, -1));
     });
     $('.donation_btn_other').click(function() {
         $('#payment-form2').css('display', 'block');
@@ -38,10 +38,6 @@ $(document).ready(function() {
         $('.don_amount').text(amount + '€');
         $('#donation_sum').val(amount);
     })
-
-
-   
-
     $('.self_realization h3 a').click(function(e) {
         e.preventDefault();
     });

@@ -75,6 +75,7 @@ Route::group(['prefix' => 'admin'], function () {
 
   
   Route::get('/register', 'AdminAuth\RegisterController@getAdminRegister')->name('getAdminRegister');
+  Route::get('/confirmUser/{token}', 'HomeController@confirmUser')->name('confirmUser');
   Route::post('/postAdminRegister', 'AdminAuth\RegisterController@postAdminRegister')->name('postAdminRegister');
   
 

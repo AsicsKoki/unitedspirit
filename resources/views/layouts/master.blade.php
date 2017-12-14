@@ -100,9 +100,7 @@ function stripeTokenHandler(token) {
     hiddenInput.setAttribute('name', 'stripeToken');
     hiddenInput.setAttribute('value', token.id);
     form.appendChild(hiddenInput);
-    // Add stripe plan 
 
-    form.appendChild(plan);
     // Submit form
     form.submit();
 }

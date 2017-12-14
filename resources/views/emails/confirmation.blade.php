@@ -23,7 +23,7 @@
                                 <td align="center" valign="top">
                                     <div style="height: 40px; line-height: 40px; font-size: 38px;">&nbsp;</div>
                                     <a href="#" style="display: block; max-width: 192px;">
-                                        <img src="http://unitedspirit.dev/img/logo.png" alt="HireClub" width="192" border="0" style="display: block; width: 192px;" />
+                                        <img src="http://unitedspirit.dev/img/logo.png" alt="Unitedspirit" width="192" border="0" style="display: block; width: 192px;" />
                                     </a>
                                     <div class="top_pad2" style="height: 48px; line-height: 48px; font-size: 46px;">&nbsp;</div>
                                 </td>
@@ -39,18 +39,18 @@
                                     <div style="height: 21px; line-height: 21px; font-size: 19px;">&nbsp;</div>
                                     <font face="'Source Sans Pro', sans-serif" color="#000000" style="font-size: 20px; line-height: 28px;">
                                         <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #000000; font-size: 20px; line-height: 28px;">
-                              Welcome to United Spirit,
+                              Welcome to United Spirit {{ $user->first_name }} {{ $user->last_name }},
                               </span>
                                     </font>
 
                                     <div style="height: 6px; line-height: 6px; font-size: 4px;">&nbsp;</div>
                                     <font face="'Source Sans Pro', sans-serif" color="#000000" style="font-size: 20px; line-height: 28px;">
                                         <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #000000; font-size: 20px; line-height: 28px;">
-                                We received a request to set your United Spirit email to mail@unitedspirit.com
+                                We received a request to set your United Spirit email to {{ $user->email }}
                                 If this is correct, please confirm by clicking the button below.
                               </span>
                                     </font>
-
+                                    <a href="{{ route('confirmUser', ['token' => $user->token]) }}">{{ route('confirmUser', ['token' => $user->token]) }}</a>
                                     <div style="height: 30px; line-height: 30px; font-size: 28px;">&nbsp;</div>
                                     <table class="mob_btn" cellpadding="0" cellspacing="0" border="0" style="background: #6070E9; border-radius: 4px;">
                                         <tr>
