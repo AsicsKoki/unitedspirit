@@ -41,56 +41,75 @@
     <script src="{{ asset('js/charge.js') }}"></script>
     @endif
 
-<!-- popup open -->
+    @if(Request::is('home'))
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        var stripe = Stripe('pk_test_H3EzMRKDqpXxlAd1hye8xpJH');
+    var elements = stripe.elements();
+// Custom Styling
+    var style = {
+    base: {
+        color: '#32325d',
+        lineHeight: '24px',
+        fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+        fontSmoothing: 'antialiased',
+        fontSize: '16px',
+        '::placeholder': {
+            color: '#aab7c4'
+        }
+    },
+    invalid: {
+        color: '#fa755a',
+        iconColor: '#fa755a'
+    }
+};
+// Create an instance of the card Element
+    var card = elements.create('card', { style: style });
+// Add an instance of the card Element into the `card-element` <div>
+    card.mount('#card-element2');
+// Handle real-time validation errors from the card Element.
+    card.addEventListener('change', function(event) {
+    var displayError = document.getElementById('card-errors2');
+    if (event.error) {
+        displayError.textContent = event.error.message;
+    } else {
+        displayError.textContent = '';
+    }
+});
+// Handle form submission
+    var form = document.getElementById('payment-form2');
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    stripe.createToken(card).then(function(result) {
+        if (result.error) {
+            // Inform the user if there was an error
+            var errorElement = document.getElementById('card-errors2');
+            errorElement.textContent = result.error.message;
+        } else {
+            stripeTokenHandler(result.token);
+        }
+    });
+});
+// Send Stripe Token to Server
+function stripeTokenHandler(token) {
 
-<!-- <div class="popup2">
-    <div class="row text-center">
-        <h2>Subscriptions</h2>
+    var form = document.getElementById('payment-form2');
+    // Add Stripe Token to hidden input
+    var hiddenInput = document.createElement('input');
+    hiddenInput.setAttribute('type', 'hidden');
+    hiddenInput.setAttribute('name', 'stripeToken');
+    hiddenInput.setAttribute('value', token.id);
+    form.appendChild(hiddenInput);
+    // Add stripe plan 
 
-        <div class="col-lg-2"><button class="btn btn-default subscription_btn">20&euro; / Month</button></div>
-
-        <div class="col-lg-2"><button class="btn btn-default subscription_btn">55&euro; / 13 weeks</button></div>
-
-        <div class="col-lg-2"><button class="btn btn-default subscription_btn">100&euro; / 26 weeks</button></div>
-
-        <div class="col-lg-2"><button class="btn btn-default subscription_btn">200&euro; / 52 weeks</button></div>
-
-
-         <button class="close_popup btn btn-danger center-block" name="close">
-              <i class="fa fa-times" aria-hidden="true"></i>
-          </button>
-    </div>
-</div> -->
+    form.appendChild(plan);
+    // Submit form
+    form.submit();
+}
+    </script>
+    @endif 
 
 
-<div class="popup">
-  <div class="row text-center">
-      <h2>Donate to us</h2>
-          <div class="col-lg-2"><button class="btn btn-default donation_btn">5&euro;</button></div>
-
-          <div class="col-lg-2"><button class="btn btn-default donation_btn">10&euro;</button></div>
-
-          <div class="col-lg-2"><button class="btn btn-default donation_btn">20&euro;</button></div>
-
-          <div class="col-lg-2"><button class="btn btn-default donation_btn">50&euro;</button></div>
-
-          <div class="col-lg-4 custom_donate_holder">
-              <input name="other_donation" type="number" class="form_group other_amount"><span class="euros_text">&euro;</span>
-
-              <label class="label_custom_donate" for="other_donation">Custom amount<small> (number)</small></label>
-
-              
-              <button class="btn btn-default donation_btn_other">donate</button>
-          </div>
-               
-
-  </div>
-
-  <button class="close_popup btn btn-danger center-block" name="close">
-      <i class="fa fa-times" aria-hidden="true"></i>
-  </button>
-
-</div>
 </body>
 
 </html>

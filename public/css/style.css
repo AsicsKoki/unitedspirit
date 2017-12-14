@@ -1598,3 +1598,7 @@ input.form_group.other_amount {
         line-height: 2;
     }
 }
+
+#payment-form2 {
+    display: none;
+}
