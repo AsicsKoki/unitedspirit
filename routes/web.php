@@ -118,7 +118,8 @@ Route::get('/mycampus', 'WeekController@getMyCampus')->name('getMyCampus');
 Route::get('/week/{wid}', 'WeekController@getWeek')->name('getSpecificWeek')->middleware('weekcheck');
 
 });
-
+route::post('/submitSubscription', 'SubscriptionController@submitSubscription')->name('submitSubscription');
+route::post('/submitDonation', 'SubscriptionController@submitDonation')->name('submitDonation');
 
 
 

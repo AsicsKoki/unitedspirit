@@ -100,7 +100,8 @@
           </div>
         </div>
       </div>   
-        <form action="charge.php" method="post" id="payment-form">
+        <form action="{{ route('submitSubscription') }}" method="post" id="payment-form">
+              {{ csrf_field() }}
                 <div class="form-row">
                  <div class="row">
                     <div class="col-md-6">
@@ -124,20 +125,20 @@
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputState">State</label>
-                    <select id="inputState" class="form-control">
+                    <select id="inputState" class="form-control" name="country">
                         <option selected>France</option>
                         <option>...</option>
                     </select>
                 </div>
                 <div class="form-group col-md-2">
                     <label for="inputZip">Zip</label>
-                    <input type="text" class="form-control" id="inputZip" placeholder="Code Postal">
+                    <input type="text" class="form-control" id="inputZip" placeholder="Code Postal" name="zip">
                 </div>
                 </div>
                 <div class="row">
                 <div class="form-group col-md-4">
                     <label for="statenum">Numero de estat</label>
-                    <select id="statenum" class="form-control">
+                    <select id="statenum" class="form-control" name="statenum">
                         <option selected>France(+33)</option>
                         <option>...</option>
                     </select>
@@ -148,7 +149,7 @@
                 </div>
                 <div class="col-md-12">
                      <label> Adrese Postale </label>
-                     <input type="text" class="form-control" placeholder="Adresse postale" >
+                     <input type="text" class="form-control" placeholder="Adresse postale" name="address">
                  </div>
                 </div>
                 <div class="form-row">
@@ -168,5 +169,37 @@
             </div>
         </form>
     </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+    $(document).ready(function() {
+     $('#sub_20').click(function() {
+        $('#payment-form').css('display', 'block');
+        $('.sub_amount').text('{{ $subscription_types[0]->price }}€');
+        $('#plan').text('{{ $subscription_types[0]->name }}');
+        $('#planName').val('{{ $subscription_types[0]->name }}');
+    });
+    $('#sub_55').click(function() {
+        $('#payment-form').css('display', 'block');
+        $('.sub_amount').text('{{ $subscription_types[1]->price }}€');
+        $('#plan').text('{{ $subscription_types[1]->name }}');
+        $('#planName').val('{{ $subscription_types[1]->name }}');
+    });
+
+    $('#sub_100').click(function() {
+        $('#payment-form').css('display', 'block');
+        $('.sub_amount').text('{{ $subscription_types[2]->price }}€');
+        $('#plan').text('{{ $subscription_types[2]->name }}');
+        $('#planName').val('{{ $subscription_types[2]->name }}');
+    });
+
+    $('#sub_200').click(function() {
+        $('#payment-form').css('display', 'block');
+        $('.sub_amount').text('{{ $subscription_types[3]->price }}€');
+        $('#plan').text('{{ $subscription_types[3]->name }}');
+        $('#planName').val('{{ $subscription_types[3]->name }}');
+    });
+
+    });
+    </script>
     <!-- /.container -->
 @endsection

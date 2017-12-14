@@ -41,5 +41,10 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Subscription' , 'user_subscription')->withTimestamps();
     }
+
+    public function invoices()
+    {
+        return $this->hasMany('App\Invoice');
+    }
     
 }

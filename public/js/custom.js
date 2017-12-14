@@ -38,32 +38,7 @@ $(document).ready(function() {
     })
 
 
-    $('#sub_20').click(function() {
-        $('#payment-form').css('display', 'block');
-        $('.sub_amount').text('20€');
-        $('#plan').text('monthly');
-        $('#planName').val('monthly');
-    });
-    $('#sub_55').click(function() {
-        $('#payment-form').css('display', 'block');
-        $('.sub_amount').text('55€');
-        $('#plan').text('13 weeks');
-        $('#planName').val('13 weeks');
-    });
-
-    $('#sub_100').click(function() {
-        $('#payment-form').css('display', 'block');
-        $('.sub_amount').text('100€');
-        $('#plan').text('26 weeks');
-        $('#planName').val('26 weeks');
-    });
-
-    $('#sub_200').click(function() {
-        $('#payment-form').css('display', 'block');
-        $('.sub_amount').text('200€');
-        $('#plan').text('52 weeks');
-        $('#planName').val('52 weeks');
-    });
+   
 
     $('.self_realization h3 a').click(function(e) {
         e.preventDefault();
