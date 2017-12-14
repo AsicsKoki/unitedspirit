@@ -27,14 +27,16 @@ $(document).ready(function() {
 
     // donations buttons pop form
     $('.donation_btn').click(function() {
-        $('#payment-form').css('display', 'block');
+        $('#payment-form2').css('display', 'block');
         var amount = $(this).text();
-        $('.amount').text(amount);
+        $('.don_amount').text(amount);
+        $('#donation_sum').val(amount);
     });
     $('.donation_btn_other').click(function() {
-        $('.require-validation').css('display', 'block');
-        var amount = $('.other_amount').val().replace(/\D/g, '');
-        $('.amount').text(amount + '€');
+        $('#payment-form2').css('display', 'block');
+        var amount = $('.other_amount').val();
+        $('.don_amount').text(amount + '€');
+        $('#donation_sum').val(amount);
     })
 
 
