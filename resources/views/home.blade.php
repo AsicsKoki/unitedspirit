@@ -17,7 +17,7 @@
                     <!-- <img class="first-slide" src="img/Campus_home.jpg" alt="First slide"> -->
                     <div class="container">
                         <div class="carousel-caption cf">
-                            <h1>the innovative school of self realiztion<span>a non profit project to change ourselves</br> and change the world.</span></h1>
+                            <h1>L'école innovante de l'accomplissement de soi<span>un projet associatif pour se changer Soi-Meme</br> et changer le monde.</span></h1>
                         </div>
                     </div>
                 </div>
@@ -68,9 +68,9 @@
                             </a>
                         </div>
                         <a href="#self_realization">
-                            <p>Questionning who we are and the meaning we want to give to our lives getting our confidence back</p>
+                            <p>S'interroger sur qui nous sommes et le sens que l'on veut donner a sa vie en retrouvant confiance en soi</p>
                         </a>
-                        <h2><a href="#self_realization">Self realization</a></h2>
+                        <h2><a href="#self_realization">Accomplissement de soi</a></h2>
                     </div>
                 
                 <!-- /.col-lg-4 -->
@@ -82,9 +82,9 @@
                             </a>
                         </div>
                         <a href="#wfromthew">
-                            <p>Learning from well known thinkers and philosophy of all over the world</p>
+                            <p>Apprendre a partir des enseignements des grands penseurs et philosophies de ce monde</p>
                         </a>
-                        <h2><a href="#wfromthew">Wisdom from the world</a></h2>
+                        <h2><a href="#wfromthew">Sagesse du Monde</a></h2>
                     </div>
                
                 <!-- /.col-lg-4 -->
@@ -94,9 +94,9 @@
                             <img src="img/healthy_mind_in_healthy_body.jpg" alt="healthy mind in healthy body">
                         </div>
                         <a href="#healthymind">
-                            <p>Taking care of the intellect and the body</p>
+                            <p>Prendre soin de son intelect sans negliger son corps</p>
                         </a>
-                        <h2><a href="#healthymind">Healthy mind in a healthy body</a></h2>
+                        <h2><a href="#healthymind">Esprit sain, dans un corps sain</a></h2>
                     </div>
 
                 <!-- /.col-lg-4 -->
@@ -112,7 +112,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <hr>
-                <h2 class="text-center">Self Realization</h2>
+                <h2 class="text-center">Accomplissement de soi</h2>
             </div>
         </div>
         <div class="row">
@@ -128,7 +128,7 @@
             </div>
             <div class="col-lg-4">
                 <h3>
-                    <a href="">Relationship With Others</a>
+                    <a href="">Rapport a autrui</a>
                 </h3>
             </div>
         </div>
@@ -138,7 +138,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <hr>
-                <h2>Wisdom from the world</h2>
+                <h2>Sagesse du Monde</h2>
             </div>
         </div>
         <div class="row">
@@ -146,7 +146,7 @@
                 <div class="img-wrapper">
 
                     <p class="img_text">
-                        Philosophy
+                        Philosophie 
                     </p>
                 </div>
             </div>
@@ -162,7 +162,7 @@
                 <div class="img-wrapper">
 
                     <p class="img_text">
-                        Humanities
+                        Humanite
                     </p>
                 </div>
             </div>
@@ -178,7 +178,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <hr>
-                <h2>Healthy mind in a healthy body</h2>
+                <h2>Esprit sain, dans un corps sain</h2>
             </div>
         </div>
         <div class="row">
@@ -194,7 +194,7 @@
                 <div class="img-wrapper">
                     <img src="img/ScienceHero.jpg" alt="philosophy">
                     <p class="img_text">
-                        Vegeterian Alimentation
+                        Alimentation vegetarienne 
                     </p>
                 </div>
             </div>
@@ -202,7 +202,7 @@
                 <div class="img-wrapper">
                     <img src="img/Humanities.jpg" alt="philosophy">
                     <p class="img_text">
-                        Phisical activity
+                        Activite physique
                     </p>
                 </div>
             </div>
@@ -211,7 +211,7 @@
 
     <div class="experts cf" id="experts">
         <hr>
-        <h2 class="text-center">Our Experts</h2>
+        <h2 class="text-center">Nos Experts</h2>
         <div class="text-center row">
             @foreach($experts as $expert)
                 <div class="col-lg-2">
@@ -253,9 +253,9 @@
     <div class="donations_content">
         <hr>
 
-        <h3 class="text-center">Make a donation</h3>
+        <h3 class="text-center">Faire un don</h3>
 
-        <button class="btn btn-default center-block main_donation_btn" data-js="open">donate</button>
+        <button class="btn btn-default center-block main_donation_btn" data-js="open">Faire un don</button>
     
     </div>
 
@@ -271,13 +271,14 @@
     <div class="campus_box_content">
         <hr>
         <h3 class="campus_box_title">Campus Box</h3>
-        <h4>Get a taste of Campus from where you are.</h4>
+        <h4>Vivez un apercu de l'experence Campus, de la ou vous etes.</h4>
         <p>
-            Receive for 52 weeks the content of the class from Campus (Self Realization, Wisdom of the World, Healthy mind in a healthy body) to transform your life by finding your path</br>
+           Recevez sur 52 semaines le contenu des cours de campus (Accomplissement de soi, Sagesse du Monde, esprit sain dans un corps sain)</br>
+           pour transformer votre vie en retrouvantle votre chemin
             <span>Progress at your own rythm with weekly exercises</span>
         </p>
-        <a href="{{ route('getSubscriptions') }}"><button class="btn btn-default center-block">Subscription / Connection</button></a>
-        <small>*All people working on Campus are volunteer, the money collected will be used to found the school</small>
+        <a href="{{ route('getSubscriptions') }}"><button class="btn btn-default center-block">Inscription / Connexion</button></a>
+        <small>Toutes les personnes de l'association sont benevoles, les fonds recoltes serviront uniquement a fonder l'ecole</small>
         
 
     </div>
@@ -298,16 +299,16 @@
             <div class="contact_content text-center">
                 <div class="container">
                     <div class="form-group">
-                        <label for="contact_name" class="text-center">Your name</label>
+                        <label for="contact_name" class="text-center">Votre name</label>
                         <input type="text" name="contact_name" class="center-block form-control" id="contact_name" placeholder="Your name">
                     </div>
                     <!-- Email input-->
                     <div class="form-group">
-                        <label for="contact_email" class="text-center">Your e-mail</label>
+                        <label for="contact_email" class="text-center">Votre e-mail</label>
                         <input type="email" name="contact_email" class="center-block form-control" id="contact_email" placeholder="Your email">
                     </div>
                     <div class="form-group">
-                        <label for="text" class="text-center">Your message</label>
+                        <label for="text" class="text-center">Votre message</label>
                         <textarea name="text" id="" cols="30" rows="10" class="center-block"></textarea>
                         {{ csrf_field() }}
                         <button class="btn btn-default center-block" type="submit">Send</button>
