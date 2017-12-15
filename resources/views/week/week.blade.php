@@ -19,7 +19,7 @@
                         <source src="{{ URL::to('/') . $vid }}" type="video/webm">
                         Your browser does not support the video tag.
                     </video> -->
-                    <iframe width="560" height="315" src="{{ $vid }}" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="{{ $vid }}"  class="center-block" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
                 </div>
                 <div class="col-sm-12">
                     <div class="audio-player text-center row">
