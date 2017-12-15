@@ -5,12 +5,12 @@
 /* Padding below the footer and lighter body text */
 
 html {
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
 }
 
 body {
     color: #5a5a5a;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
 }
 
 a:hover {
@@ -456,7 +456,7 @@ header .navbar-brand img {
     margin: 0 auto;
     border-radius: 15px;
     color: #fff;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 .self_realization h3 {
@@ -670,7 +670,22 @@ header .navbar-brand img {
 }
 
 .healthymind h2 {
-    margin-bottom: 0;
+    margin-bottom: 40px;
+}
+
+.healthymind p {
+    color: #244153;
+    display: block;
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: default;
+    background: #fff;
+    text-align: center;
+    border: solid 3px #fff;
+    width: 80%;
+    margin: auto;
+    border-radius: 3px;
 }
 
 .partner_img {
@@ -1468,6 +1483,11 @@ input.form_group.other_amount {
 
 @media (max-width: 1200px) {
     .wfromthew .row .col-lg-4 {
+        max-width: 500px;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+    .healthymind .col-lg-4 {
         max-width: 500px;
         margin: auto;
         margin-bottom: 30px;
