@@ -95,7 +95,7 @@ class RegisterController extends Controller
         'password'              => 'required',
         'password_confirmation' => 'required',
     ]);
-    if (!strcmp(Input::get('password'), Input::get('password_confirmation'))){
+    if (!strcmp(Input::get('password'), Input::get('password_confirmation')) &&  !strcmp(Input::get('email'), Input::get('confirm_email'))) {
         $key = app('App\Http\Controllers\Auth\RegisterController')->RandomString();
         $user = new User(Input::all());
         $user->password = Hash::make(Input::get('password'));

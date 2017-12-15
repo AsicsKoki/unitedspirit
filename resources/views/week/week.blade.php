@@ -3,7 +3,7 @@
 @section('content')
  <div class="container">
             <h1 class="text-center week_number">My Campus Box</h1>
-             <a href="{{ route('getMyCampus') }}"><button>Go back to calendar</button></a>
+             <a href="{{ route('getMyCampus') }}"><button class="btn btn-default">Go back to calendar</button></a>
             <hr>
             <h3 class="text-center week_name"><strong> Week {{ $week->id }} </strong> : {{ $week->name }}</h3>
             <div class="row">
@@ -46,13 +46,29 @@
                 </div>
 
             </div>
-            <button> Go back </button>
+
 
             <div class="download_links_holder">
                 <a href="{{ route('getDocument',['wid'=> $week->id]) }}"><button class="submit"> Download documentation! </button></a>
                 <!-- <a href="{{ URL::to('/') . $doc }}" download> Download here </a> -->
             </div>
-
-            <button> Go forward </button>
   </div>
+  
+            <div class="row">
+            @if(!($week->id-1)==0)
+                <div class="col-xs-6">    
+                    <a href="{{ route('getSpecificWeek',['wid'=> $week->id-1]) }}"><button class="btn btn-primary center-block" style="margin-left:60px; margin-bottom: 20px;"> Go to previous week</button></a>
+                </div>
+            @endif
+            @if(($week->id-1)==0)
+                <div class="col-xs-12">    
+                    <a href="{{ route('getSpecificWeek',['wid'=> $week->id+1]) }}"><button class="btn btn-primary center-block pull-right" style="margin-right:60px;margin-bottom: 20px;"> Go next week </button></a>
+                </div>
+            @elseif($user->weeks->contains($week->id+1))
+                <div class="col-xs-6">    
+                    <a href="{{ route('getSpecificWeek',['wid'=> $week->id+1]) }}"><button class="btn btn-primary center-block pull-right" style="margin-right:60px;margin-bottom: 20px;"> Go next week </button></a>
+                </div>
+            @endif
+            </div>
+
 @endsection

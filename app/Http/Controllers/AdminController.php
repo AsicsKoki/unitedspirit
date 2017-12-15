@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Hash as Hash;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth as Auth;
 
+
 class AdminController extends Controller
 {
     public function getAdminChangePassword()
@@ -75,6 +76,34 @@ class AdminController extends Controller
     {
         $partners = Partner::all();
         return view('admin.editpartners',['partners' => $partners]);
+    }
+
+    public function getEditUserAccounts()
+    {
+        $user = User::all();
+        return view('admin.editaccounts',['users' => $user]);
+    }
+
+    public function getEditUserAccount($uid)
+    {
+        $user = User::where('id',$uid)->first();
+        return view('admin.edituser',['user' => $user]);
+    }
+    
+    public function postEditUserAccount(Request $request)
+    {
+        $user = User::where('id',$request->id)->first();
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->email = $request->email;
+        $user->birthdate = $request->birthdate;
+        $user->phone = $request->phone;
+        $user->active= $request->is_subscribed;
+        $user->password = Hash::make(Input::get('password'));
+        $user->save();
+
+        return redirect()->back();
+
     }
 
     public function getEditWeek($wid)

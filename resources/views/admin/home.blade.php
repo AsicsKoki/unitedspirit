@@ -15,6 +15,7 @@
                         <li><a href="{{ route('getEditPartners') }}">Edit partners</a></li>
                         <li><a href="{{ route('getEditSubscriptions') }}">Edit subscriptions</a></li>
                         <li><a href="{{ route('getGenerateAccount') }}">Generate a subscribed account</a></li>
+                        <li><a href="{{ route('getEditUserAccounts') }}">Edit user account</a></li>
                     </nav>
                 </div>
             </div>

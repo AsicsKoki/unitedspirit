@@ -3,13 +3,14 @@
 @section('content')
 
 <div class="container">
-        <form class="login_form cf"  method="POST" action="{{ route('postGenerateAccount') }}">
+        <form class="login_form cf"  method="POST" action="{{ route('postEditUserAccount') }}">
                 {{ csrf_field() }}
                 <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
+                <input type="hidden" name="id" value="{{ $user->id }}">
                 <label for="first_name" class="col-md-4 control-label">First Name</label>
 
                 <div class="col-md-6">
-                    <input id="first_name" type="text" class="form-control" name="first_name" value="{{ old('first_name') }}" required autofocus>
+                    <input id="first_name" type="text" class="form-control" name="first_name" value="{{ $user->first_name }}" required autofocus>
 
                     @if ($errors->has('first_name'))
                         <span class="help-block">
@@ -23,7 +24,7 @@
                 <label for="last_name" class="col-md-4 control-label">Last Name</label>
 
                 <div class="col-md-6">
-                    <input id="last_name" type="text" class="form-control" name="last_name" value="{{ old('last_name') }}" required autofocus>
+                    <input id="last_name" type="text" class="form-control" name="last_name" value="{{ $user->last_name }}" >
 
                     @if ($errors->has('last_name'))
                         <span class="help-block">
@@ -37,7 +38,7 @@
                 <label for="email" class="col-md-4 control-label">E-Mail Adresa</label>
 
                 <div class="col-md-6">
-                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                    <input id="email" type="email" class="form-control" name="email" value="{{ $user->email }}" >
 
                     @if ($errors->has('email'))
                         <span class="help-block">
@@ -51,7 +52,7 @@
                 <label for="phone" class="col-md-4 control-label">Birthdate</label>
 
                 <div class="col-md-6">
-                    <input id="birthdate" type="date" class="form-control" name="birthdate" value="{{ old('birthdate') }}" required autofocus>
+                    <input id="birthdate" type="date" class="form-control" name="birthdate" value="{{ $user->birthdate }}" >
 
                     @if ($errors->has('birthdate'))
                         <span class="help-block">
@@ -66,7 +67,7 @@
                 <label for="phone" class="col-md-4 control-label">Phone</label>
 
                 <div class="col-md-6">
-                    <input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone') }}">
+                    <input id="phone" type="text" class="form-control" name="phone" value="{{ $user->phone }}">
 
                     @if ($errors->has('phone'))
                         <span class="help-block">
@@ -80,7 +81,7 @@
                 <label for="password" class="col-md-4 control-label">Password</label>
 
                 <div class="col-md-6">
-                    <input id="password" type="password" class="form-control" name="password" required>
+                    <input id="password" type="password" class="form-control" name="password">
 
                     @if ($errors->has('password'))
                         <span class="help-block">
@@ -91,23 +92,38 @@
             </div>
 
 
-
-            <div class="form-group">
-                <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-
-                <div class="col-md-6">
-                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                </div>
-            </div>
-
             <div class="form-group">
                 <label for="is_subscribed" class="col-md-4 control-label">Is subscribed</label>
 
                 <div class="col-md-6">
-                <label for="is_subscribed">Yes
-                    <input id="is_subscribed" type="radio" class="form-control" name="is_subscribed">
+              
+                @if($user->active==1)
+               
+                <label class="radio-inline control-label" for="is_subscribed">Yes
+                <input id="is_subscribed" type="radio" class="form-control" name="is_subscribed" value="1" checked></label>
+                <label class="radio-inline control-label" for="is_not_subscribed">No  
+                <input id="is_not_subscribed" type="radio" class="form-control" name="is_subscribed" value="0"></label>
+              
+                @elseif($user->active==0)
+                
+                <label class="radio-inline control-label" for="is_subscribed">Yes
+                <input id="is_subscribed" type="radio" class="form-control" name="is_subscribed" value="1"></label>
+                <label class="radio-inline control-label" for="is_not_subscribed">No  
+                <input id="is_not_subscribed" type="radio" class="form-control" name="is_subscribed" value="0" checked></label>
+              
+                @else
+                
+                <label class="radio-inline control-label" for="is_subscribed">Yes
+                <input id="is_subscribed" type="radio" class="form-control" name="is_subscribed" value="1"></label>
+                <label class="radio-inline control-label" for="is_not_subscribed">No  
+                <input id="is_not_subscribed" type="radio" class="form-control" name="is_subscribed" value="0"></label>
+               
+                @endif
 
-                <label for="is_not_subscribed">No  <input id="is_not_subscribed" type="radio" class="form-control" name="is_subscribed"></label>
+
+
+
+
                 </div>
             </div>
 
@@ -117,8 +133,8 @@
 
             <div class="form-group">
                 <div class="col-md-6 col-md-offset-4">
-                    <button type="submit" class="btn btn-primary">
-                        Register
+                    <button style="margin-top:50px;" type="submit" class="btn btn-primary">
+                        Edit
                     </button>
                 
                 </div>

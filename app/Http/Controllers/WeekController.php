@@ -114,6 +114,7 @@ class WeekController extends Controller
 
     public function getWeek($wid)
     {  
+        $user = User::where('id' , Auth::user()->id)->with('weeks')->first();
         $video = Video::where('week_id',$wid)->first();
         $audio = Audio::where('week_id',$wid)->first();
         $image = Image::where('week_id',$wid)->first();
@@ -121,7 +122,7 @@ class WeekController extends Controller
         $week = Week::where('id', $wid)->first();
         // $logo = $image->path;
         // return $image['path'];
-        return view('week.week', ['doc' => $document['path'], 'aud' => $audio['path'] , 'vid' => $video['path'], 'logo' => $image['path'], 'week' => $week , 'video' => $video , 'audio' => $audio , 'image' => $image , 'document' => $document ]);
+        return view('week.week', ['user' => $user,'doc' => $document['path'], 'aud' => $audio['path'] , 'vid' => $video['path'], 'logo' => $image['path'], 'week' => $week , 'video' => $video , 'audio' => $audio , 'image' => $image , 'document' => $document ]);
     }
 
     public function uploadImage(Request $request)
