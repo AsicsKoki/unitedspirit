@@ -16,7 +16,22 @@
                     <label for="week_paragraph">Text about this week:</label>
                     <textarea class="form-control" id="week_paragraph" placeholder="explain what this week is about" name="week_about">{{$week->about}}</textarea>
                 </div>
-            
+
+                <div class="form-group">
+                    <label for="self_realization_title">Self realization title :</label>
+                    <input type="text" class="form-control" id="self_realization_title" placeholder="Self realization title" name="self_realization_title" value="{{$week->self_realization_title}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="wisdome_title">Wisdome from the world title :</label>
+                    <input type="text" class="form-control" id="wisdome_title" placeholder="Wisdome from the world title" name="wisdome_title" value="{{$week->wisdome_title }}">
+                </div>
+
+                <div class="form-group">
+                    <label for="healthy_mind_title">Healthy Mind in a Healthy body title :</label>
+                    <input type="text" class="form-control" id="healthy_mind_title" placeholder="Healthy Mind in a Healthy body title" name="healthy_mind_title" value="{{$week->healthy_mind_title }}">
+                </div>
+
                 <div class="form-group">
                     <label for="practical_exercise" class="text-left">Text for practical exercise</label>
                     <textarea class="form-control" id="practical_exercise" placeholder="Explain what they should be doing this week" name="week_exercise">{{ $week->exercise }}</textarea>

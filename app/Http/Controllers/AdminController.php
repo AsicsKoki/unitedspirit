@@ -199,6 +199,9 @@ class AdminController extends Controller
         $week->name = Input::get('week_name');
         $week->about = Input::get('week_about');
         $week->exercise = Input::get('week_exercise');
+        $week->self_realization_title = Input::get('self_realization_title');
+        $week->wisdome_title = Input::get('wisdome_title');
+        $week->healthy_mind_title = Input::get('healthy_mind_title');
         $week->save();
         return redirect()->back();
     }

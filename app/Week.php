@@ -10,6 +10,10 @@ class Week extends Model
         'name', 
         'about',
         'exercise', 
+        'self_realization',
+        'wisdome_title',
+        'healthy_mind_title',
+
     ];
 
     public function admins()

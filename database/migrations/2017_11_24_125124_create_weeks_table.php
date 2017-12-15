@@ -18,9 +18,12 @@ class CreateWeeksTable extends Migration
             $table->integer('admin_id');
             $table->integer('user_id');
             $table->timestamps();
-            $table->string('name');
-            $table->string('about');
-            $table->string('exercise');
+            $table->string('name')->nullable();
+            $table->string('about')->nullable();
+            $table->string('exercise')->nullable();
+            $table->string('self_realization')->nullable();
+            $table->string('wisdome_title')->nullable();
+            $table->string('healthy_mind_title')->nullable();
         });
     }
 
