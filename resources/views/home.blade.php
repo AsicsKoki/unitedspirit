@@ -317,10 +317,9 @@
                             <!-- Used to display form errors -->
                             <div id="card-errors"></div>
                     </div>
-                  <label class="text-center">Total amount to pay: <span class="don_amount"></span>
+                  <label class="text-center donation_amount_label">Total amount to pay: <span class="don_amount"></span></label>
                 <input type="hidden" value="" name="hidden_donation" id="donation_sum"> 
             <input type="submit" class="btn btn-primary center-block" value="Submit Payment"></input>
-
           </form>
      </div>
 </div>

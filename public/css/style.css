@@ -456,7 +456,7 @@ header .navbar-brand img {
     margin: 0 auto;
     border-radius: 15px;
     color: #fff;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
 }
 
 .self_realization h3 {
@@ -475,11 +475,12 @@ header .navbar-brand img {
 }
 
 .self_realization h3 a {
-    color: #fff;
+    color: #244153;
     display: block;
     line-height: 50px;
     font-size: 18px;
     cursor: default;
+    background: #fff;
 }
 
 
@@ -668,6 +669,10 @@ header .navbar-brand img {
     color: #fff;
 }
 
+.healthymind h2 {
+    margin-bottom: 0;
+}
+
 .partner_img {
     height: 166px;
     width: 166px;
@@ -698,7 +703,7 @@ header .navbar-brand img {
     top: 50%;
     display: block;
     text-align: center;
-    background: #eeeeeeeb;
+    background: #fff;
     width: 80%;
     margin: 0 auto;
     left: 10%;
@@ -773,6 +778,11 @@ header .navbar-brand img {
 
 .donations label {
     color: #0000009c;
+}
+
+.donation_amount_label {
+    display: block;
+    margin: 20px auto;
 }
 
 .donations_content {
@@ -1620,4 +1630,8 @@ input.form_group.other_amount {
 
 #payment-form2 {
     display: none;
+}
+
+#payment-form2 label {
+    margin: 15px 0;
 }
