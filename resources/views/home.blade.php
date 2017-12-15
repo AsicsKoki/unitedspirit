@@ -5,62 +5,22 @@
         ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <div id="carousel_filter">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <!-- <img class="first-slide" src="img/Campus_home.jpg" alt="First slide"> -->
                     <div class="container">
                         <div class="carousel-caption cf">
                             <h1>L'école innovante de l'accomplissement de soi<span>un projet associatif pour se changer Soi-Meme</br> et changer le monde.</span></h1>
                         </div>
                     </div>
                 </div>
-                <div class="item">
-                    <!-- <img class="second-slide" src="img/Campus_home.jpg" alt="Second slide"> -->
-                    <div class="container">
-                        <div class="carousel-caption cf">
-                            <h1>the innovative school of self realiztion<span>a non profit project to change ourselves</br> and change the world.</span></h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <!-- <img class="third-slide" src="img/Campus_home.jpg" alt="Third slide"> -->
-                    <div class="container">
-                        <div class="carousel-caption cf">
-                            <h1>the innovative school of self realiztion<span>a non profit project to change ourselves</br> and change the world.</span></h1>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
-        <!-- <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a> -->
+        </div>    
     </div>
-    <!-- /.carousel -->
-
-
-    <!-- Marketing messaging and featurettes
-        ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
+    <!-- second layer --> 
     <div class="marketing" id="marketing">
-        
         <div class="marketing_content">
-            <!-- Three columns of text below the carousel -->
             <div class="row">
-                
+            <h3 class="text-center" style="margin-top: 0; margin-bottom: 75px;">"La véritable éducation consiste à tirer le meilleur de soi-même, pour atteindre la pleine réalisation de soi."</br> -Gandhi</h4>
                     <div class="col-lg-4" id="selfrel">
                         <div class="marketing_img_holder">
                             <a href="#self_realization">
@@ -68,13 +28,11 @@
                             </a>
                         </div>
                         <a href="#self_realization">
-                            <p>S'interroger sur qui nous sommes et le sens que l'on veut donner a sa vie en retrouvant confiance en soi</p>
+                            <p>S'interroger sur qui nous sommes et le sens que l'on veut donner à sa vie en retrouvant confiance en soi</p>
                         </a>
                         <h2><a href="#self_realization">Accomplissement de soi</a></h2>
                     </div>
-                
                 <!-- /.col-lg-4 -->
-               
                     <div class="col-lg-4" id="wisdom">
                         <div class="marketing_img_holder">
                              <a href="#wfromthew">
@@ -82,23 +40,20 @@
                             </a>
                         </div>
                         <a href="#wfromthew">
-                            <p>Apprendre a partir des enseignements des grands penseurs et philosophies de ce monde</p>
+                            <p>Apprendre à partir des enseignements des grands penseurs et philosophies de ce monde</p>
                         </a>
                         <h2><a href="#wfromthew">Sagesse du Monde</a></h2>
                     </div>
-               
                 <!-- /.col-lg-4 -->
-                
                     <div class="col-lg-4" id="health">
                         <div class="marketing_img_holder">
                             <img src="img/healthy_mind_in_healthy_body.jpg" alt="healthy mind in healthy body">
                         </div>
                         <a href="#healthymind">
-                            <p>Prendre soin de son intelect sans negliger son corps</p>
+                            <p>Prendre soin de son intelect sans négliger son corps</p>
                         </a>
                         <h2><a href="#healthymind">Esprit sain, dans un corps sain</a></h2>
-                    </div>
-
+                     </div>
                 <!-- /.col-lg-4 -->
             </div>
         <!-- /.row -->
@@ -128,7 +83,7 @@
             </div>
             <div class="col-lg-4">
                 <h3>
-                    <a href="">Rapport a autrui</a>
+                    <a href="">Rapport à autrui</a>
                 </h3>
             </div>
         </div>
@@ -144,7 +99,7 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="img-wrapper">
-
+                <img src="img/Philosophy.jpg" alt="philosophy">
                     <p class="img_text">
                         Philosophie 
                     </p>
@@ -152,7 +107,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="img-wrapper">
-
+                <img src="img/ScienceHero.jpg" alt="philosophy">
                     <p class="img_text">
                         Sciences
                     </p>
@@ -160,7 +115,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="img-wrapper">
-
+                <img src="img/Humanities.jpg" alt="philosophy">
                     <p class="img_text">
                         Humanite
                     </p>
@@ -184,7 +139,6 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="img-wrapper">
-                    <img src="img/Philosophy.jpg" alt="philosophy">
                     <p class="img_text">
                         Permaculture
                     </p>
@@ -192,17 +146,15 @@
             </div>
             <div class="col-lg-4">
                 <div class="img-wrapper">
-                    <img src="img/ScienceHero.jpg" alt="philosophy">
                     <p class="img_text">
-                        Alimentation vegetarienne 
+                        Alimentation végétarienne 
                     </p>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="img-wrapper">
-                    <img src="img/Humanities.jpg" alt="philosophy">
                     <p class="img_text">
-                        Activite physique
+                        Activité physique
                     </p>
                 </div>
             </div>
@@ -222,23 +174,7 @@
                     <h6> {{$expert->role}} </h6>
                 </div>
             @endforeach
-                <!-- <div class="col-lg-2">
-                    <div class="experts_img_holder">
-                        <img src="http://simpleicon.com/wp-content/uploads/user1.png" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="experts_img_holder">
-                        <img src="http://simpleicon.com/wp-content/uploads/user1.png" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="experts_img_holder">
-                        <img src="http://simpleicon.com/wp-content/uploads/user1.png" alt="">
-                    </div>
-                </div>
-            </div> -->
-
+ 
             <div class="half_logo_left">
                  <img src="img/half-logo-left.png" alt="Half logo united spirit">
             </div>
@@ -259,6 +195,8 @@
     
     </div>
 
+    <h3 class="text-center" style="color:#254153;" >Prenons contact, nous serions hereux de vous offrir une reconnaissance symbolique</h3>
+
     <div class="half_logo_right">
         <img src="img/half-logo.png" alt="Half logo united spirit">
     </div>
@@ -271,14 +209,14 @@
     <div class="campus_box_content">
         <hr>
         <h3 class="campus_box_title">Campus Box</h3>
-        <h4>Vivez un apercu de l'experence Campus, de la ou vous etes.</h4>
+        <h4>Vivez un aperçu de l'expérence Campus, de là où vous etes.</h4>
         <p>
            Recevez sur 52 semaines le contenu des cours de campus (Accomplissement de soi, Sagesse du Monde, esprit sain dans un corps sain)</br>
            pour transformer votre vie en retrouvantle votre chemin
-            <span>Progress at your own rythm with weekly exercises</span>
+            <span>Progressez à votre rythme avec des exercices pratques hedomadaires</span>
         </p>
         <a href="{{ route('getSubscriptions') }}"><button class="btn btn-default center-block">Inscription / Connexion</button></a>
-        <small>Toutes les personnes de l'association sont benevoles, les fonds recoltes serviront uniquement a fonder l'ecole</small>
+        <small>Toutes les personnes de l'association sont bénévoles, les fonds récoltés serviront uniquement à fonder l'école</small>
         
 
     </div>
@@ -327,7 +265,7 @@
             <div class="our_partners_content">
 
                 <hr>
-                <h3 class="text-center our_partners_title">Our Partners</h3>
+                <h3 class="text-center our_partners_title">Nos Partenaires</h3>
                 <div class="text-center row">
                 @foreach($partners as $partner)
                     <div class="col-lg-2 partner_holder">
