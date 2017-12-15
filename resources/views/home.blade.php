@@ -137,26 +137,20 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4">
-                <div class="img-wrapper">
-                    <p class="img_text">
+            <div class="col-lg-4">  
+                  <p class="img_text">
                         Permaculture
                     </p>
-                </div>
             </div>
             <div class="col-lg-4">
-                <div class="img-wrapper">
                     <p class="img_text">
                         Alimentation végétarienne 
                     </p>
-                </div>
             </div>
             <div class="col-lg-4">
-                <div class="img-wrapper">
                     <p class="img_text">
                         Activité physique
                     </p>
-                </div>
             </div>
         </div>
     </div>
@@ -237,7 +231,7 @@
             <div class="contact_content text-center">
                 <div class="container">
                     <div class="form-group">
-                        <label for="contact_name" class="text-center">Votre name</label>
+                        <label for="contact_name" class="text-center">Votre nom</label>
                         <input type="text" name="contact_name" class="center-block form-control" id="contact_name" placeholder="Your name">
                     </div>
                     <!-- Email input-->
@@ -249,7 +243,7 @@
                         <label for="text" class="text-center">Votre message</label>
                         <textarea name="text" id="" cols="30" rows="10" class="center-block"></textarea>
                         {{ csrf_field() }}
-                        <button class="btn btn-default center-block" type="submit">Send</button>
+                        <button class="btn btn-default center-block" type="submit">Envoyer</button>
                     </div>
                  
                 </div>
@@ -317,10 +311,9 @@
                             <!-- Used to display form errors -->
                             <div id="card-errors"></div>
                     </div>
-                  <label class="text-center">Total amount to pay: <span class="don_amount"></span>
+                  <label class="text-center donation_amount_label">Total amount to pay: <span class="don_amount"></span></label>
                 <input type="hidden" value="" name="hidden_donation" id="donation_sum"> 
-            <input type="submit" class="btn btn-primary center-block" value="Submit Payment"></input>
-
+            <input type="submit" class="btn btn-primary center-block" value="Soumettre le paiement"></input>
           </form>
      </div>
 </div>
