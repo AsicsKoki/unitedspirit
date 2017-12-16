@@ -23,7 +23,7 @@
                                 <td align="center" valign="top">
                                     <div style="height: 40px; line-height: 40px; font-size: 38px;">&nbsp;</div>
                                     <a href="#" style="display: block; max-width: 192px;">
-                                        <img src="http://unitedspirit.dev/img/logo.png" alt="Unitedspirit" width="192" border="0" style="display: block; width: 192px;" />
+                                        <img src="http://unitedspirit.antiqueandarts.com/public/img/logo.png" alt="Unitedspirit" width="192" border="0" style="display: block; width: 192px;" />
                                     </a>
                                     <div class="top_pad2" style="height: 48px; line-height: 48px; font-size: 46px;">&nbsp;</div>
                                 </td>
@@ -39,18 +39,17 @@
                                     <div style="height: 21px; line-height: 21px; font-size: 19px;">&nbsp;</div>
                                     <font face="'Source Sans Pro', sans-serif" color="#000000" style="font-size: 20px; line-height: 28px;">
                                         <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #000000; font-size: 20px; line-height: 28px;">
-                              Welcome to United Spirit {{ $user->first_name }} {{ $user->last_name }},
+                              Your registration at United Spirit was successfull!
                               </span>
                                     </font>
 
                                     <div style="height: 6px; line-height: 6px; font-size: 4px;">&nbsp;</div>
                                     <font face="'Source Sans Pro', sans-serif" color="#000000" style="font-size: 20px; line-height: 28px;">
                                         <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #000000; font-size: 20px; line-height: 28px;">
-                                We received a request to set your United Spirit email to {{ $user->email }}
-                                If this is correct, please confirm by clicking the button below.
+                          Thank you for that, click the button below to go straight to website.
                               </span>
                                     </font>
-                                    <a href="{{ route('confirmUser', ['token' => $user->token]) }}">{{ route('confirmUser', ['token' => $user->token]) }}</a>
+                                    <a href="http://unitedspirit.antiqueandarts.com/home"></a>
                                     <div style="height: 30px; line-height: 30px; font-size: 28px;">&nbsp;</div>
                                     <table class="mob_btn" cellpadding="0" cellspacing="0" border="0" style="background: #6070E9; border-radius: 4px;">
                                         <tr>
@@ -79,94 +78,12 @@
                             <tr>
                                 <td align="left" valign="top">
                                     <font face="'Source Sans Pro', sans-serif" color="#7f7f7f" style="font-size: 17px; line-height: 23px;">
-                                        <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #7f7f7f; font-size: 17px; line-height: 23px;">Once you confirm, all future messages about your United Spirit account will be sent to mail@unitedspirit.com .</span>
+                                        <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #7f7f7f; font-size: 17px; line-height: 23px;">Once you confirm, you will be able to access the website.</span>
                                     </font>
 
                                     <div style="height: 30px; line-height: 30px; font-size: 28px;">&nbsp;</div>
                                 </td>
                             </tr>
                         </table>
-                        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 100% !important; min-width: 100%; max-width: 100%; background: #f5f8fa;">
-                            <tbody>
-                                <tr>
-                                    <td align="center" valign="top">
-                                        <div style="height: 34px; line-height: 34px; font-size: 32px;">&nbsp;</div>
-                                        <table cellpadding="0" cellspacing="0" border="0" width="88%" style="width: 88% !important; min-width: 88%; max-width: 88%;">
-                                            <tbody>
-                                                <tr>
-                                                    <td align="center" valign="top">
-                                                        <table cellpadding="0" cellspacing="0" border="0" width="78%" style="min-width: 300px;">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td align="center" valign="top" width="23%">
-                                                                        <a href="#" style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 14px; line-height: 20px; text-decoration: none; white-space: nowrap; font-weight: bold;">
-                                                                            <font face="'Source Sans Pro', sans-serif" color="#1a1a1a" style="font-size: 14px; line-height: 20px; text-decoration: none; white-space: nowrap; font-weight: bold;">
-                                                                                <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 14px; line-height: 20px; text-decoration: none; white-space: nowrap; font-weight: bold;">HELP</span>
-                                                                            </font>
 
-                                                                        </a>
-                                                                    </td>
-                                                                    <td align="center" valign="top" width="10%">
-                                                                        <font face="'Source Sans Pro', sans-serif" color="#1a1a1a" style="font-size: 17px; line-height: 17px; font-weight: bold;">
-                                                                            <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 17px; line-height: 17px; font-weight: bold;">•</span>
-                                                                        </font>
-
-                                                                    </td>
-                                                                    <td align="center" valign="top" width="23%">
-                                                                        <a href="#" style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 14px; line-height: 20px; text-decoration: none; white-space: nowrap; font-weight: bold;">
-                                                                            <font face="'Source Sans Pro', sans-serif" color="#1a1a1a" style="font-size: 14px; line-height: 20px; text-decoration: none; white-space: nowrap; font-weight: bold;">
-                                                                                <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 14px; line-height: 20px; text-decoration: none; white-space: nowrap; font-weight: bold;">SETTINGS</span>
-                                                                            </font>
-
-                                                                        </a>
-                                                                    </td>
-                                                                    <td align="center" valign="top" width="10%">
-                                                                        <font face="'Source Sans Pro', sans-serif" color="#1a1a1a" style="font-size: 17px; line-height: 17px; font-weight: bold;">
-                                                                            <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 17px; line-height: 17px; font-weight: bold;">•</span>
-                                                                        </font>
-
-                                                                    </td>
-                                                                    <td align="center" valign="top" width="23%">
-                                                                        <a href="#" style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 14px; line-height: 20px; text-decoration: none; white-space: nowrap; font-weight: bold;">
-                                                                            <font face="'Source Sans Pro', sans-serif" color="#1a1a1a" style="font-size: 14px; line-height: 20px; text-decoration: none; white-space: nowrap; font-weight: bold;">
-                                                                                <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 14px; line-height: 20px; text-decoration: none; white-space: nowrap; font-weight: bold;">PROFILE</span>
-                                                                            </font>
-
-                                                                        </a>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                        <div style="height: 34px; line-height: 34px; font-size: 32px;">&nbsp;</div>
-                                                        <font face="'Source Sans Pro', sans-serif" color="#868686" style="font-size: 15px; line-height: 20px;">
-                                                            <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #868686; font-size: 15px; line-height: 20px;">
-                           United Spirit
-                           <br>
-                           385 29th St. Suite 3 · San Francisco, CA · 94131</span>
-                                                        </font>
-
-                                                        <div style="height: 4px; line-height: 4px; font-size: 2px;">&nbsp;</div>
-                                                        <div style="height: 3px; line-height: 3px; font-size: 1px;">&nbsp;</div>
-
-                                                        <div style="height: 35px; line-height: 35px; font-size: 33px;">&nbsp;</div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td class="mob_pad" width="25" style="width: 25px; max-width: 25px; min-width: 25px;">&nbsp;</td>
-                </tr>
-            </table>
-            <!--[if (gte mso 9)|(IE)]>
-            </td>
-          </tr>
-        </table>
-      <![endif]-->
-        </td>
-    </tr>
-</table>
 </html>
