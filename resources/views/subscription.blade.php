@@ -171,6 +171,7 @@ Exercice pratique : des exercices pour avancer chaque de la semaine</p>
                 <div class="col-md-12">
                     <label class="text-center">Total amount to pay: <span class="sub_amount"></span>, your selected plan is : <span id="plan"></span></label>
                     <input type="hidden" value="" name="hidden_plan" id="planName">
+                    <input type="hidden" value="" name="dur" id="hidden_dur">
                 </div>
                 <div class="col-md-12">
                     <button type="submit" class="btn btn-primary center-block">Submit Payment</button>
@@ -185,12 +186,14 @@ Exercice pratique : des exercices pour avancer chaque de la semaine</p>
             $('.sub_amount').text('{{ $subscription_types[0]->price }}€');
             $('#plan').text('{{ $subscription_types[0]->name }}');
             $('#planName').val('{{ $subscription_types[0]->name }}');
+            $('#hidden_dur').val('30');
         });
         $('#sub_55').click(function() {
             $('#payment-form').css('display', 'block');
             $('.sub_amount').text('{{ $subscription_types[1]->price }}€');
             $('#plan').text('{{ $subscription_types[1]->name }}');
             $('#planName').val('{{ $subscription_types[1]->name }}');
+            $('#hidden_dur').val('91');
         });
 
         $('#sub_100').click(function() {
@@ -198,6 +201,7 @@ Exercice pratique : des exercices pour avancer chaque de la semaine</p>
             $('.sub_amount').text('{{ $subscription_types[2]->price }}€');
             $('#plan').text('{{ $subscription_types[2]->name }}');
             $('#planName').val('{{ $subscription_types[2]->name }}');
+            $('#hidden_dur').val('338');
         });
 
         $('#sub_200').click(function() {
@@ -205,6 +209,7 @@ Exercice pratique : des exercices pour avancer chaque de la semaine</p>
             $('.sub_amount').text('{{ $subscription_types[3]->price }}€');
             $('#plan').text('{{ $subscription_types[3]->name }}');
             $('#planName').val('{{ $subscription_types[3]->name }}');
+            $('#hidden_dur').val('676');
         });
 
         });
