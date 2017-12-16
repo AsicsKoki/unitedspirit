@@ -49,6 +49,9 @@ Accomplissement de soi : des vidéos de développement personnel pour accomplir 
 Sagesse du Monde : des documents pdf synthétisant les enseignements de toutes les cultures
 Un corps sain dans un esprit sain : des audios sur la santé du corps et de l'esprit 
 Exercice pratique : des exercices pour avancer chaque de la semaine</p>
+            @if(Auth::user() && Auth::user()->is_subscribed==2)
+            <span class="text-success"> You are already subscribed until : <i> {{ Auth::user()->last_s_exp }} </i> </span>
+            @endif
         </header>
 
         <!-- Page Features -->
@@ -58,9 +61,8 @@ Exercice pratique : des exercices pour avancer chaque de la semaine</p>
             <div class="card_holder">
                 <img class="card-img-top" src="img/20month.jpg" alt="">
                 <div class="card-body">
-                <h4 class="card-title">{{ $subscription_types[0]->price }}€/{{ $subscription_types[0]->name }}</h4>
-                <p class="card-text text-center">Étalez par mensualités. </br>
-                Recevez l’intégralité du guide sur 52 semaines avec les quatre bilans. </p>
+                <h4 class="card-title">{{ $subscription_types[0]->price }}€{{ $subscription_types[0]->name }}</h4>
+                <p class="card-text text-center">{{ $subscription_types[0]->description }} </p>
                 </div>
                 <div class="card-footer">
                 <a href="#payment-form"><button class="btn btn-primary subscriptions_btn" id="sub_20">Subscribe</button></a>
@@ -72,8 +74,8 @@ Exercice pratique : des exercices pour avancer chaque de la semaine</p>
             <div class="card_holder">
                 <img class="card-img-top" src="img/13weeks.jpg" alt="">
                 <div class="card-body">
-                <h4 class="card-title">{{ $subscription_types[1]->price }}€/{{ $subscription_types[1]->name }}</h4>
-                <p class="card-text">Économisez en commandant le premier trimestre. Le programme complet jusqu'au premier bilan. </p>
+                <h4 class="card-title">{{ $subscription_types[1]->price }}€ {{ $subscription_types[1]->name }}</h4>
+                <p class="card-text">{{ $subscription_types[1]->description }} </p>
                 </div>
                 <div class="card-footer">
                 <a href="#payment-form"><button class="btn btn-primary subscriptions_btn" id="sub_55">Subscribe</button></a>
@@ -85,9 +87,8 @@ Exercice pratique : des exercices pour avancer chaque de la semaine</p>
             <div class="card_holder">
                 <img class="card-img-top" src="img/26weeks.jpg" alt="">
                 <div class="card-body">
-                <h4 class="card-title">{{ $subscription_types[2]->price }}€/{{ $subscription_types[2]->name }}</h4>
-                <p class="card-text">Économisez en commandant les deux premiers trimestres. Le programme complet jusqu'au second bilan. 
-    </p>
+                <h4 class="card-title">{{ $subscription_types[2]->price }}€ {{ $subscription_types[2]->name }}</h4>
+                <p class="card-text">{{ $subscription_types[2]->description }} </p>
                 </div>
                 <div class="card-footer">
                 <a href="#payment-form"><button class="btn btn-primary subscriptions_btn" id="sub_100">Subscribe</button></a>
@@ -99,8 +100,8 @@ Exercice pratique : des exercices pour avancer chaque de la semaine</p>
             <div class="card_holder">
                 <img class="card-img-top" src="img/52weeks.jpg" alt="">
                 <div class="card-body">
-                <h4 class="card-title">{{ $subscription_types[3]->price }}€/{{ $subscription_types[3]->name }}</h4>
-                <p class="card-text">Changez votre vie tout en profitant de la réduction. Le guide complet avec ses quatre bilans.</p>
+                <h4 class="card-title">{{ $subscription_types[3]->price }}€ {{ $subscription_types[3]->name }}</h4>
+                <p class="card-text">{{ $subscription_types[3]->description }}</p>
                 </div>
                 <div class="card-footer">
                 <a href="#payment-form"><button class="btn btn-primary subscriptions_btn" id="sub_200">Subscribe</button></a>

@@ -28,7 +28,7 @@
                             <img src="{{ URL::to('/') . $logo }}" alt="song art" class="artwork" />
                         </div> -->
                         <div class="controls-container col-xs-12">
-                             <h3 class="text-center"><strong>Wisdome from the world</strong> : {{ $week->wisdome_title }}</h3>
+                             <h3 class="text-center"><strong>Wisdome from the world</strong> : <a href="{{ route('getDocument',['wid'=> $week->id]) }}">{{ $week->wisdome_title }}</a></h3>
                             <audio controls>
                                   <source src="{{ URL::to('/') . $aud }}" type="audio/ogg">
                                   <source src="{{ URL::to('/') . $aud }}" type="audio/mpeg">

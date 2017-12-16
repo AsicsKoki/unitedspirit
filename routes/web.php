@@ -114,7 +114,7 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('/weeks', 'WeekController@getWeeks')->name('getWeeks')->middleware('auth');
 
-Route::get('/subscriptions' , 'SubscriptionController@getSubcriptions')->name('getSubscriptions');
+Route::get('/subscriptions' , 'SubscriptionController@getSubcriptions')->name('getSubscriptions')->middleware('auth');
 
 // Route::get('/mycampus', 'WeekController@getMyCampus')->name('getMyCampus')->middleware('auth');
 
@@ -136,7 +136,7 @@ Route::post('/embededVideo', 'WeekController@embededVideo')->name('embededVideo'
 
 Route::get('/getDocument/{wid}', 'WeekController@getDocument')->name('getDocument');
 
-Route::get('/subscribe', 'UserController@subscribe')->name('postSubscribe');
+Route::get('/subscribe/{dur}', 'UserController@subscribe')->name('subscribe');
 Route::get('/subCheck', 'UserController@subCheck')->name('subCheck');
 Route::get('/weekCheck', 'UserController@weekCheck')->name('weekCheck');
 

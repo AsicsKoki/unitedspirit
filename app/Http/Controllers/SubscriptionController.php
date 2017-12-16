@@ -106,6 +106,7 @@ class SubscriptionController extends Controller
         $lastName = Input::get('lastName');
         $email = Input::get('email');
         $city = Input::get('city');
+        $dur = Input::get('dur');
         // Create a Customer
         $customer = \Stripe\Customer::create(array(
             "email" => $email,
@@ -146,8 +147,8 @@ class SubscriptionController extends Controller
             $user->save();
             
 
-            return $subscription;
-            return redirect::route('subscribe');
+         //   return $subscription;
+            return redirect::route('subscribe, ['dur' => $dur ]');
         }
     }
 
@@ -194,7 +195,7 @@ class SubscriptionController extends Controller
             
 
             return $subscription;
-            return redirect::route('subscribe');
+           // return redirect::route('subscribe');
         }
     }
 }

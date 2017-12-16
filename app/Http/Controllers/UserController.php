@@ -62,6 +62,7 @@ class UserController extends Controller
         $week = Week::where('id',$wid)->get();
         $user->weeks()->attach($week);
         $user->m_week = $wid + $dur/7;
+        $user->last_s_exp = $startdate->addDays($dur);
         $user->subscriptions()->attach($sub);
         $user->is_subscribed = 2; // 0 = default not subscribed, 1 = sub expired , 2 active subscription
         $user->save();

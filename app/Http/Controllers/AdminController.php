@@ -264,6 +264,7 @@ class AdminController extends Controller
         //return $sub_t;
         $sub_t->name = $request->sub_name;
         $sub_t->price = $request->sub_price;
+        $sub_t->description = $request->sub_description;
         $sub_t->save();
         return redirect()->back();
     }
