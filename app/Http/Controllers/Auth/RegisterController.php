@@ -107,7 +107,7 @@ class RegisterController extends Controller
         $user->active = 0;
         $user->save();
 
-        Mail::to($user->email)->send(new EmailConfirmation($user,'Welcome to unitedspirit.com. Please verify your account!')); //gaspard.dm@hotmail.fr
+        Mail::to($user->email)->send(new EmailConfirmation($user,'Welcome to unitedspirit.com, {{ $user->first_name }} {{ $user->last_name }}. Please verify your account!')); 
 
       //  return redirect()->back();
         return redirect()->route('getUserLogin');

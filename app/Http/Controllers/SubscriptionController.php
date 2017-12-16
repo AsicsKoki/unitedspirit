@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Input;
 use App\Invoice as Invoice;
 Use App\User as User;
 use Illuminate\Support\Facades\Auth as Auth;
+use App\Mail\EmailConfirmation as EmailConfirmation;
+use Illuminate\Mail\Mailer;
+use Mail;
 
 
 
@@ -147,7 +150,7 @@ class SubscriptionController extends Controller
 
             // $user->invoices()->attach($invoice);
             // $user->save();
-            
+            Mail::to($user->email)->send(new EmailConfirmation($user,'Thank you for your subscription, {{ $user->first_name }} {{ $user->last_name }}!')); 
 
          //   return $subscription;
             return  redirect()->route('subscribe', ['dur' => $dur ]);
@@ -195,6 +198,7 @@ class SubscriptionController extends Controller
             $user->invoices()->attach($invoice);
             $user->save();
             
+            Mail::to($user->email)->send(new EmailConfirmation($user,'Thank you for your donation, {{ $user->first_name }} {{ $user->last_name }}!')); 
 
             return $subscription;
            // return redirect::route('subscribe');

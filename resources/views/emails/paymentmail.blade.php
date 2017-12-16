@@ -39,14 +39,14 @@
                                     <div style="height: 21px; line-height: 21px; font-size: 19px;">&nbsp;</div>
                                     <font face="'Source Sans Pro', sans-serif" color="#000000" style="font-size: 20px; line-height: 28px;">
                                         <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #000000; font-size: 20px; line-height: 28px;">
-                                  Your payment at United Spirit was recieved successfully!
+                                 {{ $user->first_name }} {{ $user->last_name }}, your payment at United Spirit was recieved successfully!
                                   </span>
                                     </font>
 
                                     <div style="height: 6px; line-height: 6px; font-size: 4px;">&nbsp;</div>
                                     <font face="'Source Sans Pro', sans-serif" color="#000000" style="font-size: 20px; line-height: 28px;">
                                         <span style="font-family: 'Source Sans Pro', Arial, Tahoma, Geneva, sans-serif; color: #000000; font-size: 20px; line-height: 28px;">
-                              Thank you for very much for that, click the button below to go straight to website.
+                              Thank you for for that, click the button below to go straight to website.
                                   </span>
                                     </font>
                                     <a href="http://unitedspirit.antiqueandarts.com/home"></a>
