@@ -982,6 +982,8 @@ footer {
     margin-top: 0;
     color: #fff;
     line-height: 1;
+    z-index: 4;
+    position: relative;
 }
 
 footer p {
@@ -1654,4 +1656,11 @@ input.form_group.other_amount {
 
 #payment-form2 label {
     margin: 15px 0;
+}
+
+@media screen and (min-width: 768px) bootstrap.css:4993 .container .jumbotron,
+.container-fluid .jumbotron {
+    padding-right: 60px;
+    padding-left: 60px;
+    margin-top: 90px;
 }

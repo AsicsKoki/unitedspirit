@@ -42,8 +42,8 @@
                         @endif -->
                         <!-- Authentication Links -->
                         @guest
-                        <li><a href="{{ route('getUserLogin') }}">Login</a></li>
-                        <li><a href="{{ route('getUserRegister') }}">Register</a></li>
+                        <li class="{{ Request::is('userLogin') ? 'active' : '' }}"><a href="{{ route('getUserLogin') }}">Login</a></li>
+                        <li class="{{ Request::is('userRegister') ? 'active' : '' }}"><a href="{{ route('getUserRegister') }}">Register</a></li>
                         @else
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
