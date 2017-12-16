@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Hash as Hash;
 use App\Mail\EmailConfirmation as EmailConfirmation;
 use Illuminate\Mail\Mailer;
 use Mail;
+use Illuminate\Routing\Redirector;
 
 
 class RegisterController extends Controller
@@ -95,7 +96,10 @@ class RegisterController extends Controller
         'password'              => 'required',
         'password_confirmation' => 'required',
     ]);
-    if (!strcmp(Input::get('password'), Input::get('password_confirmation')) &&  !strcmp(Input::get('email'), Input::get('confirm_email'))) {
+    if(User::where('email', '=', Input::get('email'))->count() > 0) {
+        return Redirect::back()->withErrors(['error', 'User with this email already exists!']);
+    }
+    if (!strcmp(Input::get('password'), Input::get('password_confirmation') )) {
         $key = app('App\Http\Controllers\Auth\RegisterController')->RandomString();
         $user = new User(Input::all());
         $user->password = Hash::make(Input::get('password'));

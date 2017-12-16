@@ -61,7 +61,7 @@ Exercice pratique : des exercices pour avancer chaque de la semaine</p>
             <div class="card_holder">
                 <img class="card-img-top" src="img/20month.jpg" alt="">
                 <div class="card-body">
-                <h4 class="card-title">{{ $subscription_types[0]->price }}€{{ $subscription_types[0]->name }}</h4>
+                <h4 class="card-title">{{ $subscription_types[0]->price }}€/{{ $subscription_types[0]->name }}</h4>
                 <p class="card-text text-center">{{ $subscription_types[0]->description }} </p>
                 </div>
                 <div class="card-footer">

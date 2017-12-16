@@ -43,13 +43,13 @@ class UserController extends Controller
     }
     
     //treba menjati duration u zavisnosti od subskripcije
-    public function subscribe()
+    public function subscribe($dur)
     {
      //   return $user->weeks->last()->id;
         $sub = new Subscription();
-        $sub->duration = 30; //ovo menjati
+        $sub->duration = $dur; //ovo menjati
         $sub->save();
-        $dur = $sub->duration;
+        $durat = $sub->duration;
         $user = Auth::user();
         $wid = 0;
 
@@ -61,8 +61,7 @@ class UserController extends Controller
         $wid++;
         $week = Week::where('id',$wid)->get();
         $user->weeks()->attach($week);
-        $user->m_week = $wid + $dur/7;
-        $user->last_s_exp = $startdate->addDays($dur);
+        $user->m_week = $wid + $durat/7;
         $user->subscriptions()->attach($sub);
         $user->is_subscribed = 2; // 0 = default not subscribed, 1 = sub expired , 2 active subscription
         $user->save();
@@ -83,6 +82,8 @@ class UserController extends Controller
         if($user->subscriptions->first())
         {
             $user->subscriptions->first()->pivot->touch();
+            $dur = $user->subscriptions[0]->duration;
+            
 
             //  return $user->subscriptions[0]->pivot;
             // return $user->subscriptions->first()->pivot;
@@ -90,12 +91,12 @@ class UserController extends Controller
             $currdate = $user->subscriptions[0]->pivot->updated_at;
             $startdate = $user->subscriptions[0]->pivot->created_at;
             $eqdate = $currdate->diffInDays($startdate);
+            $user->last_s_exp = $startdate->addDays($dur);
             //return $eqdate;
 
             $wid = 0;
 
         //  return $user->subscriptions[0];
-            $dur = $user->subscriptions[0]->duration;
 
             if($eqdate>$dur)
             {
@@ -104,8 +105,8 @@ class UserController extends Controller
                 $user->subscriptions[0]->delete();
                 $user->subscriptions[0]->pivot->delete();
                 $user->is_subscribed = 1;  // subscription expired
-                $user->save();
             }
+            $user->save();
         }
     }
 

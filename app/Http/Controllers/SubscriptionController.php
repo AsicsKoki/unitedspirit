@@ -8,6 +8,8 @@ use App\SubscriptionType as SubscriptionType;
 use Illuminate\Support\Facades\Input;
 use App\Invoice as Invoice;
 Use App\User as User;
+use Illuminate\Support\Facades\Auth as Auth;
+
 
 
 class SubscriptionController extends Controller
@@ -132,23 +134,23 @@ class SubscriptionController extends Controller
         ));
 
         if ($subscription) {
-            $user = User::where('id',Auth::user()->id)->with('invoices')->first();
-            $invoice = new Invoice;
-            $invoice->first_name = Input::get('name');
-            $invoice->last_name = Input::get('lastName');
-            $invoice->email = Input::get('e-mail');
-            $invoice->city = Input::get('city');
-            $invoice->country = Input::get('country');
-            $invoice->area_code = Input::get('statenum');
-            $invoice->zip = Input::get('zip');
-            $invoice->address = Input::get('address');
+           // $user = User::where('id',Auth::user()->id)->with('invoices')->first();
+            // $invoice = new Invoice;
+            // $invoice->first_name = Input::get('name');
+            // $invoice->last_name = Input::get('lastName');
+            // $invoice->email = Input::get('e-mail');
+            // $invoice->city = Input::get('city');
+            // $invoice->country = Input::get('country');
+            // $invoice->area_code = Input::get('statenum');
+            // $invoice->zip = Input::get('zip');
+            // $invoice->address = Input::get('address');
 
-            $user->invoices()->attach($invoice);
-            $user->save();
+            // $user->invoices()->attach($invoice);
+            // $user->save();
             
 
          //   return $subscription;
-            return redirect::route('subscribe, ['dur' => $dur ]');
+            return  redirect()->route('subscribe', ['dur' => $dur ]);
         }
     }
 
