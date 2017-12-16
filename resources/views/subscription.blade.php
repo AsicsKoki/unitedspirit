@@ -201,7 +201,7 @@ Exercice pratique : des exercices pour avancer chaque de la semaine</p>
             $('.sub_amount').text('{{ $subscription_types[2]->price }}€');
             $('#plan').text('{{ $subscription_types[2]->name }}');
             $('#planName').val('{{ $subscription_types[2]->name }}');
-            $('#hidden_dur').val('338');
+            $('#hidden_dur').val('182');
         });
 
         $('#sub_200').click(function() {
@@ -209,7 +209,7 @@ Exercice pratique : des exercices pour avancer chaque de la semaine</p>
             $('.sub_amount').text('{{ $subscription_types[3]->price }}€');
             $('#plan').text('{{ $subscription_types[3]->name }}');
             $('#planName').val('{{ $subscription_types[3]->name }}');
-            $('#hidden_dur').val('676');
+            $('#hidden_dur').val('364');
         });
 
         });
