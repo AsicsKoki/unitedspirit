@@ -150,7 +150,7 @@ class SubscriptionController extends Controller
 
             // $user->invoices()->attach($invoice);
             // $user->save();
-            Mail::to($user->email)->send(new EmailConfirmation($user,'Thank you for your subscription, {{ $user->first_name }} {{ $user->last_name }}!')); 
+            Mail::to($user->email)->send(new EmailConfirmation($user,"Thank you for your subscription, $user->first_name $user->last_name!")); 
 
          //   return $subscription;
             return  redirect()->route('subscribe', ['dur' => $dur ]);
@@ -198,7 +198,7 @@ class SubscriptionController extends Controller
             $user->invoices()->attach($invoice);
             $user->save();
             
-            Mail::to($user->email)->send(new EmailConfirmation($user,'Thank you for your donation, {{ $user->first_name }} {{ $user->last_name }}!')); 
+            Mail::to($user->email)->send(new EmailConfirmation($user,"Thank you for your donation, $user->first_name $user->last_name!")); 
 
             return $subscription;
            // return redirect::route('subscribe');

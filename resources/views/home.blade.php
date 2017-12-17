@@ -117,7 +117,7 @@
                 <div class="img-wrapper">
                 <img src="img/Humanities.jpg" alt="philosophy">
                     <p class="img_text">
-                        Humanite
+                        Humanités
                     </p>
                 </div>
             </div>

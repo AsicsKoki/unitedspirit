@@ -40,6 +40,6 @@ class EmailConfirmation extends Mailable
      */
     public function build()
     {
-        return $this->subject($this->subject)->view('emails.confirmation');
+        return $this->from("mg.unitedspiritcampus@godaddy.com")->subject($this->subject)->view('emails.confirmation');
     }
 }

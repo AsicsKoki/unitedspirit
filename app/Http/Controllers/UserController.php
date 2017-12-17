@@ -65,6 +65,8 @@ class UserController extends Controller
         $user->subscriptions()->attach($sub);
         $user->is_subscribed = 2; // 0 = default not subscribed, 1 = sub expired , 2 active subscription
         $user->save();
+
+         Mail::to($user->email)->send(new EmailConfirmation($user,"Thanks for your payment, $user->first_name $user->last_name!")); 
     
             // \DB::table('user_subscription')->insert([
             //     'user_id'        => $user->id,

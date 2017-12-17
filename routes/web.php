@@ -79,7 +79,7 @@ Route::group(['prefix' => 'admin'], function () {
 
   
   Route::get('/register', 'AdminAuth\RegisterController@getAdminRegister')->name('getAdminRegister');
-  Route::get('/confirmUser/{token}', 'HomeController@confirmUser')->name('confirmUser');
+  
   Route::post('/postAdminRegister', 'AdminAuth\RegisterController@postAdminRegister')->name('postAdminRegister');
   
 
@@ -100,6 +100,8 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/changePassword', 'UserController@getChangePassword')->name('getChangePassword');
 Route::post('/postChangePassword', 'UserController@postChangePassword')->name('postChangePassword');
 Route::post('/sendContactMail', 'HomeController@sendContactMail')->name('sendContactMail');
+
+Route::get('/confirmUser/{token}', 'HomeController@confirmUser')->name('confirmUser');
 
 
 // Registration Routes...

@@ -19,7 +19,6 @@ class CreateSubscriptionTypesTable extends Migration
             $table->string('name' , 250)->nullable();
             $table->string('price', 250)->nullable();
             $table->string('description', 250)->nullable();
-            description
         });
     }
 

@@ -97,7 +97,7 @@ class RegisterController extends Controller
         'password_confirmation' => 'required',
     ]);
     if(User::where('email', '=', Input::get('email'))->count() > 0) {
-        return Redirect::back()->withErrors(['error', 'User with this email already exists!']);
+        return redirect()->back()->withErrors(['error', 'User with this email already exists!']);
     }
     if (!strcmp(Input::get('password'), Input::get('password_confirmation') )) {
         $key = app('App\Http\Controllers\Auth\RegisterController')->RandomString();
@@ -107,12 +107,12 @@ class RegisterController extends Controller
         $user->active = 0;
         $user->save();
 
-        Mail::to($user->email)->send(new EmailConfirmation($user,'Welcome to unitedspirit.com, {{ $user->first_name }} {{ $user->last_name }}. Please verify your account!')); 
+        Mail::to($user->email)->send(new EmailConfirmation($user,"Welcome to unitedspirit.com, $user->first_name $user->last_name. Please verify your account!")); 
 
       //  return redirect()->back();
         return redirect()->route('getUserLogin');
     } else {
-        return Redirect::back()->withErrors(['error', "Password does not match!"]);
+        return redirect()->back()->withErrors(['error', "Password does not match!"]);
         }
 
 

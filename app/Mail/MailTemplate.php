@@ -13,14 +13,16 @@ class MailTemplate extends Mailable
     use Queueable, SerializesModels;
 
     public $contact;
+    public $subject = '';
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Contact $contact)
+    public function __construct(Contact $contact,$subject)
     {
         $this->contact = $contact;
+        $this->subject = $subject;
     }
 
     /**

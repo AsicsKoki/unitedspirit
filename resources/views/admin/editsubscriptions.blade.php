@@ -10,7 +10,7 @@
             <div class="col-md-6">
                     Name:<input id="sub{{ $sub_t->id }}_name" type="text" class="form-control" name="sub_name" value="{{ $sub_t->name }}" required>
                     Price:<input id="sub{{ $sub_t->id }}_price" type="text" class="form-control" name="sub_price" value="{{ $sub_t->price }}" required>
-                    Descrpiton:<textarea id="sub{{ $sub_t->id }}_name" class="form-control" name="sub_description">{{ $sub_t->description }} </textarea>
+                    Descripiton:<textarea id="sub{{ $sub_t->id }}_name" class="form-control" name="sub_description">{{ $sub_t->description }} </textarea>
                     <input type="hidden" value="{{ $sub_t->id }}" name="sub_id">
 
 

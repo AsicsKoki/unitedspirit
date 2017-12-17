@@ -60,7 +60,7 @@ class LoginController extends Controller
         //     return redirect()->route('home');
         // }
         // return redirect()->back()->withErrors(['error', 'Wrong email or password!']);
-        if ($user->active == 0) 
+        if ($user && $user->active == 0) 
         {
         return redirect()->route('getUserLogin')->withErrors('msg', 'Your account is not confirmed!');
         }
