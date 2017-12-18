@@ -29,12 +29,15 @@
                         </div> -->
                         <div class="controls-container col-xs-12">
                              <h3 class="text-center"><strong>Wisdome from the world</strong> : <a href="{{ route('getDocument',['wid'=> $week->id]) }}">{{ $week->wisdome_title }}</a></h3>
+                            <hr>
+                               <h3 class="text-center"><strong>Healthy Mind in a Healthy body</strong> : {{ $week->healthy_mind_title }}</h3>
+
                             <audio controls>
                                   <source src="{{ URL::to('/') . $aud }}" type="audio/ogg">
                                   <source src="{{ URL::to('/') . $aud }}" type="audio/mpeg">
                                   Your browser does not support the audio element.
                            </audio>
-                           <h3 class="text-center"><strong>Healthy Mind in a Healthy body</strong> : {{ $week->healthy_mind_title }}</h3>
+                         
                         </div>
                     </div>
                 </div>
@@ -45,12 +48,6 @@
                     </p>
                 </div>
 
-            </div>
-
-
-            <div class="download_links_holder">
-                <a href="{{ route('getDocument',['wid'=> $week->id]) }}"><button class="submit"> Download documentation! </button></a>
-                <!-- <a href="{{ URL::to('/') . $doc }}" download> Download here </a> -->
             </div>
   </div>
   
