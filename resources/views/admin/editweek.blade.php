@@ -60,7 +60,7 @@
                     </video>
                     </div>
                 </div> -->
-
+            <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group">
                     {{Form::open(array('route' => 'embededVideo','method'=>'POST'))}}
@@ -79,6 +79,28 @@
                     <iframe width="560" height="315" src="{{ $vid }}" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 
                     </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                    {{Form::open(array('route' => 'embededVideo2','method'=>'POST'))}}
+                        <div class="admin_btn_holder">
+                            <label class="upload_video_btn" for="uploaded_video2">Enter a youtube video link</label>
+                            <p>It should be in this format : <i>https://www.youtube.com/<b>embed</b>/MEAr2vPV7Sw</i> </p>
+                            <input type="text" name="yt_video2" id="uploaded_video" value="{{ $vid2 }}">
+                            {{ csrf_field() }}
+                            <input class="edit_btns" type="submit" value="Update" id="upload_video_submit">
+                        </div>
+                         
+                        <input type="hidden" name="wid" value="{{ $week->id }}">
+                    {{Form::close()}}
+
+                    @if($week->videos->count()>2)
+                    <iframe width="560" height="315" src="{{ $vid2 }}" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                    @endif
+                    
+                    </div>
+                </div>
                 </div>
 
                 <div class="col-sm-6">

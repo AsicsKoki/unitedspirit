@@ -116,7 +116,7 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('/weeks', 'WeekController@getWeeks')->name('getWeeks')->middleware('auth');
 
-Route::get('/subscriptions' , 'SubscriptionController@getSubcriptions')->name('getSubscriptions')->middleware('auth');
+Route::get('/subscriptions' , 'SubscriptionController@getSubcriptions')->name('getSubscriptions');
 
 // Route::get('/mycampus', 'WeekController@getMyCampus')->name('getMyCampus')->middleware('auth');
 
@@ -125,8 +125,8 @@ Route::get('/mycampus', 'WeekController@getMyCampus')->name('getMyCampus');
 Route::get('/week/{wid}', 'WeekController@getWeek')->name('getSpecificWeek')->middleware('weekcheck');
 
 });
-route::post('/submitSubscription', 'SubscriptionController@submitSubscription')->name('submitSubscription');
-route::post('/submitDonation', 'SubscriptionController@submitDonation')->name('submitDonation');
+route::post('/submitSubscription', 'SubscriptionController@submitSubscription')->name('submitSubscription')->middleware('auth');
+route::post('/submitDonation', 'SubscriptionController@submitDonation')->name('submitDonation')->middleware('auth');;
 
 
 
@@ -135,6 +135,7 @@ Route::post('/uploadVideo', 'WeekController@uploadVideo')->name('uploadVideo');
 Route::post('/uploadAudio', 'WeekController@uploadAudio')->name('uploadAudio');
 Route::post('/uploadDocument', 'WeekController@uploadDocument')->name('uploadDocument');
 Route::post('/embededVideo', 'WeekController@embededVideo')->name('embededVideo');
+Route::post('/embededVideo2', 'WeekController@embededVideo2')->name('embededVideo2');
 
 Route::get('/getDocument/{wid}', 'WeekController@getDocument')->name('getDocument');
 

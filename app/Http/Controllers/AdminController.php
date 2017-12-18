@@ -113,8 +113,10 @@ class AdminController extends Controller
         $image = Image::where('week_id',$wid)->first();
         $document = Document::where('week_id',$wid)->first();
         $week = Week::where('id', $wid)->first();
+        $w = Week::where('id', $wid)->with('videos')->first();
+        $video2 = $w->videos[1];
 
-        return view('admin.editweek', ['doc' => $document['path'], 'aud' => $audio['path'] , 'vid' => $video['path'], 'logo' => $image['path'], 'week' => $week  ]);
+        return view('admin.editweek', ['vid2' => $video2['path'] ,'doc' => $document['path'], 'aud' => $audio['path'] , 'vid' => $video['path'], 'logo' => $image['path'], 'week' => $week  ]);
     }
 
     public function expertEdit(Request $request)

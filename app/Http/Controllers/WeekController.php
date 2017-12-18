@@ -120,9 +120,17 @@ class WeekController extends Controller
         $image = Image::where('week_id',$wid)->first();
         $document = Document::where('week_id',$wid)->first();
         $week = Week::where('id', $wid)->first();
+
+        $w = Week::where('id', $wid)->with('videos')->first();
+
+        if($w->videos->count()>2){
+        $video2 = $w->videos[1];
+        return view('week.week', ['user' => $user,'doc' => $document['path'], 'aud' => $audio['path'] , 'vid' => $video['path'], 'logo' => $image['path'], 'week' => $week , 'vid2' => $video2['path'] ]);
+        }
+
         // $logo = $image->path;
         // return $image['path'];
-        return view('week.week', ['user' => $user,'doc' => $document['path'], 'aud' => $audio['path'] , 'vid' => $video['path'], 'logo' => $image['path'], 'week' => $week , 'video' => $video , 'audio' => $audio , 'image' => $image , 'document' => $document ]);
+        return view('week.week', ['user' => $user,'doc' => $document['path'], 'aud' => $audio['path'] , 'vid' => $video['path'], 'logo' => $image['path'], 'week' => $week ]);
     }
 
     public function uploadImage(Request $request)
@@ -202,6 +210,26 @@ class WeekController extends Controller
             $video = $week->videos->first();
             $video->week_id = $week->id;
             $video->path = $request->yt_video;
+            $video->save();
+        }
+        return redirect()->back();  
+
+    }
+
+    public function embededVideo2(Request $request)
+    {
+        $week = Week::where('id', Input::get('wid'))->with('videos')->first();
+        return $week;
+        if(!isset($week->videos[1]))
+        {
+        $video = new Video;
+        $video->week_id = $week->id;
+        $video->path = $request->yt_video2;
+        $video->save();
+        }else{
+            $video = $week->videos[1];
+            $video->week_id = $week->id;
+            $video->path = $request->yt_video2;
             $video->save();
         }
         return redirect()->back();  

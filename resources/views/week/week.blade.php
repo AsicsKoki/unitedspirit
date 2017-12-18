@@ -21,6 +21,10 @@
                         Your browser does not support the video tag.
                     </video> -->
                     <iframe width="560" height="315" src="{{ $vid }}"  class="center-block" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                    <br>
+                    @if($week->videos->count()>2)
+                    <iframe width="560" height="315" src="{{ $vid2 }}"  class="center-block" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                    @endif
                 </div>
                 <div class="col-sm-12">
                     <div class="audio-player text-center row">
