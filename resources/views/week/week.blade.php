@@ -12,6 +12,7 @@
                     {{ $week->about }}
                     </p>
                 </div>
+                <hr>
                 <div class="col-sm-6 col-sm-offset-3 video_holder">
                     <!-- <video controls class="embed-responsive-item center-block" src="{{ URL::to('/') . $vid }}" type="video/mp4"></video> -->
                       <!-- <video class="embed-responsive-item center-block" controls>
@@ -51,10 +52,10 @@
                     {{ $week->exercise }}
                     </p>
                 </div>
-
+               
             </div>
   </div>
-  
+  <hr>   
             <div class="row">
             @if(!($week->id-1)==0)
                 <div class="col-xs-6">    
