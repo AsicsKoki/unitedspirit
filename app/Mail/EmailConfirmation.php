@@ -15,17 +15,19 @@ class EmailConfirmation extends Mailable
     public $client = null;
     public $subject = '';
     public $user;
+    public $view;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(User $user,$subject)
+    public function __construct(User $user,$subject,$view)
     {
       //  $this->client = $client;
         $this->user = $user;
         $this->subject = $subject;
+        $this->view = $view;
     }
     // public function __construct($subject, $client)
     // {
@@ -40,6 +42,6 @@ class EmailConfirmation extends Mailable
      */
     public function build()
     {
-        return $this->from("mg.unitedspiritcampus@godaddy.com")->subject($this->subject)->view('emails.confirmation');
+        return $this->from("mg.unitedspiritcampus@godaddy.com")->subject($this->subject)->view($this->view);
     }
 }

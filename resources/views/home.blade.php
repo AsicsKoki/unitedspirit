@@ -1,6 +1,9 @@
 @extends('layouts.master')
 
 @section('content')
+@if(session('message'))
+    <h4 style="text-align: center; margin-bottom: 15px;color: #ff5c5c;">{{ session('message') }}</h4>
+@endif
     <!-- Carousel
         ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">

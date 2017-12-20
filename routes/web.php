@@ -103,6 +103,13 @@ Route::post('/sendContactMail', 'HomeController@sendContactMail')->name('sendCon
 
 Route::get('/confirmUser/{token}', 'HomeController@confirmUser')->name('confirmUser');
 
+Route::get('/resetPassword', 'UserController@getResetPasswordEmail')->name('getResetPasswordEmail');
+Route::get('/resetPassword/{token}', 'UserController@getResetPassword')->name('getResetPassword');
+Route::post('/resetPasswordEmail', 'UserController@sendResetPasswordEmail')->name('sendResetPasswordEmail');
+Route::get('/setNewPassword/{token}', 'UserController@getSetNewPassword')->name('getSetNewPassword');
+Route::post('/setNewPassword', 'UserController@setNewPassword')->name('setNewPassword');
+
+
 
 // Registration Routes...
 Route::get('userRegister', 'Auth\RegisterController@getUserRegister')->name('getUserRegister');

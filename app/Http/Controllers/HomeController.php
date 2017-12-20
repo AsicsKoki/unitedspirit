@@ -58,7 +58,7 @@ class HomeController extends Controller
         if ($user) {
             $user->active = 1;
             $user->save();
-            return redirect()->route('home')->with('success','It is successMessage');
+            return redirect()->route('home')->with('success','Account has been validated! Please login in.');
         }
         
         return view('auth.register')->withErrors(['error', 'Tokens do not match!']);

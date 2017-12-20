@@ -109,6 +109,7 @@ Exercice pratique : des exercices pour avancer chaque de la semaine</p>
             </div>
             </div>
         </div>   
+
             <form action="{{ route('submitSubscription') }}" method="post" id="payment-form">
                 {{ csrf_field() }}
                     <div class="form-row">

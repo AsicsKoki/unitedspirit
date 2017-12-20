@@ -11,6 +11,8 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Hash as Hash;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
+use Mail as Mail;
+use App\Mail\EmailConfirmation as EmailConfirmation;
 
 class UserController extends Controller
 {
@@ -160,7 +162,35 @@ class UserController extends Controller
                 }
             }
         }
-
-        
     }
+
+    public function getResetPasswordEmail()
+    {
+        return view('auth.passwords.resetPasswordEmail');
+    }
+
+    public function getResetPassword($token)
+    {
+        return view('auth.passwords.resetPasswordForm', ['token'=> $token]);
+    }
+
+    public function sendResetPasswordEmail()
+    {
+        $user = User::where('email', Input::get('email'))->first();
+        $user->token = app('App\Http\Controllers\Auth\RegisterController')->RandomString();
+        $user->save();
+        Mail::to($user->email)->send(new EmailConfirmation($user,"Welcome to unitedspirit.rs,  $user->first_name $user->last_name. Please verify your account!","emails.resetpassword"));
+        \Session::flash('msg', "Registered! Please check your email!" );
+        return redirect()->route('home')->with('message', "An email has been sent to your account, please follow instructions to reset your password");
+    }
+
+    public function setNewPassword()
+    {
+        $user = User::where('token', Input::get('token'))->first();
+        if (!strcmp(Input::get('password'), Input::get('confirm_password'))){
+            $user->password=Hash::make(Input::get('password'));
+        }
+        return redirect()->route('home')->with('message', 'An email has been sent to your account, please follow instructions to reset your password');
+    }
+
 }    

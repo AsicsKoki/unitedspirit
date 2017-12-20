@@ -150,7 +150,7 @@ class SubscriptionController extends Controller
 
             // $user->invoices()->attach($invoice);
             // $user->save();
-            Mail::to($user->email)->send(new EmailConfirmation($user,"Thank you for your subscription, $user->first_name $user->last_name!")); 
+            Mail::to($user->email)->send(new EmailConfirmation($user,"Thank you for your subscription, $user->first_name $user->last_name!","emails.paymentmail")); 
 
          //   return $subscription;
             return  redirect()->route('subscribe', ['dur' => $dur ]);
@@ -181,7 +181,7 @@ class SubscriptionController extends Controller
             'metadata' => array("name" => $name, "last_name" => $lastName)
         ));
 
-        return $charge;
+       // return $charge;
 
         if ($charge) {
             $user = User::where('id',Auth::user()->id)->with('invoices')->first();
@@ -198,9 +198,9 @@ class SubscriptionController extends Controller
             $user->invoices()->attach($invoice);
             $user->save();
             
-            Mail::to($user->email)->send(new EmailConfirmation($user,"Thank you for your donation, $user->first_name $user->last_name!")); 
+            Mail::to($user->email)->send(new EmailConfirmation($user,"Thank you for your donation, $user->first_name $user->last_name!","emails.paymentmail")); 
 
-            return $subscription;
+            return $charge;
            // return redirect::route('subscribe');
         }
     }

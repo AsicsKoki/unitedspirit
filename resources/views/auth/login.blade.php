@@ -19,7 +19,7 @@
         </div>
             <button type="submit" id="login-button">Login</button>
         </form>
-        <a class="btn btn-link" href="{{ route('password.request') }}"> Forgot Password? </a>
+        <a class="btn btn-link" href="{{ route('getResetPasswordEmail') }}"> Forgot Password? </a>
 	    </div>
 	
 	<ul class="bg-bubbles">

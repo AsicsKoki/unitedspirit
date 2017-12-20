@@ -1268,6 +1268,8 @@ input.form_group.other_amount {
     text-align: center;
     padding-bottom: 0;
     vertical-align: middle;
+    position: relative;
+    z-index: 20;
 }
 
 .container1 h1 {
@@ -1434,6 +1436,11 @@ input.form_group.other_amount {
     width: 160px;
     height: 160px;
     animation-delay: 11s;
+}
+
+.btn .btn-link{
+    z-index: 5;
+    position: relative;
 }
 
 @-webkit-keyframes square {
