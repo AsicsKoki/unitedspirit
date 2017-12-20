@@ -41,6 +41,13 @@ $(document).ready(function() {
     $('.self_realization h3 a').click(function(e) {
         e.preventDefault();
     });
+    $('#show_password').click(function() {
+        $('#new_password').attr('type', 'text');
+    });
+    $('#hide_password').click(function() {
+        $('#new_password').attr('type', 'password');
+    });
+
 });
 
 
