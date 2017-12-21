@@ -2,11 +2,13 @@
 
 @section('content')
 @if(session('message'))
-    <h4 style="text-align: center; margin-bottom: 15px;color: #ff5c5c;">{{ session('message') }}</h4>
+<div class="flash_message">
+    <h4>{{ session('message') }} </h4>
+</div>
 @endif
 @if($errors->any())
-<div id="error-box">
-    <h4 style="text-align: center; margin-bottom: 15px;color: #ff5c5c;">{{ session('errors') }}</h4>
+<div id="flash_message">
+    <h4>{{ session('errors') }}</h4>
 </div>
 @endif
     <!-- Carousel

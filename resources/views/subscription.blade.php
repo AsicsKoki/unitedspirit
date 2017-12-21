@@ -38,9 +38,11 @@
         <!-- Page Content -->
         <div class="container">
 
-@if(session('message'))
-    <h4 style="text-align: center; margin-bottom: 15px;color: #ff5c5c;">{{ session('message') }}</h4>
-@endif
+        @if(session('message'))
+        <div class="flash_message">
+            <h4>{{ session('message') }} </h4>
+        </div>
+        @endif
 
         <!-- Jumbotron Header -->
         <header class="jumbotron my-4">

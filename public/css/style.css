@@ -1438,9 +1438,17 @@ input.form_group.other_amount {
     animation-delay: 11s;
 }
 
-.btn .btn-link{
+.btn .btn-link {
     z-index: 5;
     position: relative;
+}
+
+.flash_message h4 {
+    background: white;
+    color: #cd399c;
+    display: inline;
+    padding: 4px;
+    border-radius: 5px;
 }
 
 @-webkit-keyframes square {

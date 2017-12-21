@@ -5,11 +5,13 @@
      <div class="wrapper1">
 
 	    <div class="container1">
-@if(session('message'))
-    <h4 style="text-align: center; margin-bottom: 15px;color: #ff5c5c;">{{ session('message') }} </h4>
-@endif
 		    <h1>Welcome to United Spirit</h1>
             <h2>Please Login</h2>
+			@if(session('message'))
+			<div class="flash_message">
+   			 <h4>{{ session('message') }} </h4>
+			</div>
+			@endif
 		<form class="login_form cf"  method="POST" action="{{ route('postUserLogin') }}">
          {{ csrf_field() }}
          <div class="col-sm-12">
