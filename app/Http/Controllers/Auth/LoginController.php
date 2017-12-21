@@ -62,7 +62,7 @@ class LoginController extends Controller
         // return redirect()->back()->withErrors(['error', 'Wrong email or password!']);
         if ($user && $user->active == 0) 
         {
-        return redirect()->route('getUserLogin')->withErrors('msg', 'Your account is not confirmed!');
+        return redirect()->route('getUserLogin')->with('message', "Your account is not confirmed!");
         }
 
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
@@ -72,7 +72,7 @@ class LoginController extends Controller
             return redirect()->route('home');
         } else {
             // Auth failed...
-            return redirect()->back()->withErrors(['msg', 'Wrong username or password!']);
+            return redirect()->back()->with('message', "Wrong username or password!");
         }
     }
 }

@@ -61,7 +61,7 @@ class HomeController extends Controller
             return redirect()->route('home')->with('message','Account has been validated! Please login in.');
         }
         
-        return view('auth.register')->withErrors(['message', 'Tokens do not match!']);
+        return view('auth.register')->with(['message', 'Tokens do not match!']);
     }
 
 

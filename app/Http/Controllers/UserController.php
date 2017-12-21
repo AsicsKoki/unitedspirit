@@ -37,10 +37,10 @@ class UserController extends Controller
                 $user->save();
                 return redirect()->route('home');
             }else{
-                return Redirect::back()->withErrors(['message', "Password does not match!"]);
+                return Redirect::back()->with(['message', "Password does not match!"]);
             }
         }else{
-             return redirect()->back()->withErrors(['message', 'Wrong old password!']);
+             return redirect()->back()->with(['message', 'Wrong old password!']);
         }
     }
     
