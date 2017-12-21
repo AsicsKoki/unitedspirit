@@ -72,7 +72,7 @@ class LoginController extends Controller
             return redirect()->route('home');
         } else {
             // Auth failed...
-            return redirect()->back()->withErrors(['error', 'Wrong username or password!']);
+            return redirect()->back()->withErrors(['msg', 'Wrong username or password!']);
         }
     }
 }

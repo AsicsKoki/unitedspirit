@@ -3,7 +3,11 @@
 @section('content')
 
      <div class="wrapper1">
+
 	    <div class="container1">
+@if(session('msg'))
+    <h4 style="text-align: center; margin-bottom: 15px;color: #ff5c5c;">{{ session('message') }}</h4>
+@endif
 		    <h1>Welcome to United Spirit</h1>
             <h2>Please Login</h2>
 		<form class="login_form cf"  method="POST" action="{{ route('postUserLogin') }}">

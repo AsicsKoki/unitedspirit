@@ -219,7 +219,6 @@ class WeekController extends Controller
     public function embededVideo2(Request $request)
     {
         $week = Week::where('id', Input::get('wid'))->with('videos')->first();
-        return $week;
         if(!isset($week->videos[1]))
         {
         $video = new Video;

@@ -21,6 +21,9 @@
 
 <div class="wrapper1">
 	    <div class="container1">
+@if(session('message'))
+    <h4 style="text-align: center; margin-bottom: 15px;color: #ff5c5c;">{{ session('message') }}</h4>
+@endif
 		    <h1>Change password</h1>
 
             <form class="form-horizontal" method="POST" action="{{ route('postChangePassword') }}">

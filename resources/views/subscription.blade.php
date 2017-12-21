@@ -38,6 +38,10 @@
         <!-- Page Content -->
         <div class="container">
 
+@if(session('message'))
+    <h4 style="text-align: center; margin-bottom: 15px;color: #ff5c5c;">{{ session('message') }}</h4>
+@endif
+
         <!-- Jumbotron Header -->
         <header class="jumbotron my-4">
             <h1 class="display-3">Le Programme 52 Semaines pour Changer de Vie</h1>

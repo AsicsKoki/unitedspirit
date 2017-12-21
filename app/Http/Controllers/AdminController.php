@@ -53,10 +53,10 @@ class AdminController extends Controller
                 $admin->save();
                 return redirect()->route('getAdminHome');
             }else{
-                return Redirect::back()->withErrors(['error', "Password does not match!"]);
+                return Redirect::back()->withErrors(['message', "Password does not match!"]);
             }
         }else{
-             return redirect()->back()->withErrors(['error', 'Wrong old password!']);
+             return redirect()->back()->withErrors(['message', 'Wrong old password!']);
         }
     }
 
@@ -115,6 +115,11 @@ class AdminController extends Controller
         $week = Week::where('id', $wid)->first();
         $w = Week::where('id', $wid)->with('videos')->first();
         $video2 = $w->videos[1];
+
+        if($w->videos->count()>2){
+        $video2 = $w->videos[1];
+        return view('week.week', ['user' => $user,'doc' => $document['path'], 'aud' => $audio['path'] , 'vid' => $video['path'], 'logo' => $image['path'], 'week' => $week , 'vid2' => $video2['path'] ]);
+        }
 
         return view('admin.editweek', ['vid2' => $video2['path'] ,'doc' => $document['path'], 'aud' => $audio['path'] , 'vid' => $video['path'], 'logo' => $image['path'], 'week' => $week  ]);
     }

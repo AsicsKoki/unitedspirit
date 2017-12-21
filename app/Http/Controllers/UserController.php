@@ -37,10 +37,10 @@ class UserController extends Controller
                 $user->save();
                 return redirect()->route('home');
             }else{
-                return Redirect::back()->withErrors(['error', "Password does not match!"]);
+                return Redirect::back()->withErrors(['message', "Password does not match!"]);
             }
         }else{
-             return redirect()->back()->withErrors(['error', 'Wrong old password!']);
+             return redirect()->back()->withErrors(['message', 'Wrong old password!']);
         }
     }
     
@@ -74,7 +74,7 @@ class UserController extends Controller
             //     'user_id'        => $user->id,
             //     'subscription_id'  => $sub->id
             // ]);
-        return redirect()->back();
+        return redirect()->back()->with('message', "Congratulations, you've just subscribed to unitedspiritcampus.com!");;
 
 
     }
@@ -190,7 +190,7 @@ class UserController extends Controller
         if (!strcmp(Input::get('password'), Input::get('confirm_password'))){
             $user->password=Hash::make(Input::get('password'));
         }
-        return redirect()->route('home')->with('message', 'An email has been sent to your account, please follow instructions to reset your password');
+        return redirect()->route('home')->with('message', "Passwords do not match!");
     }
 
 }    

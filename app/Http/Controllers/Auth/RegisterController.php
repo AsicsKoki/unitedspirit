@@ -112,7 +112,7 @@ class RegisterController extends Controller
       //  return redirect()->back();
         return redirect()->route('getUserLogin');
     } else {
-        return redirect()->back()->withErrors(['error', "Password does not match!"]);
+        return redirect()->back()->withErrors(['message', "Password does not match!"]);
         }
 
 
@@ -125,10 +125,10 @@ class RegisterController extends Controller
         if ($user) {
             $user->active = 1;
             $user->save();
-            return redirect::route('home')->with('success','It is successMessage');
+            return redirect::route('home')->with('message', "You've just confirmed your account!");
         }
         
-        return view('auth.register')->withErrors(['error', 'Tokens do not match!']);
+        return view('auth.register')->withErrors(['message', 'Tokens do not match!']);
     }
 
     public function RandomString()

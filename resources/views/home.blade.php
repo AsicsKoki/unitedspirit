@@ -4,6 +4,11 @@
 @if(session('message'))
     <h4 style="text-align: center; margin-bottom: 15px;color: #ff5c5c;">{{ session('message') }}</h4>
 @endif
+@if($errors->any())
+<div id="error-box">
+    <h4 style="text-align: center; margin-bottom: 15px;color: #ff5c5c;">{{ session('errors') }}</h4>
+</div>
+@endif
     <!-- Carousel
         ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">

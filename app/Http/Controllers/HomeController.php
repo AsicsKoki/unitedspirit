@@ -37,7 +37,7 @@ class HomeController extends Controller
     {
         Auth::logout();
         session()->flush();
-        return redirect('/');
+        return redirect('/')->with('You have logout!');;
     }
 
     public function sendContactMail()
@@ -58,10 +58,10 @@ class HomeController extends Controller
         if ($user) {
             $user->active = 1;
             $user->save();
-            return redirect()->route('home')->with('success','Account has been validated! Please login in.');
+            return redirect()->route('home')->with('message','Account has been validated! Please login in.');
         }
         
-        return view('auth.register')->withErrors(['error', 'Tokens do not match!']);
+        return view('auth.register')->withErrors(['message', 'Tokens do not match!']);
     }
 
 

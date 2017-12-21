@@ -3,6 +3,9 @@
 
 @section('content')
 <div class="container">
+@if(session('message'))
+    <h4 style="text-align: center; margin-bottom: 15px;color: #ff5c5c;">{{ session('message') }}</h4>
+@endif
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
