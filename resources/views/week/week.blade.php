@@ -23,6 +23,7 @@
                     </video> -->
                     <iframe width="560" height="315" src="{{ $vid }}"  class="center-block" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
                     <br>
+                      <h3 class="text-center"><strong>Self realization</strong> : {{ $week->self_realization_title }}</h3>
                     @if($week->videos->count()>2)
                     <iframe width="560" height="315" src="{{ $vid2 }}"  class="center-block" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
                     @endif

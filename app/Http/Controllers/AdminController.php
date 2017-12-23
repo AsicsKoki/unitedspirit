@@ -118,7 +118,7 @@ class AdminController extends Controller
 
         if($w->videos->count()>2){
         $video2 = $w->videos[1];
-        return view('week.week', ['user' => $user,'doc' => $document['path'], 'aud' => $audio['path'] , 'vid' => $video['path'], 'logo' => $image['path'], 'week' => $week , 'vid2' => $video2['path'] ]);
+        return view('admin.editweek', ['doc' => $document['path'], 'aud' => $audio['path'] , 'vid' => $video['path'], 'logo' => $image['path'], 'week' => $week , 'vid2' => $video2['path'] ]);
         }
 
         return view('admin.editweek', ['vid2' => $video2['path'] ,'doc' => $document['path'], 'aud' => $audio['path'] , 'vid' => $video['path'], 'logo' => $image['path'], 'week' => $week  ]);

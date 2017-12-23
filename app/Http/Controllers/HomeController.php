@@ -36,8 +36,8 @@ class HomeController extends Controller
     public function logout()
     {
         Auth::logout();
-        session()->flush();
-        return redirect('/')->with('You have logout!');;
+        //session()->flush();
+        return redirect()->back()->with('message',"You have just logout!"); 
     }
 
     public function sendContactMail()
