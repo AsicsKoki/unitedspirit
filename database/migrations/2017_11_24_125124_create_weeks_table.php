@@ -24,6 +24,7 @@ class CreateWeeksTable extends Migration
             $table->string('self_realization')->nullable();
             $table->string('wisdome_title')->nullable();
             $table->string('healthy_mind_title')->nullable();
+            $table->string('exercise_title')->nullable();
         });
     }
 

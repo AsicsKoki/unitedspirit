@@ -33,6 +33,11 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="healthy_mind_title">Exercise title :</label>
+                    <input type="text" class="form-control" id="exercise_title" placeholder="Exercise title" name="exercise_title" value="{{$week->exercise_title }}">
+                </div>
+
+                <div class="form-group">
                     <label for="practical_exercise" class="text-left">Text for practical exercise</label>
                     <textarea class="form-control" id="practical_exercise" placeholder="Explain what they should be doing this week" name="week_exercise">{{ $week->exercise }}</textarea>
                 </div>

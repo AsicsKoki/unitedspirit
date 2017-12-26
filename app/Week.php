@@ -13,6 +13,7 @@ class Week extends Model
         'self_realization',
         'wisdome_title',
         'healthy_mind_title',
+        'exercise_title',
 
     ];
 
